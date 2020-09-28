@@ -62,10 +62,14 @@ import operator
 # Global variables
 # ------------------------------------------------------------------------
 operators = {
-    "+" : operator.add,
-    "-" : operator.sub,
-    "*" : operator.mul,
-    "/" : operator.truediv
+    "+"  : operator.add,
+    "-"  : operator.sub,
+    "*"  : operator.mul,
+    "/"  : operator.truediv,
+    ">>" : operator.rshift,
+    "<<" : operator.lshift,
+    "%"  : operator.mod,
+    "**" : operator.pow
     }
 
 # ------------------------------------------------------------------------
