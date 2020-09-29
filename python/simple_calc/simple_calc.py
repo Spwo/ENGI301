@@ -105,9 +105,9 @@ if __name__ == "__main__":
     while True:
         (number1, number2, op) = get_user_input()
         function = operators.get(op, None)
-        #if(op is <<) or (op is >>)
-            #number1 = int(number1)
-            #number2 = int(number2)
+        if op == "<<" or op == ">>":
+            number1 = int(number1)
+            number2 = int(number2)
         if(number1 is None) or (number2 is None) or (function is None):
             print("Done")
             break
