@@ -3,8 +3,11 @@
 --------------------------------------------------------------------------
 Blink USR3
 --------------------------------------------------------------------------
-License:   
-Copyright 2020 <Spencer Wong>
+Authors: Spencer Wong (sbw1 [at] rice [dot] edu)
+ 
+Copyright 2020, Spencer Wong
+
+License:  
 
 Redistribution and use in source and binary forms, with or without 
 modification, are permitted provided that the following conditions are met:
@@ -49,7 +52,7 @@ while True:
     GPIO.output("USR3", GPIO.LOW)
     time.sleep(0.1)
     
-
+# The below code is for making the LEDs light up one at a time:
 #for i in range(4):
 #    GPIO.setup("USR%d" % i, GPIO.OUT)
 #
