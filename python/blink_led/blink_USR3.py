@@ -33,8 +33,22 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 THE POSSIBILITY OF SUCH DAMAGE.
 --------------------------------------------------------------------------
 
-Simple program that will use Adafruit BBIO library to blink USR3 LED at 5 Hz
+Program that will use Adafruit BBIO library to blink USR3 LED at 5 Hz
+(5 on/off cycles per second)
 
 --------------------------------------------------------------------------
 """
+# Set up the LED pin for output
+import Adafruit_BBIO.GPIO as GPIO
+import time
 
+for i in range(4):
+    GPIO.setup("USR%d" % i, GPIO.OUT)
+
+while True:
+    for i in range(4):
+        GPIO.output("USR%d" % i, GPIO.HIGH)
+        time.sleep(1)
+    for i in range(4):
+        GPIO.output("USR%d" % i, GPIO.LOW)
+        time.sleep(1)
