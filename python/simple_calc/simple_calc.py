@@ -84,7 +84,7 @@ def get_user_input():
     try:
         number1  = float(input("Enter the First Number: "))
         number2  = float(input("Enter the Second Number: "))
-        operator = input("Enter the Operator (valid operators are +,-,*, and /): ")
+        operator = input("Enter the Operator (valid operators are +,-,*,/,>>,<<,%, and **): ")
         return (number1, number2, operator)
     except:
         print("Invalid Input")
@@ -96,10 +96,14 @@ def get_user_input():
 # Main script
 # ------------------------------------------------------------------------
 
-if __name__ == "__main__": # If you say python3 simplecalc.py in beagleboard it will do the below commands
+# If you say python3 simple_calc.py in beagleboard it will run this
+if __name__ == "__main__": 
     while True:
         (number1, number2, op) = get_user_input()
         function = operators.get(op, None)
+        #if(op is <<) or (op is >>)
+            #number1 = int(number1)
+            #number2 = int(number2)
         if(number1 is None) or (number2 is None) or (function is None):
             print("Done")
             break
