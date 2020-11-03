@@ -40,11 +40,24 @@ Program that will be used for loss prevention device. See Code flow diagram.
 
 --------------------------------------------------------------------------
 """
+import Adafruit_BBIO.GPIO as GPIO
 
 
-
-"""The DSD TECH app shows about -50 dBm when VERY close to the GPS,
+"""The DSD TECH app shows about -50 dBm when VERY close to the BT module,
 and about -87 when 385 inches away"""
+
 
 """I downloaded the DSD tech windows tool and was able to connect to it, 
 but idk what to do with that""
+
+
+""Veryfy hardware sees the WiFi adapter!!! How do I use it? none of the 
+online guides seem to work"""
+
+
+"""I still can't really figure out how to verify my UART devices 
+on a .sh file (not using a python command), nor how to communicate 
+with them"""
+
+"""Retrying loop when installing pyserial"""
+
