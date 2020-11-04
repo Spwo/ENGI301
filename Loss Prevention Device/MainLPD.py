@@ -51,14 +51,41 @@ but idk what to do with that
 """
 
 
-"""Veryfy hardware sees the WiFi adapter!!! How do I use it? none of the 
-online guides seem to work, and the manual is specific to using it on 
-a computer"""
+"""WIFI:
+How do I enter the password with the weird login thing?
+"""
 
 
 """I still can't really figure out how to verify my UART devices 
 on a .sh file (not using a python command), nor how to communicate 
-with them"""
+with them. There's a retrying loop when installing pyserial"""
 
-"""Retrying loop when installing pyserial"""
+"""GPS:
+Example usage is in Arduino. How do I use it? 
+    
+"""
+
+
+# ------------------------------------------------------------------------
+# Constants
+# ------------------------------------------------------------------------
+
+
+
+# ------------------------------------------------------------------------
+# Global variables
+# ------------------------------------------------------------------------
+
+# None
+
+# ------------------------------------------------------------------------
+# Functions / Classes
+# ------------------------------------------------------------------------
+
+
+
+
+# ------------------------------------------------------------------------
+# Main script
+# ------------------------------------------------------------------------
 
