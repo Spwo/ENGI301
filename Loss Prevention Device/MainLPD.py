@@ -41,6 +41,8 @@ Program that will be used for loss prevention device. See Code flow diagram.
 --------------------------------------------------------------------------
 """
 import Adafruit_BBIO.GPIO as GPIO
+import Adafruit_BBIO.UART as UART
+UART.setup("UART1")
 
 """BLUETOOTH:
 The DSD TECH app shows about -50 dBm when VERY close to the BT module,
@@ -51,17 +53,20 @@ but idk what to do with that
 """
 
 
-"""WIFI:
-How do I enter the password with the weird login thing?
-"""
-
-
 """I still can't really figure out how to verify my UART devices 
 on a .sh file (not using a python command), nor how to communicate 
-with them. There's a retrying loop when installing pyserial"""
+with them. There's a retrying loop when installing pyserial
+
+Fix network first
+
+https://learn.adafruit.com/setting-up-io-python-library-on-beaglebone-black/uart
+
+"""
 
 """GPS:
 Example usage is in Arduino. How do I use it? 
+
+There's a command to convert arduino to python
     
 """
 
