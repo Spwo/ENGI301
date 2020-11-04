@@ -42,7 +42,13 @@ Program that will be used for loss prevention device. See Code flow diagram.
 """
 import Adafruit_BBIO.GPIO as GPIO
 import Adafruit_BBIO.UART as UART
-UART.setup("UART1")
+import serial
+
+
+
+
+"""Make a verify UART python script and call it in verify hardware"""
+"""Rewire UART0 to UART4, configure pins for UART2"""
 
 """BLUETOOTH:
 The DSD TECH app shows about -50 dBm when VERY close to the BT module,
