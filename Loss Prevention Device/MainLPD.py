@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 --------------------------------------------------------------------------
-LPD_Main
+MainLPD
 --------------------------------------------------------------------------
 Authors: Spencer Wong (sbw1 [at] rice [dot] edu)
  
@@ -40,40 +40,59 @@ Program that will be used for loss prevention device. See Code flow diagram.
 
 --------------------------------------------------------------------------
 """
+import sys
 import Adafruit_BBIO.GPIO as GPIO
 import Adafruit_BBIO.UART as UART
 import serial
 
+"""UART1 is the bluetooth module"""
+UART.setup("PB-UART1")
+ 
+
+ser1 = serial.Serial(port = "/dev/ttyO1", baudrate=9600, timeout=2)
+ser1.close()
+ser1.open()
+
+# Verification for serial port
+if ser1 is None or not ser1.isOpen():
+    print("ERROR opening UART1")
+    sys.exit(0)
+
+wakeup_str = "a" * 100
+ser1.write(wakeup_str.encode("utf-8"))
+ser1.write("AT+ADDR?".encode("utf-8"))
+x = ser1.readline()
+print("Serial reading from BT Module:")
+print(x)
+
+
+"""UART2 is the GPS module"""
+UART.setup("PB-UART2")
+ 
+ser2 = serial.Serial(port = "/dev/ttyO2", baudrate=9600, timeout=2)
+ser2.close()
+ser2.open()
+
+# Verification for serial port
+if ser2 is None or not ser2.isOpen():
+    print("ERROR opening UART2")
+    sys.exit(0)
+    
+    
+y = ser2.readline()
+print("Serial reading from GPS Module:")
+print(y)
 
 
 
-"""Make a verify UART python script and call it in verify hardware"""
-"""Rewire UART0 to UART4, configure pins for UART2"""
 
 """BLUETOOTH:
-The DSD TECH app shows about -50 dBm when VERY close to the BT module,
-and about -87 when 385 inches away
-
-I downloaded the DSD tech windows tool and was able to connect to it, 
-but idk what to do with that
+Wait for UART verification tomorrow
 """
 
-
-"""I still can't really figure out how to verify my UART devices 
-on a .sh file (not using a python command), nor how to communicate 
-with them. There's a retrying loop when installing pyserial
-
-Fix network first
-
-https://learn.adafruit.com/setting-up-io-python-library-on-beaglebone-black/uart
-
-"""
 
 """GPS:
-Example usage is in Arduino. How do I use it? 
-
-There's a command to convert arduino to python
-    
+Use Library to convert NMEA data to something good
 """
 
 
