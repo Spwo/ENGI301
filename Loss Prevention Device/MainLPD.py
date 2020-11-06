@@ -122,8 +122,8 @@ while time.time() < t_end:
 
 
 """Messaging system"""
-account_sid = 'ACfa28ef2d0cf861f0edb283ed3839a47b'
-auth_token = 'f60385740c04e3081a57b2545c8e3b80'
+account_sid = 'XXXXXX'
+auth_token = 'XXXXXXX'
 client = Client(account_sid, auth_token)
 
 message = client.messages \
