@@ -47,6 +47,11 @@ import serial
 import pynmea2
 import time
 
+
+#Uncomment this once internet is figured back out
+# Download the helper library from https://www.twilio.com/docs/python/install
+#from twilio.rest import Client
+
 """UART1 is the bluetooth module"""
 UART.setup("PB-UART1")
  
@@ -100,8 +105,14 @@ while time.time() < t_end:
             msg = pynmea2.parse(y, check=False) #Convert string using pynmea2
             #print(repr(msg))
             print("Lattitude and Longitude:")
-            print(msg.lat)
-            print(msg.lon)
+            lattitude = msg.lat
+            longitude = msg.lat
+            if lattitude == "":
+                lattitude = "NO LONGITUDE DATA"
+            print(lattitude)
+            if longitude == "":
+                longitude = "NO LONGITUDE DATA"
+            print(longitude)
         except pynmea2.ParseError as e:
             print('Parse error: {}'.format(e))
             continue
@@ -110,9 +121,38 @@ while time.time() < t_end:
 
 
 
-"""BLUETOOTH:
-Wait for UART verification tomorrow
+"""Messaging system"""
+account_sid = 'ACfa28ef2d0cf861f0edb283ed3839a47b'
+auth_token = 'f60385740c04e3081a57b2545c8e3b80'
+client = Client(account_sid, auth_token)
+
+message = client.messages \
+    .create(
+        body="Your device was last seen at,\n Lattitude: {} \nLongitude: {}".format(lattitude, longitude),
+        from_='+12053524587',
+        to='+17742706970'
+        )
+print(message.body)
+
+
+"""GPS:
+GPS always says <GGA(timestamp=None, lat='', lat_dir='', lon='', lon_dir='', 
+gps_qual=0, num_sats='00', horizontal_dil='99.99', altitude=None, 
+altitude_units='', geo_sep='', geo_sep_units='', age_gps_data='', 
+ref_station_id='')>
 """
+
+
+"""BLUETOOTH:
+Wait for UART verification tool
+"""
+
+"""WIFI:
+Get new usb pin thing
+
+With no USB pin thing, the connection isn't working anymore?
+"""
+
 
 
 

@@ -2,8 +2,8 @@
 # --------------------------------------------------------------------------
 # LPD - Configure Pins
 # --------------------------------------------------------------------------
-# License:   
-# Copyright 2020 Erik Welsh
+# Authors: Spencer Wong (sbw1 [at] rice [dot] edu)
+# Copyright 2020, Spencer Wong
 # 
 # Redistribution and use in source and binary forms, with or without 
 # modification, are permitted provided that the following conditions are met:
@@ -33,7 +33,7 @@
 # 
 # Configure pins for LPD:
 #   - UART2
-# 
+#   - UART1
 # --------------------------------------------------------------------------
 
 # UART2 (GPS)
