@@ -44,6 +44,8 @@ import sys
 import Adafruit_BBIO.GPIO as GPIO
 import Adafruit_BBIO.UART as UART
 import serial
+import pynmea2
+import time
 
 """UART1 is the bluetooth module"""
 UART.setup("PB-UART1")
@@ -79,10 +81,32 @@ if ser2 is None or not ser2.isOpen():
     sys.exit(0)
     
     
-y = ser2.readline()
-print("Serial reading from GPS Module:")
-print(y)
 
+
+
+print("Serial reading from GPS Module:")
+t_end = time.time() + 5
+while time.time() < t_end:
+    y = ser2.readline()
+    try:
+        y = y.decode("utf-8")
+    except:
+        pass
+    DataType = y[:6] #Grab the type of NMEA data from the beginning of the string
+    #print(y) # This will print all types of NMEA data
+    if DataType == "$GPGGA":
+        #GPGGA is the most standard form of NMEA output
+        try:
+            msg = pynmea2.parse(y, check=False) #Convert string using pynmea2
+            #print(repr(msg))
+            print("Lattitude and Longitude:")
+            print(msg.lat)
+            print(msg.lon)
+        except pynmea2.ParseError as e:
+            print('Parse error: {}'.format(e))
+            continue
+            
+            #If status is 'V', that means there's a warning and connection bad
 
 
 
@@ -90,10 +114,6 @@ print(y)
 Wait for UART verification tomorrow
 """
 
-
-"""GPS:
-Use Library to convert NMEA data to something good
-"""
 
 
 # ------------------------------------------------------------------------
