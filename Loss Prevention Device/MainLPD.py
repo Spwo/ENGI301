@@ -48,9 +48,9 @@ import pynmea2
 import time
 
 
-#Uncomment this once internet is figured back out
+
 # Download the helper library from https://www.twilio.com/docs/python/install
-#from twilio.rest import Client
+from twilio.rest import Client
 
 """UART1 is the bluetooth module"""
 UART.setup("PB-UART1")
@@ -65,9 +65,10 @@ if ser1 is None or not ser1.isOpen():
     print("ERROR opening UART1")
     sys.exit(0)
 
-wakeup_str = "a" * 100
-ser1.write(wakeup_str.encode("utf-8"))
-ser1.write("AT+ADDR?".encode("utf-8"))
+#wakeup_str = "a" * 100
+#ser1.write(wakeup_str.encode("utf-8"))
+ser1.write("AT".encode("utf-8"))
+time.sleep(5)
 x = ser1.readline()
 print("Serial reading from BT Module:")
 print(x)
@@ -90,7 +91,7 @@ if ser2 is None or not ser2.isOpen():
 
 
 print("Serial reading from GPS Module:")
-t_end = time.time() + 5
+t_end = time.time() + 2
 while time.time() < t_end:
     y = ser2.readline()
     try:
@@ -98,7 +99,7 @@ while time.time() < t_end:
     except:
         pass
     DataType = y[:6] #Grab the type of NMEA data from the beginning of the string
-    #print(y) # This will print all types of NMEA data
+    print(y) # This will print all types of NMEA data
     if DataType == "$GPGGA":
         #GPGGA is the most standard form of NMEA output
         try:
@@ -122,36 +123,31 @@ while time.time() < t_end:
 
 
 """Messaging system"""
-account_sid = 'XXXXXX'
-auth_token = 'XXXXXXX'
+account_sid = 'XXXX'
+auth_token = 'XXXXX'
 client = Client(account_sid, auth_token)
 
 message = client.messages \
     .create(
         body="Your device was last seen at,\n Lattitude: {} \nLongitude: {}".format(lattitude, longitude),
-        from_='+12053524587',
-        to='+17742706970'
+        from_='XXXXX',
+        to='XXXXX'
         )
 print(message.body)
 
 
 """GPS:
-GPS always says <GGA(timestamp=None, lat='', lat_dir='', lon='', lon_dir='', 
-gps_qual=0, num_sats='00', horizontal_dil='99.99', altitude=None, 
-altitude_units='', geo_sep='', geo_sep_units='', age_gps_data='', 
-ref_station_id='')>
+
+Try leaving on for a long time to charge up in a more open area now
 """
 
 
 """BLUETOOTH:
 Wait for UART verification tool
+RSSI command to get connection strength, make code structure
 """
 
-"""WIFI:
-Get new usb pin thing
 
-With no USB pin thing, the connection isn't working anymore?
-"""
 
 
 
