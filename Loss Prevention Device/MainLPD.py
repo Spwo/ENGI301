@@ -136,15 +136,15 @@ while time.time() < t_end:
 
 
 """Messaging system"""
-account_sid = 'ACfa28ef2d0cf861f0edb283ed3839a47b'
-auth_token = 'bef5c9297b1bca4af7dcb2a944b0d043'
+account_sid = 'XXXXXX'
+auth_token = 'XXXXX'
 client = Client(account_sid, auth_token)
 
 message = client.messages \
     .create(
         body="Your device was last seen at,\nLattitude: {} \nLongitude: {}".format(lattitude, longitude),
-        from_='+12053524587',
-        to='+17742706970'
+        from_='XXXXXX',
+        to='XXXXXXX'
         )
 print(message.body)
 
