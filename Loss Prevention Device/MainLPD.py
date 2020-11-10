@@ -53,25 +53,34 @@ import time
 from twilio.rest import Client
 
 """UART1 is the bluetooth module"""
-UART.setup("PB-UART1")
+UART.setup("PB-UART4")
  
 
-ser1 = serial.Serial(port = "/dev/ttyO1", baudrate=9600, timeout=2)
+ser1 = serial.Serial(port = "/dev/ttyO4", baudrate=9600, timeout=2)
 ser1.close()
 ser1.open()
 
 # Verification for serial port
 if ser1 is None or not ser1.isOpen():
-    print("ERROR opening UART1")
+    print("ERROR opening UART4")
     sys.exit(0)
 
 #wakeup_str = "a" * 100
 #ser1.write(wakeup_str.encode("utf-8"))
-ser1.write("AT".encode("utf-8"))
-time.sleep(5)
+ser1.write("AT+RSSI?".encode("utf-8"))
+time.sleep(1)
+#You will recieve OK+RSSI:[P1]
 x = ser1.readline()
 print("Serial reading from BT Module:")
 print(x)
+
+"""ConnectionStrength = x[8:]
+while ConnectionStrength < -80:
+    ser1.write("AT+RSSI?".encode("utf-8"))
+    time.sleep(1)
+    x = ser1.readline()
+    ConnectionStrength = x[8:]"""
+    #Loop reading ConnectionStrength until it gets below -80
 
 
 """UART2 is the GPS module"""
@@ -90,7 +99,7 @@ if ser2 is None or not ser2.isOpen():
 
 
 
-print("Serial reading from GPS Module:")
+#print("Serial reading from GPS Module:")
 t_end = time.time() + 2
 while time.time() < t_end:
     y = ser2.readline()
@@ -99,21 +108,25 @@ while time.time() < t_end:
     except:
         pass
     DataType = y[:6] #Grab the type of NMEA data from the beginning of the string
-    print(y) # This will print all types of NMEA data
+    #print(y) # This will print all types of NMEA data
     if DataType == "$GPGGA":
         #GPGGA is the most standard form of NMEA output
         try:
             msg = pynmea2.parse(y, check=False) #Convert string using pynmea2
             #print(repr(msg))
-            print("Lattitude and Longitude:")
-            lattitude = msg.lat
-            longitude = msg.lat
+            #print("Lattitude and Longitude:")
+            lattitude = str(float(msg.lat)/100)
+            lattitude = lattitude[:6] # Truncate the value
+            lattitude = lattitude + " " + msg.lat_dir # Add the direction
+            longitude = str(float(msg.lon)/100)
+            longitude = longitude[:6]
+            longitude = longitude + " " + msg.lon_dir
             if lattitude == "":
                 lattitude = "NO LONGITUDE DATA"
-            print(lattitude)
+            #print(lattitude)
             if longitude == "":
                 longitude = "NO LONGITUDE DATA"
-            print(longitude)
+            #print(longitude)
         except pynmea2.ParseError as e:
             print('Parse error: {}'.format(e))
             continue
@@ -123,28 +136,27 @@ while time.time() < t_end:
 
 
 """Messaging system"""
-account_sid = 'XXXX'
-auth_token = 'XXXXX'
+account_sid = 'ACfa28ef2d0cf861f0edb283ed3839a47b'
+auth_token = 'bef5c9297b1bca4af7dcb2a944b0d043'
 client = Client(account_sid, auth_token)
 
 message = client.messages \
     .create(
-        body="Your device was last seen at,\n Lattitude: {} \nLongitude: {}".format(lattitude, longitude),
-        from_='XXXXX',
-        to='XXXXX'
+        body="Your device was last seen at,\nLattitude: {} \nLongitude: {}".format(lattitude, longitude),
+        from_='+12053524587',
+        to='+17742706970'
         )
 print(message.body)
 
 
-"""GPS:
-
-Try leaving on for a long time to charge up in a more open area now
-"""
 
 
 """BLUETOOTH:
-Wait for UART verification tool
-RSSI command to get connection strength, make code structure
+Use the code Erik emailed
+
+Move to UART 4
+
+Direct connection instead
 """
 
 
