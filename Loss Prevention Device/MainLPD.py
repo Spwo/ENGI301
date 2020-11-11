@@ -121,16 +121,16 @@ def send_BTcmd(message):
 def send_location(lattitude, longitude):
     """Send location to phone"""
     # Authentication is censored for publishing
-    account_sid = 'ACfa28ef2d0cf861f0edb283ed3839a47b'
-    auth_token = '7761284591ec00f79522f8304131d627'
+    account_sid = 'XXXXXXXXXXXXXXXXXXXXXXXX'
+    auth_token = 'XXXXXXXXXXXXXXXXXXXXXXXXX'
     client = Client(account_sid, auth_token)
 
     message = client.messages \
         .create(
             body="You have separated from your device! It was last seen at,\nLattitude: {} \nLongitude: {}".format(lattitude, longitude),
             # Phone number is censored for publishing
-            from_='+12053524587',
-            to='+17742706970'
+            from_='XXXXXXXXXXXX',
+            to='XXXXXXXXXXXX'
             )
     #print(message.body)
 # End def
@@ -193,7 +193,6 @@ if __name__ == '__main__':
     LookForPhone = False
     while True:
         resp = send_BTcmd("AT+ADDR?") # Constantly ping BT module
-        print(resp)
         if resp == "":
             # A blank string means phone is connected. Start watching for a disconnect
             LookForPhone = True
@@ -202,7 +201,7 @@ if __name__ == '__main__':
             [lattitude, longitude] = get_GPS_data()
             send_location(lattitude, longitude)
             LookForPhone = False
-            print("sending coordinates")    
+            #print("sending coordinates")    
 
     
     
