@@ -46,33 +46,21 @@ import Adafruit_BBIO.UART as UART
 import serial
 import pynmea2
 import time
-
+import os
 
 
 # Download the helper library from https://www.twilio.com/docs/python/install
 from twilio.rest import Client
 
-"""UART1 is the bluetooth module"""
+#UART1 is the bluetooth module
 UART.setup("PB-UART4")
  
+#UART2 is the GPS module
+UART.setup("PB-UART2")
 
-ser1 = serial.Serial(port = "/dev/ttyO4", baudrate=9600, timeout=2)
-ser1.close()
-ser1.open()
 
-# Verification for serial port
-if ser1 is None or not ser1.isOpen():
-    print("ERROR opening UART4")
-    sys.exit(0)
 
-#wakeup_str = "a" * 100
-#ser1.write(wakeup_str.encode("utf-8"))
-ser1.write("AT+RSSI?".encode("utf-8"))
-time.sleep(1)
-#You will recieve OK+RSSI:[P1]
-x = ser1.readline()
-print("Serial reading from BT Module:")
-print(x)
+
 
 """ConnectionStrength = x[8:]
 while ConnectionStrength < -80:
@@ -82,18 +70,8 @@ while ConnectionStrength < -80:
     ConnectionStrength = x[8:]"""
     #Loop reading ConnectionStrength until it gets below -80
 
-
-"""UART2 is the GPS module"""
-UART.setup("PB-UART2")
+"""
  
-ser2 = serial.Serial(port = "/dev/ttyO2", baudrate=9600, timeout=2)
-ser2.close()
-ser2.open()
-
-# Verification for serial port
-if ser2 is None or not ser2.isOpen():
-    print("ERROR opening UART2")
-    sys.exit(0)
     
     
 
@@ -115,18 +93,22 @@ while time.time() < t_end:
             msg = pynmea2.parse(y, check=False) #Convert string using pynmea2
             #print(repr(msg))
             #print("Lattitude and Longitude:")
-            lattitude = str(float(msg.lat)/100)
-            lattitude = lattitude[:6] # Truncate the value
-            lattitude = lattitude + " " + msg.lat_dir # Add the direction
-            longitude = str(float(msg.lon)/100)
-            longitude = longitude[:6]
-            longitude = longitude + " " + msg.lon_dir
+            lattitude = msg.lat
+            longitude = msg.lon
             if lattitude == "":
                 lattitude = "NO LONGITUDE DATA"
-            #print(lattitude)
+            else:
+                lattitude = str(float(lattitude)/100)
+                lattitude = lattitude[:6] # Truncate the value
+                lattitude = lattitude + " " + msg.lat_dir # Add the direction
+                #print(lattitude)
             if longitude == "":
                 longitude = "NO LONGITUDE DATA"
-            #print(longitude)
+            else:
+                longitude = str(float(longitude)/100)
+                longitude = longitude[:6]
+                longitude = longitude + " " + msg.lon_dir
+                #print(longitude)
         except pynmea2.ParseError as e:
             print('Parse error: {}'.format(e))
             continue
@@ -135,28 +117,24 @@ while time.time() < t_end:
 
 
 
-"""Messaging system"""
-account_sid = 'XXXXXX'
-auth_token = 'XXXXX'
+#Messaging system
+account_sid = 'XXXXXXXXXXXXXXXXXXXXXXXXX'
+auth_token = 'XXXXXXXXXX'
 client = Client(account_sid, auth_token)
 
 message = client.messages \
     .create(
         body="Your device was last seen at,\nLattitude: {} \nLongitude: {}".format(lattitude, longitude),
-        from_='XXXXXX',
-        to='XXXXXXX'
+        from_='XXXXXXXX',
+        to='XXXXXXXXX'
         )
 print(message.body)
 
-
+"""
 
 
 """BLUETOOTH:
-Use the code Erik emailed
-
-Move to UART 4
-
-Direct connection instead
+Keep searching until BT disconnects and you get something back, then run GPS
 """
 
 
@@ -180,10 +158,67 @@ Direct connection instead
 # Functions / Classes
 # ------------------------------------------------------------------------
 
+def BTcomm_setup():
+    """Set up UART communication with BT module."""
+    BTport = serial.Serial(port = "/dev/ttyO4", baudrate=9600, timeout=1)
+    BTport.close()
+    BTport.open()
+    
+    if (BTport is None) or (not BTport.isOpen()):
+        print("ERROR opening UART4 port.")
+        return None
+    
+    return BTport
+# End def
 
+def GPScomm_setup():
+    """Set up UART communication with GPS module."""
+    GPSport = serial.Serial(port = "/dev/ttyO2", baudrate=9600, timeout=1)
+    GPSport.close()
+    GPSport.open()
+    
+    if (GPSport is None) or (not GPSport.isOpen()):
+        print("ERROR opening UART2 port.")
+        return None
+    
+    return GPSport
+# End def
+
+
+def send_BTcmd(message):
+    """Send and recieve AT command with BT module"""
+    print("Send: {0}".format(message))
+    BTport.write(message.encode("utf-8"))
+    response = BTport.read(1000).decode("utf-8")
+    #  until a response is read:
+    while response == "":
+        BTport.write(message.encode("utf-8"))
+        response = BTport.read(1000).decode("utf-8")
+    print("Recv: {0}".format(response))
+    
+    return response
+# End def
 
 
 # ------------------------------------------------------------------------
 # Main script
 # ------------------------------------------------------------------------
 
+if __name__ == '__main__':
+    # Set up comm
+    BTport = BTcomm_setup()
+    GPSport = GPScomm_setup()
+
+    try:
+        #resp = send_cmd("AT+MODE1")
+        #^Mode 2 is needed for RSSI read
+        #resp = send_cmd("AT")
+        #^Disconnects the device if connected, says OK if not
+        #AT+RSSI? Only works if sent from phone
+        resp = send_BTcmd("AT+ADDR?")
+    except KeyboardInterrupt:
+        pass
+    
+    BTport.close()
+    
+    print("BT Done")
