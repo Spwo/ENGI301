@@ -28,4 +28,4 @@ The device will constantly ping your phone until the connection is lost. Once co
 
 Note that any Twilio information is censored. Make an account on Twilio and use your own information to get that part to work.
 
-*Hackster URL*
+https://www.hackster.io/sbw1/loss-prevention-device-78e2b8
