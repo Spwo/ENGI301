@@ -39,15 +39,15 @@
 import Adafruit_BBIO.UART as UART
 import serial
 
-"""UART1 is the bluetooth module"""
-UART.setup("PB-UART1")
+"""UART4 is the bluetooth module"""
+UART.setup("PB-UART4")
  
 
-ser1 = serial.Serial(port = "/dev/ttyO1", baudrate=9600, timeout=2)
+ser1 = serial.Serial(port = "/dev/ttyO4", baudrate=9600, timeout=2)
 ser1.close()
 ser1.open()
 if ser1.isOpen():
-	print("Serial 1 is open! (BT Module)")
+	print("Serial 4 is open! (BT Module)")
 
 
 """UART2 is the GPS module"""

@@ -33,14 +33,10 @@
 # 
 # Configure pins for LPD:
 #   - UART2
-#   - UART1
+#   
 # --------------------------------------------------------------------------
 
 # UART2 (GPS)
 config-pin P1_08 uart
 config-pin P1_10 uart
-
-# UART1 (BT)
-config-pin P2_09 uart
-config-pin P2_11 uart
 

@@ -41,7 +41,6 @@ Program that will be used for loss prevention device. See Code flow diagram.
 --------------------------------------------------------------------------
 """
 import sys
-import Adafruit_BBIO.GPIO as GPIO
 import Adafruit_BBIO.UART as UART
 import serial
 import pynmea2
@@ -62,91 +61,11 @@ UART.setup("PB-UART2")
 
 
 
-"""ConnectionStrength = x[8:]
-while ConnectionStrength < -80:
-    ser1.write("AT+RSSI?".encode("utf-8"))
-    time.sleep(1)
-    x = ser1.readline()
-    ConnectionStrength = x[8:]"""
-    #Loop reading ConnectionStrength until it gets below -80
-
-"""
- 
-    
-    
-
-
-
-#print("Serial reading from GPS Module:")
-t_end = time.time() + 2
-while time.time() < t_end:
-    y = ser2.readline()
-    try:
-        y = y.decode("utf-8")
-    except:
-        pass
-    DataType = y[:6] #Grab the type of NMEA data from the beginning of the string
-    #print(y) # This will print all types of NMEA data
-    if DataType == "$GPGGA":
-        #GPGGA is the most standard form of NMEA output
-        try:
-            msg = pynmea2.parse(y, check=False) #Convert string using pynmea2
-            #print(repr(msg))
-            #print("Lattitude and Longitude:")
-            lattitude = msg.lat
-            longitude = msg.lon
-            if lattitude == "":
-                lattitude = "NO LONGITUDE DATA"
-            else:
-                lattitude = str(float(lattitude)/100)
-                lattitude = lattitude[:6] # Truncate the value
-                lattitude = lattitude + " " + msg.lat_dir # Add the direction
-                #print(lattitude)
-            if longitude == "":
-                longitude = "NO LONGITUDE DATA"
-            else:
-                longitude = str(float(longitude)/100)
-                longitude = longitude[:6]
-                longitude = longitude + " " + msg.lon_dir
-                #print(longitude)
-        except pynmea2.ParseError as e:
-            print('Parse error: {}'.format(e))
-            continue
-            
-            #If status is 'V', that means there's a warning and connection bad
-
-
-
-#Messaging system
-account_sid = 'XXXXXXXXXXXXXXXXXXXXXXXXX'
-auth_token = 'XXXXXXXXXX'
-client = Client(account_sid, auth_token)
-
-message = client.messages \
-    .create(
-        body="Your device was last seen at,\nLattitude: {} \nLongitude: {}".format(lattitude, longitude),
-        from_='XXXXXXXX',
-        to='XXXXXXXXX'
-        )
-print(message.body)
-
-"""
-
-
-"""BLUETOOTH:
-Keep searching until BT disconnects and you get something back, then run GPS
-"""
-
-
-
-
-
-
 # ------------------------------------------------------------------------
 # Constants
 # ------------------------------------------------------------------------
 
-
+# None
 
 # ------------------------------------------------------------------------
 # Global variables
@@ -187,17 +106,76 @@ def GPScomm_setup():
 
 def send_BTcmd(message):
     """Send and recieve AT command with BT module"""
-    print("Send: {0}".format(message))
+    #print("Send: {0}".format(message))
     BTport.write(message.encode("utf-8"))
     response = BTport.read(1000).decode("utf-8")
     #  until a response is read:
-    while response == "":
-        BTport.write(message.encode("utf-8"))
-        response = BTport.read(1000).decode("utf-8")
-    print("Recv: {0}".format(response))
+    #while response == "":
+        #BTport.write(message.encode("utf-8"))
+        #response = BTport.read(1000).decode("utf-8")
+    #print("Recv: {0}".format(response))
     
     return response
 # End def
+
+def send_location(lattitude, longitude):
+    """Send location to phone"""
+    # Authentication is censored for publishing
+    account_sid = 'ACfa28ef2d0cf861f0edb283ed3839a47b'
+    auth_token = '7761284591ec00f79522f8304131d627'
+    client = Client(account_sid, auth_token)
+
+    message = client.messages \
+        .create(
+            body="You have separated from your device! It was last seen at,\nLattitude: {} \nLongitude: {}".format(lattitude, longitude),
+            # Phone number is censored for publishing
+            from_='+12053524587',
+            to='+17742706970'
+            )
+    #print(message.body)
+# End def
+
+def get_GPS_data():
+    """Find lattitude and longitude using GPS module"""
+    t_end = time.time() + 2 #2 seconds should be enough to get the data we need
+    while time.time() < t_end:
+        y = GPSport.readline()
+        try:
+            y = y.decode("utf-8")
+        except:
+            pass
+        DataType = y[:6] #Grab the type of NMEA data from the beginning of the string
+        #print(y) # This will print all types of NMEA data
+        if DataType == "$GPGGA":
+            #GPGGA is the most standard form of NMEA output
+            try:
+                msg = pynmea2.parse(y, check=False) #Convert string using pynmea2
+                #print(repr(msg))
+                #print("Lattitude and Longitude:")
+                lattitude = msg.lat
+                longitude = msg.lon
+                if lattitude == "":
+                    lattitude = "NO LONGITUDE DATA" # If the GPS cannot find location
+                else:
+                    lattitude = str(float(lattitude)/100)
+                    lattitude = lattitude[:6] # Truncate the value
+                    lattitude = lattitude + " " + msg.lat_dir # Add the direction
+                    #print(lattitude)
+                if longitude == "":
+                    longitude = "NO LONGITUDE DATA" # If the GPS cannot find location
+                else:
+                    longitude = str(float(longitude)/100)
+                    longitude = longitude[:6]
+                    longitude = longitude + " " + msg.lon_dir
+                    #print(longitude)
+            except pynmea2.ParseError as e:
+                print('Parse error: {}'.format(e))
+                continue
+            #If status is 'V', that means there's a warning and connection bad
+    return [lattitude, longitude];
+
+# End def
+
 
 
 # ------------------------------------------------------------------------
@@ -208,17 +186,23 @@ if __name__ == '__main__':
     # Set up comm
     BTport = BTcomm_setup()
     GPSport = GPScomm_setup()
+    
+    """ Below is a loop where the BT module will keep searching for the phone. 
+    Once the phone connects and disconnects the loaction will be sent,
+    and the loop will reset """
+    LookForPhone = False
+    while True:
+        resp = send_BTcmd("AT+ADDR?") # Constantly ping BT module
+        print(resp)
+        if resp == "":
+            # A blank string means phone is connected. Start watching for a disconnect
+            LookForPhone = True
+        if resp != "" and LookForPhone == True:
+            # Once disconnect, gather GPS data and text phone location
+            [lattitude, longitude] = get_GPS_data()
+            send_location(lattitude, longitude)
+            LookForPhone = False
+            print("sending coordinates")    
 
-    try:
-        #resp = send_cmd("AT+MODE1")
-        #^Mode 2 is needed for RSSI read
-        #resp = send_cmd("AT")
-        #^Disconnects the device if connected, says OK if not
-        #AT+RSSI? Only works if sent from phone
-        resp = send_BTcmd("AT+ADDR?")
-    except KeyboardInterrupt:
-        pass
     
-    BTport.close()
     
-    print("BT Done")
