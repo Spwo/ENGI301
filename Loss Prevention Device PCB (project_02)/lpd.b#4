@@ -842,11 +842,6 @@ design rules under a new name.</description>
 <signal name="VIN">
 <contactref element="U1" pad="P1_01"/>
 </signal>
-<signal name="3.3V">
-<contactref element="U1" pad="P1_14"/>
-<contactref element="U1" pad="P2_23"/>
-<wire x1="22.42" y1="-29.49" x2="35.12" y2="-6.63" width="0" layer="19" extent="1-1"/>
-</signal>
 <signal name="GND">
 <contactref element="U1" pad="P1_16"/>
 <contactref element="U1" pad="P1_22"/>
@@ -863,6 +858,11 @@ design rules under a new name.</description>
 </signal>
 <signal name="BAT.VIN">
 <contactref element="U1" pad="P2_14"/>
+</signal>
+<signal name="VDD_3P3V">
+<contactref element="U1" pad="P2_23"/>
+<contactref element="U1" pad="P1_14"/>
+<wire x1="22.42" y1="-29.49" x2="35.12" y2="-6.63" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

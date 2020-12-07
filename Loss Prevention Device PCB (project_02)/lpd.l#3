@@ -822,6 +822,11 @@
 <text x="-12.7" y="12.7" size="1.27" layer="95">&gt;NAME</text>
 <text x="5.08" y="-10.16" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="VDD_3P3V">
+<circle x="0" y="1.27" radius="1.27" width="0.254" layer="94"/>
+<pin name="VDD_3P3V" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
+<text x="0" y="4.064" size="1.778" layer="96" align="center">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="GT-U7" prefix="U">
@@ -983,6 +988,18 @@
 <connect gate="G$1" pin="GND" pad="4"/>
 <connect gate="G$1" pin="VBUS" pad="1"/>
 </connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="VDD_3P3V" prefix="SUPPLY">
+<gates>
+<gate name="G$1" symbol="VDD_3P3V" x="0" y="2.54"/>
+</gates>
+<devices>
+<device name="">
 <technologies>
 <technology name=""/>
 </technologies>
