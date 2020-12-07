@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.5" unitdist="mm" unit="mm" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -532,6 +532,20 @@
 <wire x1="22.4282" y1="4.8006" x2="22.4282" y2="12.1666" width="0.254" layer="21"/>
 <text x="42.7355" y="10.7315" size="1.016" layer="21" font="vector" ratio="12" align="bottom-center">U0</text>
 <wire x1="7.1882" y1="32.2326" x2="7.1882" y2="30.2006" width="0.254" layer="21"/>
+</package>
+<package name="BT">
+<wire x1="0" y1="1" x2="0" y2="26" width="0.1524" layer="21"/>
+<wire x1="1" y1="27" x2="12" y2="27" width="0.1524" layer="21"/>
+<wire x1="13" y1="26" x2="13" y2="1" width="0.1524" layer="21"/>
+<wire x1="1" y1="0" x2="12" y2="0" width="0.1524" layer="21"/>
+<wire x1="12" y1="0" x2="13" y2="1" width="0.1524" layer="21" curve="90"/>
+<wire x1="13" y1="26" x2="12" y2="27" width="0.1524" layer="21" curve="90"/>
+<wire x1="1" y1="27" x2="0" y2="26" width="0.1524" layer="21" curve="90"/>
+<wire x1="0" y1="1" x2="1" y2="0" width="0.1524" layer="21" curve="90"/>
+<pad name="P$1" x="4" y="1" drill="0.6" shape="square"/>
+<pad name="P$2" x="5.5" y="1" drill="0.6" shape="square"/>
+<pad name="P$3" x="7.5" y="1" drill="0.6" shape="square"/>
+<pad name="P$4" x="9" y="1" drill="0.6" shape="square"/>
 </package>
 </packages>
 <symbols>

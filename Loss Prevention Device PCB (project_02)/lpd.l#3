@@ -693,6 +693,18 @@
 <pin name="RXD" x="13.97" y="-3.81" length="middle" rot="R90"/>
 <pin name="VCC" x="6.35" y="-3.81" length="middle" rot="R90"/>
 </symbol>
+<symbol name="FEMALE90">
+<wire x1="0" y1="0" x2="0" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="0" y1="5.08" x2="12.7" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="12.7" y1="5.08" x2="12.7" y2="0" width="0.1524" layer="94"/>
+<wire x1="12.7" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
+<pin name="P$1" x="2.54" y="-2.54" length="middle" rot="R90"/>
+<pin name="P$2" x="5.08" y="-2.54" length="middle" rot="R90"/>
+<pin name="P$3" x="7.62" y="-2.54" length="middle" rot="R90"/>
+<pin name="P$4" x="10.16" y="-2.54" length="middle" rot="R90"/>
+<text x="-10.16" y="2.54" size="1.778" layer="95">&gt;NAME</text>
+<text x="15.24" y="2.54" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="GT-U7" prefix="U">
