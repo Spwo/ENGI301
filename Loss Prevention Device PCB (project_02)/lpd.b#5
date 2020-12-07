@@ -842,19 +842,16 @@ design rules under a new name.</description>
 <signal name="VIN">
 <contactref element="U1" pad="P1_01"/>
 </signal>
-<signal name="3.3V">
-<contactref element="U1" pad="P1_14"/>
-<contactref element="U1" pad="P2_23"/>
-<wire x1="22.42" y1="-29.49" x2="35.12" y2="-6.63" width="0" layer="19" extent="1-1"/>
-</signal>
 <signal name="GND">
 <contactref element="U1" pad="P1_16"/>
 <contactref element="U1" pad="P1_22"/>
 <contactref element="U1" pad="P2_15"/>
 <contactref element="U1" pad="P2_21"/>
-<wire x1="24.96" y1="-6.63" x2="32.58" y2="-6.63" width="0" layer="19" extent="1-1"/>
-<wire x1="24.96" y1="-29.49" x2="24.96" y2="-6.63" width="0" layer="19" extent="1-1"/>
+<contactref element="U2" pad="P$1"/>
+<wire x1="24.96" y1="-29.49" x2="9.25" y2="-67.19" width="0" layer="19" extent="1-1"/>
 <wire x1="32.58" y1="-29.49" x2="24.96" y2="-29.49" width="0" layer="19" extent="1-1"/>
+<wire x1="32.58" y1="-6.63" x2="32.58" y2="-29.49" width="0" layer="19" extent="1-1"/>
+<wire x1="24.96" y1="-6.63" x2="32.58" y2="-6.63" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VOUT">
 <contactref element="U1" pad="P1_24"/>
@@ -863,6 +860,29 @@ design rules under a new name.</description>
 </signal>
 <signal name="BAT.VIN">
 <contactref element="U1" pad="P2_14"/>
+</signal>
+<signal name="VDD_3P3V">
+<contactref element="U1" pad="P2_23"/>
+<contactref element="U1" pad="P1_14"/>
+<contactref element="U2" pad="P$5"/>
+<wire x1="22.42" y1="-29.49" x2="19.89" y2="-67.19" width="0" layer="19" extent="1-1"/>
+<wire x1="35.12" y1="-6.63" x2="22.42" y2="-29.49" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="UART2.RX">
+<contactref element="U1" pad="P1_08"/>
+<contactref element="U2" pad="P$3"/>
+<wire x1="14.8" y1="-29.49" x2="14.57" y2="-67.19" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="UART2.TX">
+<contactref element="U1" pad="P1_10"/>
+<contactref element="U2" pad="P$4"/>
+<wire x1="17.34" y1="-29.49" x2="17.23" y2="-67.19" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="UART4.TX">
+<contactref element="U1" pad="P2_07"/>
+</signal>
+<signal name="UART4.RX">
+<contactref element="U1" pad="P2_05"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

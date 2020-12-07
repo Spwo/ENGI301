@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="10" unitdist="mil" unit="mil" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -343,7 +343,7 @@
 <pad name="P2_35" x="49.09" y="28.93" drill="0.889" diameter="1.524" shape="octagon"/>
 <pad name="P2_36" x="49.09" y="31.47" drill="0.889" diameter="1.524" shape="octagon"/>
 <text x="21.59" y="17.145" size="1.27" layer="21" font="vector" ratio="12">PocektBeagle</text>
-<text x="2.54" y="19.05" size="1.27" layer="21" font="vector" ratio="12" rot="R90" align="bottom-center">microUSB</text>
+<text x="6.35" y="17.78" size="1.27" layer="21" font="vector" ratio="12" rot="R90" align="bottom-center">microUSB</text>
 <text x="53.34" y="17.78" size="1.27" layer="21" font="vector" ratio="12" rot="R90" align="bottom-center">microSD</text>
 <wire x1="24.9682" y1="4.8006" x2="22.4282" y2="4.8006" width="0.254" layer="21"/>
 <wire x1="22.4282" y1="4.8006" x2="19.8882" y2="4.8006" width="0.254" layer="21"/>
@@ -402,8 +402,8 @@
 <text x="23.6855" y="6.985" size="1.27" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">GND</text>
 <text x="21.1455" y="6.985" size="1.143" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">+3.3V</text>
 <text x="18.6055" y="6.985" size="1.27" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">MOSI</text>
-<text x="16.0655" y="6.985" size="1.27" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">MISO</text>
-<text x="13.5255" y="6.985" size="1.143" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">CLK</text>
+<text x="16.0655" y="6.985" size="1.27" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">TX</text>
+<text x="13.5255" y="6.985" size="1.143" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">RX</text>
 <text x="10.9855" y="6.985" size="1.27" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">CS0</text>
 <text x="8.4455" y="6.985" size="1.27" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">89</text>
 <text x="5.9055" y="6.985" size="1.016" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">A6/87</text>
@@ -476,7 +476,7 @@
 <wire x1="7.1882" y1="12.1666" x2="4.6482" y2="12.1666" width="0.254" layer="21"/>
 <wire x1="19.8882" y1="12.1666" x2="9.7282" y2="12.1666" width="0.254" layer="21"/>
 <wire x1="19.8882" y1="4.8006" x2="19.8882" y2="12.1666" width="0.254" layer="21"/>
-<text x="12.2555" y="10.7315" size="1.016" layer="21" font="vector" ratio="12" align="bottom-center">SPI0</text>
+<text x="14.7955" y="10.7315" size="1.016" layer="21" font="vector" ratio="12" align="bottom-center">U2</text>
 <text x="17.5895" y="0.254" size="1.016" layer="21" font="vector" ratio="12" align="bottom-center">USB1</text>
 <wire x1="24.9682" y1="12.1666" x2="22.4282" y2="12.1666" width="0.254" layer="21"/>
 <wire x1="22.4282" y1="12.1666" x2="19.8882" y2="12.1666" width="0.254" layer="21"/>
@@ -532,6 +532,13 @@
 <wire x1="22.4282" y1="4.8006" x2="22.4282" y2="12.1666" width="0.254" layer="21"/>
 <text x="42.7355" y="10.7315" size="1.016" layer="21" font="vector" ratio="12" align="bottom-center">U0</text>
 <wire x1="7.1882" y1="32.2326" x2="7.1882" y2="30.2006" width="0.254" layer="21"/>
+<wire x1="0" y1="20.32" x2="3.81" y2="20.32" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="20.32" x2="3.81" y2="15.24" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="15.24" x2="0" y2="15.24" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="16.51" x2="2.54" y2="16.51" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="19.05" x2="2.54" y2="19.05" width="0.1524" layer="21"/>
+<wire x1="17.272" y1="12.192" x2="17.272" y2="4.826" width="0.2032" layer="21"/>
+<wire x1="12.192" y1="12.192" x2="12.192" y2="4.826" width="0.2032" layer="21"/>
 </package>
 <package name="BT">
 <wire x1="0" y1="1" x2="0" y2="26" width="0.1524" layer="21"/>
@@ -783,10 +790,10 @@
 <pin name="P$4" x="10.16" y="0" length="middle" rot="R270"/>
 <text x="-10.16" y="2.54" size="1.778" layer="95">&gt;NAME</text>
 <text x="15.24" y="2.54" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="P$5" x="2.54" y="5.08" length="middle" rot="R90"/>
-<pin name="P$6" x="5.08" y="5.08" length="middle" rot="R90"/>
-<pin name="P$7" x="7.62" y="5.08" length="middle" rot="R90"/>
-<pin name="P$8" x="10.16" y="5.08" length="middle" rot="R90"/>
+<pin name="P$5" x="2.54" y="5.08" visible="pad" length="point" rot="R90"/>
+<pin name="P$6" x="5.08" y="5.08" visible="pad" length="point" rot="R90"/>
+<pin name="P$7" x="7.62" y="5.08" visible="pad" length="point" rot="R90"/>
+<pin name="P$8" x="10.16" y="5.08" visible="pad" length="point" rot="R90"/>
 </symbol>
 <symbol name="GHI2_USB_HOST_W/CHASSIS_GND">
 <wire x1="-10.16" y1="10.16" x2="7.62" y2="10.16" width="0.254" layer="94"/>
@@ -831,6 +838,15 @@
 <wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
 <pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
 <text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="GHI-POWERGOUNDSUPPLY_CGND">
+<wire x1="-2.54" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-3.81" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="1.27" y2="-2.54" width="0.254" layer="94"/>
+<pin name="CGND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
+<text x="0" y="-3.556" size="1.778" layer="96" align="center">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -1015,6 +1031,18 @@
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="1" symbol="GND" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="GHI-POWERGOUNDSUPPLY_CGND" prefix="SUPPLY">
+<gates>
+<gate name="G$1" symbol="GHI-POWERGOUNDSUPPLY_CGND" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">

@@ -343,7 +343,7 @@
 <pad name="P2_35" x="49.09" y="28.93" drill="0.889" diameter="1.524" shape="octagon"/>
 <pad name="P2_36" x="49.09" y="31.47" drill="0.889" diameter="1.524" shape="octagon"/>
 <text x="21.59" y="17.145" size="1.27" layer="21" font="vector" ratio="12">PocektBeagle</text>
-<text x="2.54" y="19.05" size="1.27" layer="21" font="vector" ratio="12" rot="R90" align="bottom-center">microUSB</text>
+<text x="6.35" y="17.78" size="1.27" layer="21" font="vector" ratio="12" rot="R90" align="bottom-center">microUSB</text>
 <text x="53.34" y="17.78" size="1.27" layer="21" font="vector" ratio="12" rot="R90" align="bottom-center">microSD</text>
 <wire x1="24.9682" y1="4.8006" x2="22.4282" y2="4.8006" width="0.254" layer="21"/>
 <wire x1="22.4282" y1="4.8006" x2="19.8882" y2="4.8006" width="0.254" layer="21"/>
@@ -402,8 +402,8 @@
 <text x="23.6855" y="6.985" size="1.27" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">GND</text>
 <text x="21.1455" y="6.985" size="1.143" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">+3.3V</text>
 <text x="18.6055" y="6.985" size="1.27" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">MOSI</text>
-<text x="16.0655" y="6.985" size="1.27" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">MISO</text>
-<text x="13.5255" y="6.985" size="1.143" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">CLK</text>
+<text x="16.0655" y="6.985" size="1.27" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">TX</text>
+<text x="13.5255" y="6.985" size="1.143" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">RX</text>
 <text x="10.9855" y="6.985" size="1.27" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">CS0</text>
 <text x="8.4455" y="6.985" size="1.27" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">89</text>
 <text x="5.9055" y="6.985" size="1.016" layer="21" font="vector" ratio="12" rot="SR270" align="center-right">A6/87</text>
@@ -476,7 +476,7 @@
 <wire x1="7.1882" y1="12.1666" x2="4.6482" y2="12.1666" width="0.254" layer="21"/>
 <wire x1="19.8882" y1="12.1666" x2="9.7282" y2="12.1666" width="0.254" layer="21"/>
 <wire x1="19.8882" y1="4.8006" x2="19.8882" y2="12.1666" width="0.254" layer="21"/>
-<text x="12.2555" y="10.7315" size="1.016" layer="21" font="vector" ratio="12" align="bottom-center">SPI0</text>
+<text x="14.7955" y="10.7315" size="1.016" layer="21" font="vector" ratio="12" align="bottom-center">U2</text>
 <text x="17.5895" y="0.254" size="1.016" layer="21" font="vector" ratio="12" align="bottom-center">USB1</text>
 <wire x1="24.9682" y1="12.1666" x2="22.4282" y2="12.1666" width="0.254" layer="21"/>
 <wire x1="22.4282" y1="12.1666" x2="19.8882" y2="12.1666" width="0.254" layer="21"/>
@@ -532,6 +532,13 @@
 <wire x1="22.4282" y1="4.8006" x2="22.4282" y2="12.1666" width="0.254" layer="21"/>
 <text x="42.7355" y="10.7315" size="1.016" layer="21" font="vector" ratio="12" align="bottom-center">U0</text>
 <wire x1="7.1882" y1="32.2326" x2="7.1882" y2="30.2006" width="0.254" layer="21"/>
+<wire x1="0" y1="20.32" x2="3.81" y2="20.32" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="20.32" x2="3.81" y2="15.24" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="15.24" x2="0" y2="15.24" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="16.51" x2="2.54" y2="16.51" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="19.05" x2="2.54" y2="19.05" width="0.1524" layer="21"/>
+<wire x1="17.272" y1="12.192" x2="17.272" y2="4.826" width="0.2032" layer="21"/>
+<wire x1="12.192" y1="12.192" x2="12.192" y2="4.826" width="0.2032" layer="21"/>
 </package>
 <package name="BT">
 <wire x1="0" y1="1" x2="0" y2="26" width="0.1524" layer="21"/>
@@ -671,14 +678,14 @@
 <pin name="PRU0.4" x="45.72" y="15.24" length="middle" rot="R180"/>
 <pin name="PRU0.1" x="45.72" y="22.86" length="middle" rot="R180"/>
 <pin name="PRU1.10" x="45.72" y="5.08" length="middle" rot="R180"/>
-<pin name="AIN6/GPIO87" x="45.72" y="99.06" length="middle" rot="R180"/>
-<pin name="GPIO89" x="45.72" y="91.44" length="middle" rot="R180"/>
-<pin name="SPI0.CS" x="45.72" y="104.14" length="middle" rot="R180"/>
-<pin name="SPI0.CLK" x="45.72" y="111.76" length="middle" rot="R180"/>
-<pin name="SPI0.MISO" x="45.72" y="106.68" length="middle" rot="R180"/>
-<pin name="SPI0.MOSI" x="45.72" y="109.22" length="middle" rot="R180"/>
+<pin name="AIN6/GPIO87" x="45.72" y="111.76" length="middle" rot="R180"/>
+<pin name="GPIO89" x="45.72" y="104.14" length="middle" rot="R180"/>
+<pin name="SPI0.CS" x="45.72" y="116.84" length="middle" rot="R180"/>
+<pin name="UART2.RX" x="45.72" y="83.82" length="middle" rot="R180"/>
+<pin name="UART2.TX" x="45.72" y="86.36" length="middle" rot="R180"/>
+<pin name="SPI0.MOSI" x="45.72" y="119.38" length="middle" rot="R180"/>
 <pin name="3.3V@1" x="45.72" y="132.08" length="middle" direction="pwr" rot="R180"/>
-<pin name="GND@2" x="45.72" y="81.28" length="middle" direction="pwr" rot="R180"/>
+<pin name="GND@2" x="45.72" y="93.98" length="middle" direction="pwr" rot="R180"/>
 <pin name="AIN.VREF+" x="-5.08" y="22.86" length="middle" direction="in"/>
 <pin name="GPIO20" x="45.72" y="60.96" length="middle" rot="R180"/>
 <pin name="GND@3" x="-5.08" y="81.28" length="middle" direction="pwr"/>
@@ -689,14 +696,14 @@
 <pin name="UART0.RX" x="-5.08" y="116.84" length="middle"/>
 <pin name="GPIO26" x="-5.08" y="93.98" length="middle"/>
 <pin name="PWM0A" x="-5.08" y="86.36" length="middle"/>
-<pin name="PWM1A" x="45.72" y="86.36" length="middle" rot="R180"/>
-<pin name="GPIO23" x="45.72" y="93.98" length="middle" rot="R180"/>
-<pin name="UART4.RX" x="45.72" y="116.84" length="middle" rot="R180"/>
-<pin name="UART4.TX" x="45.72" y="119.38" length="middle" rot="R180"/>
+<pin name="PWM1A" x="45.72" y="99.06" length="middle" rot="R180"/>
+<pin name="GPIO23" x="45.72" y="106.68" length="middle" rot="R180"/>
+<pin name="UART4.RX" x="45.72" y="78.74" length="middle" rot="R180"/>
+<pin name="UART4.TX" x="45.72" y="81.28" length="middle" rot="R180"/>
 <pin name="I2C1.SCL" x="45.72" y="127" length="middle" rot="R180"/>
 <pin name="I2C1.SDA" x="45.72" y="124.46" length="middle" rot="R180"/>
 <pin name="VOUT@2" x="45.72" y="134.62" length="middle" direction="pwr" rot="R180"/>
-<pin name="GND@4" x="45.72" y="78.74" length="middle" direction="pwr" rot="R180"/>
+<pin name="GND@4" x="45.72" y="91.44" length="middle" direction="pwr" rot="R180"/>
 <pin name="GPIO65" x="45.72" y="33.02" length="middle" rot="R180"/>
 <pin name="GPIO27" x="45.72" y="58.42" length="middle" rot="R180"/>
 <pin name="GND@5" x="-5.08" y="78.74" length="middle" direction="pwr"/>
@@ -731,7 +738,8 @@
 <wire x1="0" y1="73.66" x2="0" y2="139.7" width="0.254" layer="94"/>
 <wire x1="0" y1="139.7" x2="20.32" y2="139.7" width="0.254" layer="94"/>
 <wire x1="20.32" y1="139.7" x2="40.64" y2="139.7" width="0.254" layer="94"/>
-<wire x1="40.64" y1="139.7" x2="40.64" y2="73.66" width="0.254" layer="94"/>
+<wire x1="40.64" y1="139.7" x2="40.64" y2="88.9" width="0.254" layer="94"/>
+<wire x1="40.64" y1="88.9" x2="40.64" y2="73.66" width="0.254" layer="94"/>
 <wire x1="40.64" y1="73.66" x2="40.64" y2="63.5" width="0.254" layer="94"/>
 <wire x1="40.64" y1="63.5" x2="40.64" y2="27.94" width="0.254" layer="94"/>
 <wire x1="40.64" y1="27.94" x2="40.64" y2="0" width="0.254" layer="94"/>
@@ -739,7 +747,8 @@
 <wire x1="20.32" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
 <wire x1="20.32" y1="0" x2="20.32" y2="50.8" width="0.254" layer="94"/>
 <wire x1="20.32" y1="50.8" x2="20.32" y2="63.5" width="0.254" layer="94"/>
-<wire x1="20.32" y1="63.5" x2="20.32" y2="139.7" width="0.254" layer="94"/>
+<wire x1="20.32" y1="63.5" x2="20.32" y2="88.9" width="0.254" layer="94"/>
+<wire x1="20.32" y1="88.9" x2="20.32" y2="139.7" width="0.254" layer="94"/>
 <wire x1="0" y1="73.66" x2="40.64" y2="73.66" width="0.254" layer="94"/>
 <wire x1="0" y1="27.94" x2="40.64" y2="27.94" width="0.254" layer="94"/>
 <wire x1="0" y1="50.8" x2="20.32" y2="50.8" width="0.254" layer="94"/>
@@ -755,6 +764,8 @@
 <wire x1="40.64" y1="63.5" x2="20.32" y2="63.5" width="0.254" layer="94"/>
 <text x="22.86" y="68.58" size="2.54" layer="94">Pocket</text>
 <text x="25.4" y="66.04" size="2.54" layer="94">Beagle</text>
+<wire x1="40.64" y1="88.9" x2="20.32" y2="88.9" width="0.254" layer="94"/>
+<text x="25.4" y="78.74" size="2.54" layer="94" rot="R90">UART</text>
 </symbol>
 <symbol name="BT">
 <wire x1="2.54" y1="0" x2="17.78" y2="0" width="0.1524" layer="94"/>
@@ -920,9 +931,7 @@
 <connect gate="G$1" pin="PWM1A" pad="P2_01"/>
 <connect gate="G$1" pin="PWR.BTN" pad="P2_12"/>
 <connect gate="G$1" pin="RESET#" pad="P2_26"/>
-<connect gate="G$1" pin="SPI0.CLK" pad="P1_08"/>
 <connect gate="G$1" pin="SPI0.CS" pad="P1_06"/>
-<connect gate="G$1" pin="SPI0.MISO" pad="P1_10"/>
 <connect gate="G$1" pin="SPI0.MOSI" pad="P1_12"/>
 <connect gate="G$1" pin="SPI1.CLK" pad="P2_29"/>
 <connect gate="G$1" pin="SPI1.CS" pad="P2_31"/>
@@ -930,6 +939,8 @@
 <connect gate="G$1" pin="SPI1.MOSI" pad="P2_25"/>
 <connect gate="G$1" pin="UART0.RX" pad="P1_32"/>
 <connect gate="G$1" pin="UART0.TX" pad="P1_30"/>
+<connect gate="G$1" pin="UART2.RX" pad="P1_08"/>
+<connect gate="G$1" pin="UART2.TX" pad="P1_10"/>
 <connect gate="G$1" pin="UART4.RX" pad="P2_05"/>
 <connect gate="G$1" pin="UART4.TX" pad="P2_07"/>
 <connect gate="G$1" pin="USB1.D+" pad="P1_11"/>
