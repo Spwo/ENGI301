@@ -6,10 +6,10 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="100" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
-<layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
+<layer number="2" name="Route2" color="16" fill="1" visible="yes" active="yes"/>
 <layer number="3" name="Route3" color="17" fill="1" visible="no" active="no"/>
 <layer number="4" name="Route4" color="18" fill="1" visible="no" active="no"/>
 <layer number="5" name="Route5" color="19" fill="1" visible="no" active="no"/>
@@ -22,7 +22,7 @@
 <layer number="12" name="Route12" color="20" fill="1" visible="no" active="no"/>
 <layer number="13" name="Route13" color="21" fill="1" visible="no" active="no"/>
 <layer number="14" name="Route14" color="22" fill="1" visible="no" active="no"/>
-<layer number="15" name="Route15" color="23" fill="1" visible="no" active="no"/>
+<layer number="15" name="Route15" color="23" fill="1" visible="no" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -169,47 +169,33 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="160" y2="0" width="0" layer="20"/>
-<wire x1="160" y1="0" x2="160" y2="100" width="0" layer="20"/>
-<wire x1="160" y1="100" x2="0" y2="100" width="0" layer="20"/>
-<wire x1="0" y1="100" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="0" y1="0" x2="53.34" y2="0" width="0" layer="20"/>
+<wire x1="53.34" y1="0" x2="53.34" y2="63.5" width="0" layer="20"/>
+<wire x1="53.34" y1="63.5" x2="0" y2="63.5" width="0" layer="20"/>
+<wire x1="0" y1="63.5" x2="0" y2="0" width="0" layer="20"/>
 </plain>
 <libraries>
 <library name="lpd">
 <packages>
-<package name="FEMALE90">
-<pad name="P$1" x="0" y="0" drill="0.6" shape="square"/>
-<pad name="P$2" x="1.2" y="0" drill="0.6" shape="square"/>
-<pad name="P$3" x="2.4" y="0" drill="0.6" shape="square"/>
-<pad name="P$4" x="3.6" y="0" drill="0.6" shape="square"/>
-<wire x1="-0.7" y1="-0.6" x2="-0.7" y2="4" width="0.1524" layer="21"/>
-<wire x1="-0.7" y1="4" x2="4.3" y2="4" width="0.1524" layer="21"/>
-<wire x1="4.3" y1="4" x2="4.3" y2="-0.6" width="0.1524" layer="21"/>
-<wire x1="4.3" y1="-0.6" x2="-0.7" y2="-0.6" width="0.1524" layer="21"/>
-<pad name="P$5" x="0" y="3" drill="0.6" shape="square"/>
-<pad name="P$6" x="1.2" y="3" drill="0.6" shape="square"/>
-<pad name="P$7" x="2.4" y="3" drill="0.6" shape="square"/>
-<pad name="P$8" x="3.6" y="3" drill="0.6" shape="square"/>
-</package>
 <package name="GPS">
-<wire x1="2.66" y1="0" x2="23.94" y2="0" width="0.1524" layer="21"/>
-<wire x1="26.6" y1="2.66" x2="26.6" y2="23.94" width="0.1524" layer="21"/>
-<wire x1="0" y1="23.94" x2="0" y2="2.66" width="0.1524" layer="21"/>
-<wire x1="0" y1="23.94" x2="2.66" y2="26.6" width="0.1524" layer="21" curve="-90"/>
-<wire x1="2.66" y1="26.6" x2="10.64" y2="26.6" width="0.1524" layer="21"/>
-<wire x1="10.64" y1="26.6" x2="15.96" y2="26.6" width="0.1524" layer="21"/>
-<wire x1="15.96" y1="26.6" x2="23.94" y2="26.6" width="0.1524" layer="21"/>
-<wire x1="23.94" y1="26.6" x2="26.6" y2="23.94" width="0.1524" layer="21" curve="-90"/>
-<wire x1="26.6" y1="2.66" x2="23.94" y2="0" width="0.1524" layer="21" curve="-90"/>
-<wire x1="2.66" y1="0" x2="0" y2="2.66" width="0.1524" layer="21" curve="-90"/>
-<pad name="P$1" x="7.98" y="2.66" drill="0.6" shape="square"/>
-<pad name="P$2" x="10.64" y="2.66" drill="0.6" shape="square"/>
-<pad name="P$3" x="13.3" y="2.66" drill="0.6" shape="square"/>
-<pad name="P$4" x="15.96" y="2.66" drill="0.6" shape="square"/>
-<pad name="P$5" x="18.62" y="2.66" drill="0.6" shape="square"/>
-<wire x1="10.64" y1="26.6" x2="10.64" y2="21.28" width="0.1524" layer="21"/>
-<wire x1="10.64" y1="21.28" x2="15.96" y2="21.28" width="0.1524" layer="21"/>
-<wire x1="15.96" y1="21.28" x2="15.96" y2="26.6" width="0.1524" layer="21"/>
+<pad name="P$1" x="7.62" y="2.54" drill="0.6" shape="square"/>
+<pad name="P$2" x="10.16" y="2.54" drill="0.6" shape="square"/>
+<pad name="P$3" x="12.7" y="2.54" drill="0.6" shape="square"/>
+<pad name="P$4" x="15.24" y="2.54" drill="0.6" shape="square"/>
+<pad name="P$5" x="17.78" y="2.54" drill="0.6" shape="square"/>
+<wire x1="0" y1="22.86" x2="0" y2="2.54" width="0.254" layer="21"/>
+<wire x1="0" y1="2.54" x2="2.54" y2="0" width="0.254" layer="21" curve="90"/>
+<wire x1="2.54" y1="0" x2="22.86" y2="0" width="0.254" layer="21"/>
+<wire x1="22.86" y1="0" x2="25.4" y2="2.54" width="0.254" layer="21" curve="90"/>
+<wire x1="25.4" y1="2.54" x2="25.4" y2="22.86" width="0.254" layer="21"/>
+<wire x1="25.4" y1="22.86" x2="22.86" y2="25.4" width="0.254" layer="21" curve="90"/>
+<wire x1="22.86" y1="25.4" x2="15.24" y2="25.4" width="0.254" layer="21"/>
+<wire x1="15.24" y1="25.4" x2="10.16" y2="25.4" width="0.254" layer="21"/>
+<wire x1="10.16" y1="25.4" x2="2.54" y2="25.4" width="0.254" layer="21"/>
+<wire x1="2.54" y1="25.4" x2="0" y2="22.86" width="0.254" layer="21" curve="90"/>
+<wire x1="10.16" y1="25.4" x2="10.16" y2="20.32" width="0.254" layer="21"/>
+<wire x1="10.16" y1="20.32" x2="15.24" y2="20.32" width="0.254" layer="21"/>
+<wire x1="15.24" y1="20.32" x2="15.24" y2="25.4" width="0.254" layer="21"/>
 </package>
 <package name="GHI2_USB_HOST_HORIZONTAL_W/CHASSIS_GND">
 <wire x1="-6.5" y1="0.3" x2="-6.4999" y2="0.3" width="0.2032" layer="21"/>
@@ -277,18 +263,20 @@
 <text x="-5.08" y="0.635" size="1.016" layer="21" ratio="12">AMP 787616-1</text>
 </package>
 <package name="BT">
-<wire x1="0" y1="1" x2="0" y2="26" width="0.1524" layer="21"/>
-<wire x1="1" y1="27" x2="12" y2="27" width="0.1524" layer="21"/>
-<wire x1="13" y1="26" x2="13" y2="1" width="0.1524" layer="21"/>
-<wire x1="1" y1="0" x2="12" y2="0" width="0.1524" layer="21"/>
-<wire x1="12" y1="0" x2="13" y2="1" width="0.1524" layer="21" curve="90"/>
-<wire x1="13" y1="26" x2="12" y2="27" width="0.1524" layer="21" curve="90"/>
-<wire x1="1" y1="27" x2="0" y2="26" width="0.1524" layer="21" curve="90"/>
-<wire x1="0" y1="1" x2="1" y2="0" width="0.1524" layer="21" curve="90"/>
-<pad name="P$1" x="4" y="1" drill="0.6" shape="square"/>
-<pad name="P$2" x="5.5" y="1" drill="0.6" shape="square"/>
-<pad name="P$3" x="7.5" y="1" drill="0.6" shape="square"/>
-<pad name="P$4" x="9" y="1" drill="0.6" shape="square"/>
+<pad name="P$1" x="2.54" y="-1.27" drill="0.6" shape="square"/>
+<pad name="P$2" x="5.08" y="-1.27" drill="0.6" shape="square"/>
+<pad name="P$3" x="7.62" y="-1.27" drill="0.6" shape="square"/>
+<pad name="P$4" x="10.16" y="-1.27" drill="0.6" shape="square"/>
+<wire x1="0" y1="0" x2="0" y2="-2.54" width="0.254" layer="21"/>
+<wire x1="0" y1="-2.54" x2="12.7" y2="-2.54" width="0.254" layer="21"/>
+<wire x1="12.7" y1="-2.54" x2="12.7" y2="0" width="0.254" layer="21"/>
+<wire x1="12.7" y1="0" x2="0" y2="0" width="0.254" layer="21"/>
+<wire x1="-1.905" y1="6.35" x2="14.605" y2="6.35" width="0.254" layer="21"/>
+<wire x1="14.605" y1="6.35" x2="14.605" y2="44.45" width="0.254" layer="21"/>
+<wire x1="-1.905" y1="44.45" x2="14.605" y2="44.45" width="0.254" layer="21"/>
+<wire x1="-1.905" y1="6.35" x2="-1.905" y2="44.45" width="0.254" layer="21"/>
+<text x="0" y="40.005" size="1.778" layer="21">BT Module</text>
+<text x="1.905" y="0.635" size="0.762" layer="21">90 Deg Header</text>
 </package>
 <package name="POCKETBEAGLE">
 <wire x1="44.873" y1="34.873" x2="9.873" y2="34.873" width="0.254" layer="21"/>
@@ -652,75 +640,64 @@
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="default">
-<description language="de">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
-&lt;p&gt;
-Die Standard-Design-Rules sind so gewählt, dass sie für 
-die meisten Anwendungen passen. Sollte ihre Platine 
-besondere Anforderungen haben, treffen Sie die erforderlichen
-Einstellungen hier und speichern die Design Rules unter 
-einem neuen Namen ab.</description>
+<designrules name="ENGI301_4lyr">
 <description language="en">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
 &lt;p&gt;
-The default Design Rules have been set to cover
-a wide range of applications. Your particular design
-may have different requirements, so please make the
-necessary adjustments and save your customized
-design rules under a new name.</description>
-<param name="layerSetup" value="(1*16)"/>
+This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for inner layers.</description>
+<param name="layerSetup" value="(1*2*15*16)"/>
 <param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
-<param name="mtIsolate" value="1.5mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
-<param name="mdWireWire" value="6mil"/>
-<param name="mdWirePad" value="6mil"/>
-<param name="mdWireVia" value="6mil"/>
-<param name="mdPadPad" value="6mil"/>
-<param name="mdPadVia" value="6mil"/>
-<param name="mdViaVia" value="6mil"/>
-<param name="mdSmdPad" value="6mil"/>
-<param name="mdSmdVia" value="6mil"/>
-<param name="mdSmdSmd" value="6mil"/>
-<param name="mdViaViaSameLayer" value="6mil"/>
+<param name="mtIsolate" value="0.23mm 0.93mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.23mm"/>
+<param name="mdWireWire" value="10mil"/>
+<param name="mdWirePad" value="10mil"/>
+<param name="mdWireVia" value="10mil"/>
+<param name="mdPadPad" value="10mil"/>
+<param name="mdPadVia" value="10mil"/>
+<param name="mdViaVia" value="10mil"/>
+<param name="mdSmdPad" value="10mil"/>
+<param name="mdSmdVia" value="10mil"/>
+<param name="mdSmdSmd" value="10mil"/>
+<param name="mdViaViaSameLayer" value="10mil"/>
 <param name="mnLayersViaInSmd" value="2"/>
-<param name="mdCopperDimension" value="40mil"/>
-<param name="mdDrill" value="6mil"/>
+<param name="mdCopperDimension" value="10mil"/>
+<param name="mdDrill" value="12mil"/>
 <param name="mdSmdStop" value="0mil"/>
-<param name="msWidth" value="6mil"/>
-<param name="msDrill" value="0.35mm"/>
-<param name="msMicroVia" value="9.99mm"/>
+<param name="msWidth" value="10mil"/>
+<param name="msDrill" value="12mil"/>
+<param name="msMicroVia" value="12mil"/>
 <param name="msBlindViaRatio" value="0.5"/>
-<param name="rvPadTop" value="0.25"/>
-<param name="rvPadInner" value="0.25"/>
-<param name="rvPadBottom" value="0.25"/>
-<param name="rvViaOuter" value="0.25"/>
-<param name="rvViaInner" value="0.25"/>
-<param name="rvMicroViaOuter" value="0.25"/>
-<param name="rvMicroViaInner" value="0.25"/>
-<param name="rlMinPadTop" value="10mil"/>
+<param name="rvPadTop" value="0.2"/>
+<param name="rvPadInner" value="0.2"/>
+<param name="rvPadBottom" value="0.2"/>
+<param name="rvViaOuter" value="0.2"/>
+<param name="rvViaInner" value="0.2"/>
+<param name="rvMicroViaOuter" value="0.2"/>
+<param name="rvMicroViaInner" value="0.2"/>
+<param name="rlMinPadTop" value="6mil"/>
 <param name="rlMaxPadTop" value="20mil"/>
-<param name="rlMinPadInner" value="10mil"/>
+<param name="rlMinPadInner" value="6mil"/>
 <param name="rlMaxPadInner" value="20mil"/>
-<param name="rlMinPadBottom" value="10mil"/>
+<param name="rlMinPadBottom" value="6mil"/>
 <param name="rlMaxPadBottom" value="20mil"/>
-<param name="rlMinViaOuter" value="8mil"/>
+<param name="rlMinViaOuter" value="6mil"/>
 <param name="rlMaxViaOuter" value="20mil"/>
-<param name="rlMinViaInner" value="8mil"/>
+<param name="rlMinViaInner" value="6mil"/>
 <param name="rlMaxViaInner" value="20mil"/>
-<param name="rlMinMicroViaOuter" value="4mil"/>
+<param name="rlMinMicroViaOuter" value="6mil"/>
 <param name="rlMaxMicroViaOuter" value="20mil"/>
-<param name="rlMinMicroViaInner" value="4mil"/>
+<param name="rlMinMicroViaInner" value="6mil"/>
 <param name="rlMaxMicroViaInner" value="20mil"/>
 <param name="psTop" value="-1"/>
 <param name="psBottom" value="-1"/>
-<param name="psFirst" value="-1"/>
+<param name="psFirst" value="0"/>
 <param name="psElongationLong" value="100"/>
 <param name="psElongationOffset" value="100"/>
 <param name="mvStopFrame" value="1"/>
 <param name="mvCreamFrame" value="0"/>
-<param name="mlMinStopFrame" value="4mil"/>
-<param name="mlMaxStopFrame" value="4mil"/>
+<param name="mlMinStopFrame" value="3mil"/>
+<param name="mlMaxStopFrame" value="3mil"/>
 <param name="mlMinCreamFrame" value="0mil"/>
 <param name="mlMaxCreamFrame" value="0mil"/>
-<param name="mlViaStopLimit" value="0mil"/>
+<param name="mlViaStopLimit" value="25mil"/>
 <param name="srRoundness" value="0"/>
 <param name="srMinRoundness" value="0mil"/>
 <param name="srMaxRoundness" value="0mil"/>
@@ -728,9 +705,9 @@ design rules under a new name.</description>
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
-<param name="checkAngle" value="0"/>
+<param name="checkAngle" value="1"/>
 <param name="checkFont" value="1"/>
-<param name="checkRestrict" value="1"/>
+<param name="checkRestrict" value="0"/>
 <param name="checkStop" value="0"/>
 <param name="checkValues" value="0"/>
 <param name="checkNames" value="1"/>
@@ -836,112 +813,97 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="K1" library="lpd" package="FEMALE90" value="LPPB041NGCN-RC" x="-27.94" y="-43.18" smashed="yes"/>
-<element name="U2" library="lpd" package="GPS" value="GT-U7" x="1.27" y="-69.85" smashed="yes"/>
-<element name="X1" library="lpd" package="GHI2_USB_HOST_HORIZONTAL_W/CHASSIS_GND" value="" x="26.67" y="-90.17" smashed="yes">
-<attribute name="NAME" x="20.1699" y="-75.6699" size="1.016" layer="25" ratio="12"/>
-<attribute name="VALUE" x="22.1699" y="-80.17" size="1.016" layer="27" ratio="12"/>
+<element name="U2" library="lpd" package="GPS" value="GT-U7" x="-43.18" y="-78.74" smashed="yes"/>
+<element name="X1" library="lpd" package="GHI2_USB_HOST_HORIZONTAL_W/CHASSIS_GND" value="" x="-8.89" y="-144.78" smashed="yes">
+<attribute name="NAME" x="-15.3901" y="-130.2799" size="1.016" layer="25" ratio="12"/>
+<attribute name="VALUE" x="-13.3901" y="-134.78" size="1.016" layer="27" ratio="12"/>
 </element>
-<element name="U3" library="lpd" package="BT" value="HM-10" x="-13.97" y="-87.63" smashed="yes"/>
+<element name="U3" library="lpd" package="BT" value="HM-10" x="-19.05" y="-64.77" smashed="yes"/>
 <element name="U$1" library="lpd" package="POCKETBEAGLE" value="POCKETBEAGLE" x="-27.94" y="-127" smashed="yes"/>
 </elements>
 <signals>
 <signal name="GND">
 <contactref element="U2" pad="P$1"/>
-<contactref element="K1" pad="P$2"/>
 <contactref element="X1" pad="4"/>
-<contactref element="U$1" pad="P2_23"/>
-<contactref element="U$1" pad="P2_24"/>
-<contactref element="U$1" pad="P2_25"/>
-<contactref element="U$1" pad="P2_26"/>
-<contactref element="U$1" pad="P2_22"/>
-<wire x1="5.91" y1="-95.53" x2="5.91" y2="-98.07" width="0" layer="19" extent="1-1"/>
-<wire x1="3.37" y1="-95.53" x2="5.91" y2="-95.53" width="0" layer="19" extent="1-1"/>
-<wire x1="8.45" y1="-98.07" x2="5.91" y2="-98.07" width="0" layer="19" extent="1-1"/>
-<wire x1="8.45" y1="-95.53" x2="5.91" y2="-95.53" width="0" layer="19" extent="1-1"/>
-<wire x1="9.25" y1="-67.19" x2="8.45" y2="-95.53" width="0" layer="19" extent="1-1"/>
-<wire x1="30.17" y1="-77.18" x2="9.25" y2="-67.19" width="0" layer="19" extent="1-1"/>
-<wire x1="-26.74" y1="-43.18" x2="9.25" y2="-67.19" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="P1_22"/>
+<contactref element="U$1" pad="P2_15"/>
+<contactref element="U$1" pad="P2_21"/>
+<contactref element="U$1" pad="P1_15"/>
+<contactref element="U$1" pad="P1_16"/>
+<contactref element="U3" pad="P$1"/>
+<polygon width="0.1524" layer="2">
+<vertex x="-2.54" y="66.04"/>
+<vertex x="-2.54" y="-2.54"/>
+<vertex x="55.88" y="-2.54"/>
+<vertex x="55.88" y="66.04"/>
+</polygon>
+<wire x1="-4.25" y1="-123.47" x2="-5.39" y2="-131.79" width="0" layer="19" extent="1-1"/>
+<wire x1="-4.25" y1="-120.93" x2="-4.25" y2="-123.47" width="0" layer="19" extent="1-1"/>
+<wire x1="3.37" y1="-120.93" x2="-4.25" y2="-120.93" width="0" layer="19" extent="1-1"/>
+<wire x1="-4.25" y1="-98.07" x2="-4.25" y2="-120.93" width="0" layer="19" extent="1-1"/>
+<wire x1="3.37" y1="-98.07" x2="-4.25" y2="-98.07" width="0" layer="19" extent="1-1"/>
+<wire x1="-16.51" y1="-66.04" x2="-4.25" y2="-98.07" width="0" layer="19" extent="1-1"/>
+<wire x1="-35.56" y1="-76.2" x2="-16.51" y2="-66.04" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VDD_3P3V">
 <contactref element="U2" pad="P$5"/>
-<contactref element="K1" pad="P$1"/>
-<contactref element="U$1" pad="P2_21"/>
-<contactref element="U$1" pad="P2_20"/>
-<wire x1="0.83" y1="-95.53" x2="3.37" y2="-98.07" width="0" layer="19" extent="1-1"/>
-<wire x1="19.89" y1="-67.19" x2="0.83" y2="-95.53" width="0" layer="19" extent="1-1"/>
-<wire x1="-27.94" y1="-43.18" x2="19.89" y2="-67.19" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="P1_23"/>
+<contactref element="U$1" pad="P1_14"/>
+<contactref element="U3" pad="P$4"/>
+<wire x1="-6.79" y1="-120.93" x2="5.91" y2="-123.47" width="0" layer="19" extent="1-1"/>
+<wire x1="-8.89" y1="-66.04" x2="-6.79" y2="-120.93" width="0" layer="19" extent="1-1"/>
+<wire x1="-25.4" y1="-76.2" x2="-8.89" y2="-66.04" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="UART2.RX">
 <contactref element="U2" pad="P$3"/>
-<contactref element="U$1" pad="P2_27"/>
-<wire x1="14.57" y1="-67.19" x2="10.99" y2="-98.07" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="P1_08"/>
+<wire x1="-30.48" y1="-76.2" x2="-14.41" y2="-120.93" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="UART2.TX">
 <contactref element="U2" pad="P$4"/>
-<contactref element="U$1" pad="P2_28"/>
-<wire x1="17.23" y1="-67.19" x2="10.99" y2="-95.53" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="P1_10"/>
+<wire x1="-27.94" y1="-76.2" x2="-11.87" y2="-120.93" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="UART4.TX">
-<contactref element="K1" pad="P$3"/>
-<contactref element="U$1" pad="P2_30"/>
-<wire x1="-25.54" y1="-43.18" x2="13.53" y2="-95.53" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="P2_07"/>
+<contactref element="U3" pad="P$3"/>
+<wire x1="-14.41" y1="-98.07" x2="-11.43" y2="-66.04" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="UART4.RX">
-<contactref element="K1" pad="P$4"/>
-<contactref element="U$1" pad="P2_29"/>
-<wire x1="-24.34" y1="-43.18" x2="13.53" y2="-98.07" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="ANGLE1">
-<contactref element="K1" pad="P$5"/>
-<contactref element="U3" pad="P$4"/>
-<wire x1="-27.94" y1="-40.18" x2="-4.97" y2="-86.63" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="ANGLE2">
-<contactref element="K1" pad="P$6"/>
-<contactref element="U3" pad="P$1"/>
-<wire x1="-26.74" y1="-40.18" x2="-9.97" y2="-86.63" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="ANGLE3">
-<contactref element="K1" pad="P$7"/>
-<contactref element="U3" pad="P$3"/>
-<wire x1="-25.54" y1="-40.18" x2="-6.47" y2="-86.63" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="ANGLE4">
-<contactref element="K1" pad="P$8"/>
+<contactref element="U$1" pad="P2_05"/>
 <contactref element="U3" pad="P$2"/>
-<wire x1="-24.34" y1="-40.18" x2="-8.47" y2="-86.63" width="0" layer="19" extent="1-1"/>
+<wire x1="-16.95" y1="-98.07" x2="-13.97" y2="-66.04" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="CGND">
 <contactref element="X1" pad="5"/>
 <contactref element="X1" pad="6"/>
-<wire x1="33.24" y1="-79.8901" x2="20.1" y2="-79.8901" width="0" layer="19" extent="1-1"/>
+<wire x1="-2.32" y1="-134.5001" x2="-15.46" y2="-134.5001" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="USB1.VBUS">
 <contactref element="X1" pad="1"/>
-<contactref element="U$1" pad="P2_35"/>
-<wire x1="23.17" y1="-77.18" x2="21.15" y2="-98.07" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="P1_05"/>
+<wire x1="-12.39" y1="-131.79" x2="-16.95" y2="-123.47" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="USB1.D-">
 <contactref element="X1" pad="2"/>
-<contactref element="U$1" pad="P2_32"/>
-<wire x1="25.67" y1="-77.18" x2="16.07" y2="-95.53" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="P1_09"/>
+<wire x1="-9.89" y1="-131.79" x2="-11.87" y2="-123.47" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="USB1.D+">
 <contactref element="X1" pad="3"/>
-<contactref element="U$1" pad="P2_31"/>
-<wire x1="27.67" y1="-77.18" x2="16.07" y2="-98.07" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="P1_11"/>
+<wire x1="-7.89" y1="-131.79" x2="-9.33" y2="-123.47" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VIN">
-<contactref element="U$1" pad="P2_17"/>
+<contactref element="U$1" pad="P2_34"/>
 </signal>
 <signal name="VOUT">
-<contactref element="U$1" pad="P2_18"/>
-<contactref element="U$1" pad="P2_19"/>
 <wire x1="-1.71" y1="-95.53" x2="0.83" y2="-98.07" width="0" layer="19" extent="1-1"/>
+<contactref element="U$1" pad="P2_35"/>
+<contactref element="U$1" pad="P2_36"/>
 </signal>
 <signal name="BAT.VIN">
-<contactref element="U$1" pad="P1_12"/>
+<contactref element="U$1" pad="P1_25"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

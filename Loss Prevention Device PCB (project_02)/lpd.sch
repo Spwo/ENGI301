@@ -1054,37 +1054,6 @@ DIN A3, landscape with location and doc. field</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="BeagleBone_Blue">
-<description>Generated from &lt;b&gt;BeagleBone_Blue.sch&lt;/b&gt;&lt;p&gt;
-by exp-lbrs.ulp</description>
-<packages>
-</packages>
-<symbols>
-<symbol name="GHI-POWERGOUNDSUPPLY_CGND">
-<wire x1="-2.54" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
-<wire x1="-2.54" y1="0" x2="-3.81" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="-1.27" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="2.54" y1="0" x2="1.27" y2="-2.54" width="0.254" layer="94"/>
-<pin name="CGND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
-<text x="0" y="-3.556" size="1.778" layer="96" align="center">&gt;VALUE</text>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="GHI-POWERGOUNDSUPPLY_CGND" prefix="SUPPLY">
-<gates>
-<gate name="G$1" symbol="GHI-POWERGOUNDSUPPLY_CGND" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1101,8 +1070,6 @@ by exp-lbrs.ulp</description>
 <part name="U3" library="lpd" deviceset="HM-10" device=""/>
 <part name="SUPPLY3" library="lpd" deviceset="VDD_3P3V" device=""/>
 <part name="GND4" library="lpd" deviceset="GND" device=""/>
-<part name="SUPPLY5" library="BeagleBone_Blue" deviceset="GHI-POWERGOUNDSUPPLY_CGND" device=""/>
-<part name="SUPPLY6" library="BeagleBone_Blue" deviceset="GHI-POWERGOUNDSUPPLY_CGND" device=""/>
 <part name="GND3" library="lpd" deviceset="GND" device=""/>
 <part name="U$1" library="lpd" deviceset="POCKETBEAGLE" device=""/>
 <part name="GND1" library="lpd" deviceset="GND" device=""/>
@@ -1110,6 +1077,8 @@ by exp-lbrs.ulp</description>
 <part name="SUPPLY2" library="lpd" deviceset="VDD_3P3V" device=""/>
 <part name="SUPPLY4" library="lpd" deviceset="VDD_3P3V" device=""/>
 <part name="GND2" library="lpd" deviceset="GND" device=""/>
+<part name="GND5" library="lpd" deviceset="GND" device=""/>
+<part name="GND6" library="lpd" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1530,12 +1499,6 @@ by exp-lbrs.ulp</description>
 <instance part="GND4" gate="1" x="208.28" y="172.72" smashed="yes">
 <attribute name="VALUE" x="205.74" y="170.18" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY5" gate="G$1" x="175.26" y="81.28" smashed="yes">
-<attribute name="VALUE" x="175.26" y="77.724" size="1.27" layer="96" align="center"/>
-</instance>
-<instance part="SUPPLY6" gate="G$1" x="228.6" y="81.28" smashed="yes">
-<attribute name="VALUE" x="228.6" y="77.724" size="1.27" layer="96" align="center"/>
-</instance>
 <instance part="GND3" gate="1" x="205.74" y="124.46" smashed="yes" rot="R180">
 <attribute name="VALUE" x="208.28" y="127" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -1561,6 +1524,12 @@ by exp-lbrs.ulp</description>
 </instance>
 <instance part="GND2" gate="1" x="317.5" y="149.86" smashed="yes">
 <attribute name="VALUE" x="314.96" y="147.32" size="1.778" layer="96"/>
+</instance>
+<instance part="GND5" gate="1" x="175.26" y="81.28" smashed="yes">
+<attribute name="VALUE" x="172.72" y="78.74" size="1.778" layer="96"/>
+</instance>
+<instance part="GND6" gate="1" x="228.6" y="81.28" smashed="yes">
+<attribute name="VALUE" x="226.06" y="78.74" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -1632,6 +1601,18 @@ by exp-lbrs.ulp</description>
 <wire x1="318.77" y1="152.4" x2="317.5" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="X1" gate="G$1" pin="CG1"/>
+<wire x1="190.5" y1="86.36" x2="175.26" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="175.26" y1="86.36" x2="175.26" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="X1" gate="G$1" pin="CG2"/>
+<wire x1="228.6" y1="83.82" x2="228.6" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="228.6" y1="86.36" x2="213.36" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="GND6" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="UART2.RX" class="0">
 <segment>
@@ -1681,20 +1662,6 @@ by exp-lbrs.ulp</description>
 <wire x1="323.85" y1="168.91" x2="323.85" y2="167.64" width="0.1524" layer="91"/>
 <wire x1="323.85" y1="167.64" x2="337.82" y2="167.64" width="0.1524" layer="91"/>
 <label x="327.66" y="167.64" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="CGND" class="0">
-<segment>
-<pinref part="X1" gate="G$1" pin="CG1"/>
-<pinref part="SUPPLY5" gate="G$1" pin="CGND"/>
-<wire x1="190.5" y1="86.36" x2="175.26" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="175.26" y1="86.36" x2="175.26" y2="83.82" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="SUPPLY6" gate="G$1" pin="CGND"/>
-<pinref part="X1" gate="G$1" pin="CG2"/>
-<wire x1="228.6" y1="83.82" x2="228.6" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="228.6" y1="86.36" x2="213.36" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="USB1.VBUS" class="0">
