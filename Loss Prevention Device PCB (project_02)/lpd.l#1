@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="100" unitdist="mil" unit="mil" style="dots" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -621,6 +621,14 @@
 <text x="-4.5001" y="10" size="1.016" layer="27" ratio="12">&gt;VALUE</text>
 <text x="-5.08" y="0.635" size="1.016" layer="21" ratio="12">AMP 787616-1</text>
 </package>
+<package name="MOUNTING_HOLE">
+<pad name="P$1" x="0" y="0" drill="3.175" diameter="4.445"/>
+</package>
+<package name="FIDUCIAL_40MIL">
+<circle x="0" y="0" radius="0.762" width="0.6096" layer="29"/>
+<circle x="0" y="0" radius="1.04726875" width="0.127" layer="41"/>
+<smd name="P$1" x="0" y="0" dx="1.016" dy="1.016" layer="1" roundness="100" cream="no"/>
+</package>
 </packages>
 <symbols>
 <symbol name="GPS">
@@ -840,6 +848,20 @@
 <text x="25.4" y="78.74" size="2.54" layer="94">Beagle</text>
 <wire x1="20.32" y1="88.9" x2="20.32" y2="73.66" width="0.254" layer="94"/>
 </symbol>
+<symbol name="MOUNTING_HOLE">
+<circle x="0" y="2.54" radius="2.54" width="0.254" layer="94"/>
+<pin name="P$1" x="0" y="-5.08" visible="off" length="middle" rot="R90"/>
+<text x="0.762" y="-2.032" size="1.27" layer="95">&gt;NAME</text>
+</symbol>
+<symbol name="FIDUCIAL">
+<wire x1="-2.54" y1="-2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
+<pin name="P$1" x="0" y="0" visible="off" length="point" direction="nc"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="GT-U7" prefix="U">
@@ -946,76 +968,107 @@
 <connects>
 <connect gate="G$1" pin="AIN.VREF+" pad="P1_01"/>
 <connect gate="G$1" pin="AIN.VREF-" pad="P1_02"/>
-<connect gate="G$1" pin="AIN0(1.8V)" pad="P1_03"/>
-<connect gate="G$1" pin="AIN1(1.8V)" pad="P1_04"/>
-<connect gate="G$1" pin="AIN2(1.8V)" pad="P1_05"/>
-<connect gate="G$1" pin="AIN3(1.8V)" pad="P1_06"/>
-<connect gate="G$1" pin="AIN4(1.8V)" pad="P1_07"/>
-<connect gate="G$1" pin="AIN5(3.3V)" pad="P1_08"/>
-<connect gate="G$1" pin="AIN6/GPIO87" pad="P1_09"/>
-<connect gate="G$1" pin="AIN7(1.8V)" pad="P1_10"/>
-<connect gate="G$1" pin="BAT.TEMP" pad="P1_11"/>
-<connect gate="G$1" pin="BAT.VIN" pad="P1_12"/>
-<connect gate="G$1" pin="GPIO20" pad="P1_13"/>
-<connect gate="G$1" pin="GPIO23" pad="P1_14"/>
-<connect gate="G$1" pin="GPIO26" pad="P1_15"/>
-<connect gate="G$1" pin="GPIO27" pad="P1_16"/>
-<connect gate="G$1" pin="GPIO44" pad="P1_17"/>
-<connect gate="G$1" pin="GPIO45" pad="P1_18"/>
-<connect gate="G$1" pin="GPIO46" pad="P1_19"/>
-<connect gate="G$1" pin="GPIO47" pad="P1_20"/>
-<connect gate="G$1" pin="GPIO52" pad="P1_21"/>
-<connect gate="G$1" pin="GPIO57" pad="P1_22"/>
-<connect gate="G$1" pin="GPIO58" pad="P1_23"/>
-<connect gate="G$1" pin="GPIO59" pad="P1_24"/>
-<connect gate="G$1" pin="GPIO60" pad="P1_25"/>
-<connect gate="G$1" pin="GPIO64" pad="P1_26"/>
-<connect gate="G$1" pin="GPIO65" pad="P1_27"/>
-<connect gate="G$1" pin="GPIO89" pad="P1_28"/>
-<connect gate="G$1" pin="I2C1.SCL" pad="P1_29"/>
-<connect gate="G$1" pin="I2C1.SDA" pad="P1_30"/>
-<connect gate="G$1" pin="I2C2.SCL" pad="P1_31"/>
-<connect gate="G$1" pin="I2C2.SDA" pad="P1_32"/>
-<connect gate="G$1" pin="PRU0.1" pad="P1_33"/>
-<connect gate="G$1" pin="PRU0.2" pad="P1_34"/>
-<connect gate="G$1" pin="PRU0.3" pad="P1_35"/>
-<connect gate="G$1" pin="PRU0.4" pad="P1_36"/>
-<connect gate="G$1" pin="PRU0.5" pad="P2_01"/>
-<connect gate="G$1" pin="PRU0.6" pad="P2_02"/>
-<connect gate="G$1" pin="PRU0.7" pad="P2_03"/>
-<connect gate="G$1" pin="PRU1.10" pad="P2_04"/>
-<connect gate="G$1" pin="PWM0A" pad="P2_05"/>
-<connect gate="G$1" pin="PWM1A" pad="P2_06"/>
-<connect gate="G$1" pin="PWR.BTN" pad="P2_07"/>
-<connect gate="G$1" pin="RESET#" pad="P2_08"/>
-<connect gate="G$1" pin="SPI0.CS" pad="P2_09"/>
-<connect gate="G$1" pin="SPI0.MOSI" pad="P2_10"/>
-<connect gate="G$1" pin="SPI1.CLK" pad="P2_11"/>
-<connect gate="G$1" pin="SPI1.CS" pad="P2_12"/>
-<connect gate="G$1" pin="SPI1.MISO" pad="P2_13"/>
-<connect gate="G$1" pin="SPI1.MOSI" pad="P2_14"/>
-<connect gate="G$1" pin="UART0.RX" pad="P2_15"/>
-<connect gate="G$1" pin="UART0.TX" pad="P2_16"/>
-<connect gate="G$1" pin="VIN" pad="P2_17"/>
-<connect gate="G$1" pin="VOUT@1" pad="P2_18"/>
-<connect gate="G$1" pin="VOUT@2" pad="P2_19"/>
-<connect gate="G$2" pin="3.3V@1" pad="P2_20"/>
-<connect gate="G$2" pin="3.3V@2" pad="P2_21"/>
-<connect gate="G$2" pin="GND@1" pad="P2_22"/>
-<connect gate="G$2" pin="GND@2" pad="P2_23"/>
-<connect gate="G$2" pin="GND@3" pad="P2_24"/>
-<connect gate="G$2" pin="GND@4" pad="P2_25"/>
-<connect gate="G$2" pin="GND@5" pad="P2_26"/>
-<connect gate="G$2" pin="UART2.RX" pad="P2_27"/>
-<connect gate="G$2" pin="UART2.TX" pad="P2_28"/>
-<connect gate="G$2" pin="UART4.RX" pad="P2_29"/>
-<connect gate="G$2" pin="UART4.TX" pad="P2_30"/>
-<connect gate="G$2" pin="USB1.D+" pad="P2_31"/>
-<connect gate="G$2" pin="USB1.D-" pad="P2_32"/>
-<connect gate="G$2" pin="USB1.DRVVBUS" pad="P2_33"/>
-<connect gate="G$2" pin="USB1.ID" pad="P2_34"/>
-<connect gate="G$2" pin="USB1.VBUS" pad="P2_35"/>
-<connect gate="G$2" pin="USB1.VIN" pad="P2_36"/>
+<connect gate="G$1" pin="AIN0(1.8V)" pad="P1_04"/>
+<connect gate="G$1" pin="AIN1(1.8V)" pad="P1_06"/>
+<connect gate="G$1" pin="AIN2(1.8V)" pad="P1_12"/>
+<connect gate="G$1" pin="AIN3(1.8V)" pad="P1_17"/>
+<connect gate="G$1" pin="AIN4(1.8V)" pad="P1_18"/>
+<connect gate="G$1" pin="AIN5(3.3V)" pad="P1_19"/>
+<connect gate="G$1" pin="AIN6/GPIO87" pad="P1_20"/>
+<connect gate="G$1" pin="AIN7(1.8V)" pad="P1_21"/>
+<connect gate="G$1" pin="BAT.TEMP" pad="P1_24"/>
+<connect gate="G$1" pin="BAT.VIN" pad="P1_25"/>
+<connect gate="G$1" pin="GPIO20" pad="P1_26"/>
+<connect gate="G$1" pin="GPIO23" pad="P1_27"/>
+<connect gate="G$1" pin="GPIO26" pad="P1_28"/>
+<connect gate="G$1" pin="GPIO27" pad="P1_29"/>
+<connect gate="G$1" pin="GPIO44" pad="P1_30"/>
+<connect gate="G$1" pin="GPIO45" pad="P1_31"/>
+<connect gate="G$1" pin="GPIO46" pad="P1_32"/>
+<connect gate="G$1" pin="GPIO47" pad="P1_33"/>
+<connect gate="G$1" pin="GPIO52" pad="P1_34"/>
+<connect gate="G$1" pin="GPIO57" pad="P1_35"/>
+<connect gate="G$1" pin="GPIO58" pad="P1_36"/>
+<connect gate="G$1" pin="GPIO59" pad="P2_01"/>
+<connect gate="G$1" pin="GPIO60" pad="P2_02"/>
+<connect gate="G$1" pin="GPIO64" pad="P2_03"/>
+<connect gate="G$1" pin="GPIO65" pad="P2_04"/>
+<connect gate="G$1" pin="GPIO89" pad="P2_06"/>
+<connect gate="G$1" pin="I2C1.SCL" pad="P2_08"/>
+<connect gate="G$1" pin="I2C1.SDA" pad="P2_09"/>
+<connect gate="G$1" pin="I2C2.SCL" pad="P2_10"/>
+<connect gate="G$1" pin="I2C2.SDA" pad="P2_11"/>
+<connect gate="G$1" pin="PRU0.1" pad="P2_12"/>
+<connect gate="G$1" pin="PRU0.2" pad="P2_13"/>
+<connect gate="G$1" pin="PRU0.3" pad="P2_14"/>
+<connect gate="G$1" pin="PRU0.4" pad="P2_16"/>
+<connect gate="G$1" pin="PRU0.5" pad="P2_17"/>
+<connect gate="G$1" pin="PRU0.6" pad="P2_18"/>
+<connect gate="G$1" pin="PRU0.7" pad="P2_19"/>
+<connect gate="G$1" pin="PRU1.10" pad="P2_20"/>
+<connect gate="G$1" pin="PWM0A" pad="P2_22"/>
+<connect gate="G$1" pin="PWM1A" pad="P2_23"/>
+<connect gate="G$1" pin="PWR.BTN" pad="P2_24"/>
+<connect gate="G$1" pin="RESET#" pad="P2_25"/>
+<connect gate="G$1" pin="SPI0.CS" pad="P2_26"/>
+<connect gate="G$1" pin="SPI0.MOSI" pad="P2_27"/>
+<connect gate="G$1" pin="SPI1.CLK" pad="P2_28"/>
+<connect gate="G$1" pin="SPI1.CS" pad="P2_29"/>
+<connect gate="G$1" pin="SPI1.MISO" pad="P2_30"/>
+<connect gate="G$1" pin="SPI1.MOSI" pad="P2_31"/>
+<connect gate="G$1" pin="UART0.RX" pad="P2_32"/>
+<connect gate="G$1" pin="UART0.TX" pad="P2_33"/>
+<connect gate="G$1" pin="VIN" pad="P2_34"/>
+<connect gate="G$1" pin="VOUT@1" pad="P2_35"/>
+<connect gate="G$1" pin="VOUT@2" pad="P2_36"/>
+<connect gate="G$2" pin="3.3V@1" pad="P1_14"/>
+<connect gate="G$2" pin="3.3V@2" pad="P1_23"/>
+<connect gate="G$2" pin="GND@1" pad="P1_16"/>
+<connect gate="G$2" pin="GND@2" pad="P1_22"/>
+<connect gate="G$2" pin="GND@3" pad="P2_15"/>
+<connect gate="G$2" pin="GND@4" pad="P2_21"/>
+<connect gate="G$2" pin="GND@5" pad="P1_15"/>
+<connect gate="G$2" pin="UART2.RX" pad="P1_08"/>
+<connect gate="G$2" pin="UART2.TX" pad="P1_10"/>
+<connect gate="G$2" pin="UART4.RX" pad="P2_05"/>
+<connect gate="G$2" pin="UART4.TX" pad="P2_07"/>
+<connect gate="G$2" pin="USB1.D+" pad="P1_11"/>
+<connect gate="G$2" pin="USB1.D-" pad="P1_09"/>
+<connect gate="G$2" pin="USB1.DRVVBUS" pad="P1_03"/>
+<connect gate="G$2" pin="USB1.ID" pad="P1_13"/>
+<connect gate="G$2" pin="USB1.VBUS" pad="P1_05"/>
+<connect gate="G$2" pin="USB1.VIN" pad="P1_07"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MOUNTING_HOLE" prefix="MGT">
+<description>Chassis Mounting Hole w/GND connection ability</description>
+<gates>
+<gate name="G$1" symbol="MOUNTING_HOLE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MOUNTING_HOLE">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="FIDUCIAL" prefix="FUD">
+<gates>
+<gate name="G$1" symbol="FIDUCIAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="FIDUCIAL_40MIL">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
 </connects>
 <technologies>
 <technology name=""/>

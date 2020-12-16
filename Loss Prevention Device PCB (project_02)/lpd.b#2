@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="100" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="25" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -28,7 +28,7 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
@@ -629,6 +629,14 @@
 <wire x1="17.272" y1="12.192" x2="17.272" y2="4.826" width="0.2032" layer="21"/>
 <wire x1="12.192" y1="12.192" x2="12.192" y2="4.826" width="0.2032" layer="21"/>
 </package>
+<package name="MOUNTING_HOLE">
+<pad name="P$1" x="0" y="0" drill="3.175" diameter="4.445"/>
+</package>
+<package name="FIDUCIAL_40MIL">
+<circle x="0" y="0" radius="0.762" width="0.6096" layer="29"/>
+<circle x="0" y="0" radius="1.04726875" width="0.127" layer="41"/>
+<smd name="P$1" x="0" y="0" dx="1.016" dy="1.016" layer="1" roundness="100" cream="no"/>
+</package>
 </packages>
 </library>
 </libraries>
@@ -820,6 +828,15 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 </element>
 <element name="U3" library="lpd" package="BT" value="HM-10" x="31.75" y="3.81" smashed="yes"/>
 <element name="U$1" library="lpd" package="POCKETBEAGLE" value="POCKETBEAGLE" x="38.1" y="1.27" smashed="yes" rot="R90"/>
+<element name="MGT1" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="3.175" y="3.175" smashed="yes"/>
+<element name="MGT2" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="45.085" y="6.985" smashed="yes"/>
+<element name="MGT3" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="45.085" y="55.245" smashed="yes"/>
+<element name="FUD1" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="1.905" y="7.62" smashed="yes"/>
+<element name="FUD2" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="40.64" y="7.62" smashed="yes"/>
+<element name="FUD3" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="40.64" y="50.165" smashed="yes"/>
+<element name="FUD4" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-13.97" smashed="yes"/>
+<element name="FUD5" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-16.51" smashed="yes"/>
+<element name="FUD6" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-19.05" smashed="yes"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -855,20 +872,23 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 <signal name="UART2.RX">
 <contactref element="U2" pad="P$3"/>
 <contactref element="U$1" pad="P1_08"/>
-<wire x1="32.03" y1="14.8" x2="27.432" y2="19.398" width="0.254" layer="1"/>
-<wire x1="17.3434" y1="33.4566" x2="17.1697875" y2="33.4566" width="0.254" layer="1"/>
-<wire x1="16.3363875" y1="34.29" x2="15.24" y2="34.29" width="0.254" layer="1"/>
-<wire x1="17.1697875" y1="33.4566" x2="16.3363875" y2="34.29" width="0.254" layer="1"/>
-<wire x1="27.432" y1="19.398" x2="27.432" y2="23.368" width="0.254" layer="1"/>
-<wire x1="27.432" y1="23.368" x2="17.3434" y2="33.4566" width="0.254" layer="1"/>
+<wire x1="15.24" y1="34.29" x2="18.239" y2="31.291" width="0.254" layer="1"/>
+<wire x1="25.88876875" y1="14.8" x2="32.03" y2="14.8" width="0.254" layer="1"/>
+<wire x1="18.239" y1="31.291" x2="18.239" y2="13.81223125" width="0.254" layer="1"/>
+<wire x1="23.75976875" y1="12.671" x2="25.88876875" y2="14.8" width="0.254" layer="1"/>
+<wire x1="18.239" y1="13.81223125" x2="19.38023125" y2="12.671" width="0.254" layer="1"/>
+<wire x1="19.38023125" y1="12.671" x2="23.75976875" y2="12.671" width="0.254" layer="1"/>
 </signal>
 <signal name="UART2.TX">
 <contactref element="U2" pad="P$4"/>
 <contactref element="U$1" pad="P1_10"/>
-<wire x1="17.78" y1="34.29" x2="27.94" y2="24.13" width="0.254" layer="1"/>
-<wire x1="27.94" y1="24.13" x2="27.94" y2="20.32" width="0.254" layer="1"/>
-<wire x1="27.94" y1="20.32" x2="30.92" y2="17.34" width="0.254" layer="1"/>
-<wire x1="30.92" y1="17.34" x2="32.03" y2="17.34" width="0.254" layer="1"/>
+<wire x1="35.04345" y1="21.023" x2="35.713" y2="20.35345" width="0.254" layer="1"/>
+<wire x1="35.713" y1="20.35345" x2="35.713" y2="19.40655" width="0.254" layer="1"/>
+<wire x1="35.713" y1="19.40655" x2="35.04345" y2="18.737" width="0.254" layer="1"/>
+<wire x1="17.78" y1="34.29" x2="31.047" y2="21.023" width="0.254" layer="1"/>
+<wire x1="35.04345" y1="18.737" x2="33.427" y2="18.737" width="0.254" layer="1"/>
+<wire x1="33.427" y1="18.737" x2="32.03" y2="17.34" width="0.254" layer="1"/>
+<wire x1="31.047" y1="21.023" x2="35.04345" y2="21.023" width="0.254" layer="1"/>
 </signal>
 <signal name="UART4.TX">
 <contactref element="U$1" pad="P2_07"/>
@@ -898,50 +918,36 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 <signal name="USB1.VBUS">
 <contactref element="X1" pad="1"/>
 <contactref element="U$1" pad="P1_05"/>
-<wire x1="26.0653" y1="13.5409" x2="25.2244" y2="12.7" width="0.254" layer="1"/>
-<wire x1="25.2244" y1="12.7" x2="17.78" y2="12.7" width="0.254" layer="1"/>
+<wire x1="26.0653" y1="13.5409" x2="24.4624" y2="11.938" width="0.254" layer="1"/>
+<wire x1="24.4624" y1="11.938" x2="18.542" y2="11.938" width="0.254" layer="1"/>
 <wire x1="34.57" y1="12.26" x2="33.2891" y2="13.5409" width="0.254" layer="1"/>
 <wire x1="33.2891" y1="13.5409" x2="26.0653" y2="13.5409" width="0.254" layer="1"/>
-<wire x1="17.78" y1="12.7" x2="16.82" y2="13.66" width="0.254" layer="1"/>
+<wire x1="18.542" y1="11.938" x2="16.82" y2="13.66" width="0.254" layer="1"/>
 <wire x1="16.82" y1="13.66" x2="16.82" y2="14.26" width="0.254" layer="1"/>
 </signal>
 <signal name="USB1.D-">
 <contactref element="X1" pad="2"/>
 <contactref element="U$1" pad="P1_09"/>
-<wire x1="34.57" y1="17.34" x2="34.57" y2="18.6608" width="0.254" layer="1"/>
-<wire x1="34.57" y1="18.6608" x2="35.7892" y2="18.6608" width="0.254" layer="1"/>
-<wire x1="35.7892" y1="18.6608" x2="35.7892" y2="21.0992" width="0.254" layer="1"/>
-<wire x1="30.8108" y1="21.0992" x2="30.8108" y2="20.32" width="0.254" layer="1"/>
-<wire x1="30.8108" y1="20.32" x2="30.48" y2="20.32" width="0.254" layer="1"/>
-<wire x1="35.7892" y1="21.0992" x2="30.8108" y2="21.0992" width="0.254" layer="1"/>
-<wire x1="30.48" y1="20.32" x2="28.956" y2="21.844" width="0.254" layer="1"/>
-<wire x1="28.956" y1="21.844" x2="28.956" y2="25.146" width="0.254" layer="1"/>
-<wire x1="28.956" y1="25.146" x2="20.9756" y2="33.1264" width="0.254" layer="1"/>
-<wire x1="20.9756" y1="33.1264" x2="21.2296" y2="33.3804" width="0.254" layer="1"/>
-<wire x1="21.2296" y1="33.3804" x2="21.2296" y2="35.7076" width="0.254" layer="1"/>
-<wire x1="21.2296" y1="35.7076" x2="13.8224" y2="35.7076" width="0.254" layer="1"/>
-<wire x1="13.8224" y1="35.7076" x2="13.8224" y2="32.4406" width="0.254" layer="1"/>
-<wire x1="13.8224" y1="32.4406" x2="19.32" y2="26.943" width="0.254" layer="1"/>
-<wire x1="19.32" y1="26.943" x2="19.32" y2="14.26" width="0.254" layer="1"/>
+<wire x1="34.57" y1="17.34" x2="33.64645" y2="17.34" width="0.254" layer="1"/>
+<wire x1="33.64645" y1="17.34" x2="32.50345" y2="16.197" width="0.254" layer="1"/>
+<wire x1="32.50345" y1="16.197" x2="24.22823125" y2="16.197" width="0.254" layer="1"/>
+<wire x1="24.22823125" y1="16.197" x2="22.401" y2="14.36976875" width="0.254" layer="1"/>
+<wire x1="22.401" y1="13.81223125" x2="22.401" y2="14.36976875" width="0.254" layer="1"/>
+<wire x1="19.32" y1="14.26" x2="20.372" y2="13.208" width="0.254" layer="1"/>
+<wire x1="20.84323125" y1="13.208" x2="20.87223125" y2="13.179" width="0.254" layer="1"/>
+<wire x1="20.87223125" y1="13.179" x2="21.76776875" y2="13.179" width="0.254" layer="1"/>
+<wire x1="20.372" y1="13.208" x2="20.84323125" y2="13.208" width="0.254" layer="1"/>
+<wire x1="21.76776875" y1="13.179" x2="22.401" y2="13.81223125" width="0.254" layer="1"/>
 </signal>
 <signal name="USB1.D+">
 <contactref element="X1" pad="3"/>
 <contactref element="U$1" pad="P1_11"/>
-<wire x1="34.57" y1="19.88" x2="33.2492" y2="19.88" width="0.254" layer="1"/>
-<wire x1="33.2492" y1="19.88" x2="33.2492" y2="18.6608" width="0.254" layer="1"/>
-<wire x1="33.2492" y1="18.6608" x2="30.8108" y2="18.6608" width="0.254" layer="1"/>
-<wire x1="14.3304" y1="35.1996" x2="14.3304" y2="33.3804" width="0.254" layer="1"/>
-<wire x1="16.6617875" y1="31.0490125" x2="16.6617875" y2="30.4086" width="0.254" layer="1"/>
-<wire x1="14.3304" y1="33.3804" x2="16.6617875" y2="31.0490125" width="0.254" layer="1"/>
-<wire x1="28.448" y1="24.638" x2="28.1528" y2="24.638" width="0.254" layer="1"/>
-<wire x1="28.1528" y1="24.638" x2="18.6896" y2="34.1012" width="0.254" layer="1"/>
-<wire x1="18.6896" y1="34.1012" x2="18.6896" y2="35.1996" width="0.254" layer="1"/>
-<wire x1="16.6617875" y1="30.4086" x2="20.1228" y2="26.9475875" width="0.254" layer="1"/>
-<wire x1="20.1228" y1="26.9475875" x2="20.1228" y2="15.4572" width="0.254" layer="1"/>
-<wire x1="21.32" y1="14.26" x2="20.1228" y2="15.4572" width="0.254" layer="1"/>
-<wire x1="30.8108" y1="18.6608" x2="28.448" y2="21.0236" width="0.254" layer="1"/>
-<wire x1="28.448" y1="21.0236" x2="28.448" y2="24.638" width="0.254" layer="1"/>
-<wire x1="18.6896" y1="35.1996" x2="14.3304" y2="35.1996" width="0.254" layer="1"/>
+<wire x1="34.57" y1="19.88" x2="33.64645" y2="19.88" width="0.254" layer="1"/>
+<wire x1="33.64645" y1="19.88" x2="32.24945" y2="18.483" width="0.254" layer="1"/>
+<wire x1="23.511" y1="18.483" x2="20.558" y2="15.53" width="0.254" layer="1"/>
+<wire x1="20.558" y1="15.53" x2="20.558" y2="15.022" width="0.254" layer="1"/>
+<wire x1="20.558" y1="15.022" x2="21.32" y2="14.26" width="0.254" layer="1"/>
+<wire x1="32.24945" y1="18.483" x2="23.511" y2="18.483" width="0.254" layer="1"/>
 </signal>
 <signal name="VIN">
 <contactref element="U$1" pad="P2_34"/>
