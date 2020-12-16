@@ -199,16 +199,6 @@
 <frame x1="0" y1="0" x2="387.35" y2="260.35" columns="8" rows="5" layer="94"/>
 <text x="361.315" y="5.08" size="2.54" layer="94">Rev 1A</text>
 </symbol>
-<symbol name="VDD_3P3V">
-<circle x="0" y="1.27" radius="1.27" width="0.254" layer="94"/>
-<pin name="VDD_3P3V" x="0" y="-2.54" visible="off" length="short" direction="sup" rot="R90"/>
-<text x="0" y="4.064" size="1.778" layer="96" align="center">&gt;VALUE</text>
-</symbol>
-<symbol name="GND">
-<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
-<pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
-<text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="FRAMES_A3L-LOC" prefix="FRAME" uservalue="yes">
@@ -225,35 +215,123 @@ DIN A3, landscape with location and doc. field</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="VDD_3P3V" prefix="SUPPLY">
-<gates>
-<gate name="G$1" symbol="VDD_3P3V" x="0" y="2.54"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="GND" prefix="GND">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
-<gates>
-<gate name="1" symbol="GND" x="0" y="0"/>
-</gates>
-<devices>
-<device name="">
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 </devicesets>
 </library>
 <library name="lpd">
 <packages>
+<package name="FEMALE90">
+<pad name="P$1" x="0" y="0" drill="0.6" shape="square"/>
+<pad name="P$2" x="1.2" y="0" drill="0.6" shape="square"/>
+<pad name="P$3" x="2.4" y="0" drill="0.6" shape="square"/>
+<pad name="P$4" x="3.6" y="0" drill="0.6" shape="square"/>
+<wire x1="-0.7" y1="-0.6" x2="-0.7" y2="4" width="0.1524" layer="21"/>
+<wire x1="-0.7" y1="4" x2="4.3" y2="4" width="0.1524" layer="21"/>
+<wire x1="4.3" y1="4" x2="4.3" y2="-0.6" width="0.1524" layer="21"/>
+<wire x1="4.3" y1="-0.6" x2="-0.7" y2="-0.6" width="0.1524" layer="21"/>
+<pad name="P$5" x="0" y="3" drill="0.6" shape="square"/>
+<pad name="P$6" x="1.2" y="3" drill="0.6" shape="square"/>
+<pad name="P$7" x="2.4" y="3" drill="0.6" shape="square"/>
+<pad name="P$8" x="3.6" y="3" drill="0.6" shape="square"/>
+</package>
+<package name="GPS">
+<wire x1="2.66" y1="0" x2="23.94" y2="0" width="0.1524" layer="21"/>
+<wire x1="26.6" y1="2.66" x2="26.6" y2="23.94" width="0.1524" layer="21"/>
+<wire x1="0" y1="23.94" x2="0" y2="2.66" width="0.1524" layer="21"/>
+<wire x1="0" y1="23.94" x2="2.66" y2="26.6" width="0.1524" layer="21" curve="-90"/>
+<wire x1="2.66" y1="26.6" x2="10.64" y2="26.6" width="0.1524" layer="21"/>
+<wire x1="10.64" y1="26.6" x2="15.96" y2="26.6" width="0.1524" layer="21"/>
+<wire x1="15.96" y1="26.6" x2="23.94" y2="26.6" width="0.1524" layer="21"/>
+<wire x1="23.94" y1="26.6" x2="26.6" y2="23.94" width="0.1524" layer="21" curve="-90"/>
+<wire x1="26.6" y1="2.66" x2="23.94" y2="0" width="0.1524" layer="21" curve="-90"/>
+<wire x1="2.66" y1="0" x2="0" y2="2.66" width="0.1524" layer="21" curve="-90"/>
+<pad name="P$1" x="7.98" y="2.66" drill="0.6" shape="square"/>
+<pad name="P$2" x="10.64" y="2.66" drill="0.6" shape="square"/>
+<pad name="P$3" x="13.3" y="2.66" drill="0.6" shape="square"/>
+<pad name="P$4" x="15.96" y="2.66" drill="0.6" shape="square"/>
+<pad name="P$5" x="18.62" y="2.66" drill="0.6" shape="square"/>
+<wire x1="10.64" y1="26.6" x2="10.64" y2="21.28" width="0.1524" layer="21"/>
+<wire x1="10.64" y1="21.28" x2="15.96" y2="21.28" width="0.1524" layer="21"/>
+<wire x1="15.96" y1="21.28" x2="15.96" y2="26.6" width="0.1524" layer="21"/>
+</package>
+<package name="GHI2_USB_HOST_HORIZONTAL_W/CHASSIS_GND">
+<wire x1="-6.5" y1="0.3" x2="-6.4999" y2="0.3" width="0.2032" layer="21"/>
+<wire x1="-6.4999" y1="0.3" x2="-6.2" y2="0.3" width="0.2032" layer="21"/>
+<wire x1="-5.9" y1="0" x2="5.9" y2="0" width="0.2032" layer="21"/>
+<wire x1="6.2" y1="0.3" x2="6.5" y2="0.3" width="0.2032" layer="21"/>
+<wire x1="6.5" y1="0.3" x2="6.5" y2="8.4" width="0.2032" layer="21"/>
+<wire x1="6.5" y1="12.2" x2="6.5" y2="13.9" width="0.2032" layer="21"/>
+<wire x1="6.5" y1="13.9" x2="3.9" y2="13.9" width="0.2032" layer="21"/>
+<wire x1="-3.9" y1="13.9" x2="-6.5" y2="13.9" width="0.2032" layer="21"/>
+<wire x1="-6.5" y1="13.9" x2="-6.5" y2="12.2" width="0.2032" layer="21"/>
+<wire x1="-6.5" y1="8.4" x2="-6.5" y2="0.3" width="0.2032" layer="21"/>
+<wire x1="-6.7999" y1="0" x2="-6.4999" y2="0.3" width="0.2032" layer="21" curve="90"/>
+<wire x1="-6.8" y1="0" x2="-7" y2="0" width="0.2032" layer="21"/>
+<wire x1="-6.2" y1="0.3" x2="-5.9" y2="0" width="0.2032" layer="21" curve="-90"/>
+<wire x1="6.5" y1="0.3" x2="6.8" y2="0" width="0.2032" layer="21" curve="90"/>
+<wire x1="5.9" y1="0" x2="6.2" y2="0.3001" width="0.2032" layer="21" curve="-89.980911"/>
+<wire x1="-5" y1="8" x2="-4" y2="2" width="0.2032" layer="21"/>
+<wire x1="-4" y1="2" x2="-3" y2="2" width="0.2032" layer="21"/>
+<wire x1="-3" y1="2" x2="-2" y2="8" width="0.2032" layer="21"/>
+<wire x1="5" y1="8" x2="4" y2="2" width="0.2032" layer="21"/>
+<wire x1="4" y1="2" x2="3" y2="2" width="0.2032" layer="21"/>
+<wire x1="3" y1="2" x2="2" y2="8" width="0.2032" layer="21"/>
+<wire x1="6.8" y1="0" x2="7" y2="0" width="0.2032" layer="21"/>
+<wire x1="-6.5" y1="0.3" x2="-6.4999" y2="0.3" width="0.2032" layer="51"/>
+<wire x1="-6.4999" y1="0.3" x2="-6.2" y2="0.3" width="0.2032" layer="51"/>
+<wire x1="-5.9" y1="0" x2="5.9" y2="0" width="0.2032" layer="51"/>
+<wire x1="6.2" y1="0.3" x2="6.5" y2="0.3" width="0.2032" layer="51"/>
+<wire x1="6.5" y1="0.3" x2="6.5" y2="9" width="0.2032" layer="51"/>
+<wire x1="6.5" y1="9" x2="6.5" y2="11.5" width="0.2032" layer="51"/>
+<wire x1="6.5" y1="11.5" x2="6.5" y2="13.9" width="0.2032" layer="51"/>
+<wire x1="6.5" y1="13.9" x2="-6.5" y2="13.9" width="0.2032" layer="51"/>
+<wire x1="-6.5" y1="13.9" x2="-6.5" y2="11.5" width="0.2032" layer="51"/>
+<wire x1="-6.5" y1="11.5" x2="-6.5" y2="9" width="0.2032" layer="51"/>
+<wire x1="-6.5" y1="9" x2="-6.5" y2="0.3" width="0.2032" layer="51"/>
+<wire x1="-6.7999" y1="0" x2="-6.4999" y2="0.3" width="0.2032" layer="51" curve="90"/>
+<wire x1="-6.8" y1="0" x2="-7" y2="0" width="0.2032" layer="51"/>
+<wire x1="-6.2" y1="0.3" x2="-5.9" y2="0" width="0.2032" layer="51" curve="-90"/>
+<wire x1="6.5" y1="0.3" x2="6.8" y2="0" width="0.2032" layer="51" curve="90"/>
+<wire x1="5.9" y1="0" x2="6.2" y2="0.3001" width="0.2032" layer="51" curve="-89.980911"/>
+<wire x1="-5" y1="8" x2="-4" y2="2" width="0.2032" layer="51"/>
+<wire x1="-4" y1="2" x2="-3" y2="2" width="0.2032" layer="51"/>
+<wire x1="-3" y1="2" x2="-2" y2="8" width="0.2032" layer="51"/>
+<wire x1="5" y1="8" x2="4" y2="2" width="0.2032" layer="51"/>
+<wire x1="4" y1="2" x2="3" y2="2" width="0.2032" layer="51"/>
+<wire x1="3" y1="2" x2="2" y2="8" width="0.2032" layer="51"/>
+<wire x1="-6.5" y1="11.5" x2="-8" y2="11" width="0.2032" layer="51"/>
+<wire x1="-8" y1="11" x2="-8" y2="9.5" width="0.2032" layer="51"/>
+<wire x1="-8" y1="9.5" x2="-6.5" y2="9" width="0.2032" layer="51"/>
+<wire x1="6.5" y1="11.5" x2="8" y2="11" width="0.2032" layer="51"/>
+<wire x1="8" y1="11" x2="8" y2="9.5" width="0.2032" layer="51"/>
+<wire x1="8" y1="9.5" x2="6.5" y2="9" width="0.2032" layer="51"/>
+<wire x1="6.8" y1="0" x2="7" y2="0" width="0.2032" layer="51"/>
+<wire x1="3.1" y1="13.9" x2="1.4" y2="13.9" width="0.2032" layer="21"/>
+<wire x1="-1.4" y1="13.9" x2="-3.1" y2="13.9" width="0.2032" layer="21"/>
+<wire x1="0.6" y1="13.9" x2="-0.6" y2="13.9" width="0.2032" layer="21"/>
+<pad name="1" x="-3.5" y="12.99" drill="1"/>
+<pad name="2" x="-1" y="12.99" drill="1"/>
+<pad name="3" x="1" y="12.99" drill="1"/>
+<pad name="4" x="3.5" y="12.99" drill="1"/>
+<pad name="5" x="-6.57" y="10.2799" drill="2.3"/>
+<pad name="6" x="6.57" y="10.2799" drill="2.3"/>
+<text x="-6.5001" y="14.5001" size="1.016" layer="25" ratio="12">&gt;NAME</text>
+<text x="-4.5001" y="10" size="1.016" layer="27" ratio="12">&gt;VALUE</text>
+<text x="-5.08" y="0.635" size="1.016" layer="21" ratio="12">AMP 787616-1</text>
+</package>
+<package name="BT">
+<wire x1="0" y1="1" x2="0" y2="26" width="0.1524" layer="21"/>
+<wire x1="1" y1="27" x2="12" y2="27" width="0.1524" layer="21"/>
+<wire x1="13" y1="26" x2="13" y2="1" width="0.1524" layer="21"/>
+<wire x1="1" y1="0" x2="12" y2="0" width="0.1524" layer="21"/>
+<wire x1="12" y1="0" x2="13" y2="1" width="0.1524" layer="21" curve="90"/>
+<wire x1="13" y1="26" x2="12" y2="27" width="0.1524" layer="21" curve="90"/>
+<wire x1="1" y1="27" x2="0" y2="26" width="0.1524" layer="21" curve="90"/>
+<wire x1="0" y1="1" x2="1" y2="0" width="0.1524" layer="21" curve="90"/>
+<pad name="P$1" x="4" y="1" drill="0.6" shape="square"/>
+<pad name="P$2" x="5.5" y="1" drill="0.6" shape="square"/>
+<pad name="P$3" x="7.5" y="1" drill="0.6" shape="square"/>
+<pad name="P$4" x="9" y="1" drill="0.6" shape="square"/>
+</package>
 <package name="POCKETBEAGLE">
 <wire x1="44.873" y1="34.873" x2="9.873" y2="34.873" width="0.254" layer="21"/>
 <wire x1="9.873" y1="34.873" x2="-0.127" y2="24.873" width="0.254" layer="21" curve="90"/>
@@ -605,229 +683,8 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="17.272" y1="12.192" x2="17.272" y2="4.826" width="0.2032" layer="21"/>
 <wire x1="12.192" y1="12.192" x2="12.192" y2="4.826" width="0.2032" layer="21"/>
 </package>
-<package name="FEMALE90">
-<pad name="P$1" x="0" y="0" drill="0.6" shape="square"/>
-<pad name="P$2" x="1.2" y="0" drill="0.6" shape="square"/>
-<pad name="P$3" x="2.4" y="0" drill="0.6" shape="square"/>
-<pad name="P$4" x="3.6" y="0" drill="0.6" shape="square"/>
-<wire x1="-0.7" y1="-0.6" x2="-0.7" y2="4" width="0.1524" layer="21"/>
-<wire x1="-0.7" y1="4" x2="4.3" y2="4" width="0.1524" layer="21"/>
-<wire x1="4.3" y1="4" x2="4.3" y2="-0.6" width="0.1524" layer="21"/>
-<wire x1="4.3" y1="-0.6" x2="-0.7" y2="-0.6" width="0.1524" layer="21"/>
-<pad name="P$5" x="0" y="3" drill="0.6" shape="square"/>
-<pad name="P$6" x="1.2" y="3" drill="0.6" shape="square"/>
-<pad name="P$7" x="2.4" y="3" drill="0.6" shape="square"/>
-<pad name="P$8" x="3.6" y="3" drill="0.6" shape="square"/>
-</package>
-<package name="GPS">
-<wire x1="2.66" y1="0" x2="23.94" y2="0" width="0.1524" layer="21"/>
-<wire x1="26.6" y1="2.66" x2="26.6" y2="23.94" width="0.1524" layer="21"/>
-<wire x1="0" y1="23.94" x2="0" y2="2.66" width="0.1524" layer="21"/>
-<wire x1="0" y1="23.94" x2="2.66" y2="26.6" width="0.1524" layer="21" curve="-90"/>
-<wire x1="2.66" y1="26.6" x2="10.64" y2="26.6" width="0.1524" layer="21"/>
-<wire x1="10.64" y1="26.6" x2="15.96" y2="26.6" width="0.1524" layer="21"/>
-<wire x1="15.96" y1="26.6" x2="23.94" y2="26.6" width="0.1524" layer="21"/>
-<wire x1="23.94" y1="26.6" x2="26.6" y2="23.94" width="0.1524" layer="21" curve="-90"/>
-<wire x1="26.6" y1="2.66" x2="23.94" y2="0" width="0.1524" layer="21" curve="-90"/>
-<wire x1="2.66" y1="0" x2="0" y2="2.66" width="0.1524" layer="21" curve="-90"/>
-<pad name="P$1" x="7.98" y="2.66" drill="0.6" shape="square"/>
-<pad name="P$2" x="10.64" y="2.66" drill="0.6" shape="square"/>
-<pad name="P$3" x="13.3" y="2.66" drill="0.6" shape="square"/>
-<pad name="P$4" x="15.96" y="2.66" drill="0.6" shape="square"/>
-<pad name="P$5" x="18.62" y="2.66" drill="0.6" shape="square"/>
-<wire x1="10.64" y1="26.6" x2="10.64" y2="21.28" width="0.1524" layer="21"/>
-<wire x1="10.64" y1="21.28" x2="15.96" y2="21.28" width="0.1524" layer="21"/>
-<wire x1="15.96" y1="21.28" x2="15.96" y2="26.6" width="0.1524" layer="21"/>
-</package>
-<package name="GHI2_USB_HOST_HORIZONTAL_W/CHASSIS_GND">
-<wire x1="-6.5" y1="0.3" x2="-6.4999" y2="0.3" width="0.2032" layer="21"/>
-<wire x1="-6.4999" y1="0.3" x2="-6.2" y2="0.3" width="0.2032" layer="21"/>
-<wire x1="-5.9" y1="0" x2="5.9" y2="0" width="0.2032" layer="21"/>
-<wire x1="6.2" y1="0.3" x2="6.5" y2="0.3" width="0.2032" layer="21"/>
-<wire x1="6.5" y1="0.3" x2="6.5" y2="8.4" width="0.2032" layer="21"/>
-<wire x1="6.5" y1="12.2" x2="6.5" y2="13.9" width="0.2032" layer="21"/>
-<wire x1="6.5" y1="13.9" x2="3.9" y2="13.9" width="0.2032" layer="21"/>
-<wire x1="-3.9" y1="13.9" x2="-6.5" y2="13.9" width="0.2032" layer="21"/>
-<wire x1="-6.5" y1="13.9" x2="-6.5" y2="12.2" width="0.2032" layer="21"/>
-<wire x1="-6.5" y1="8.4" x2="-6.5" y2="0.3" width="0.2032" layer="21"/>
-<wire x1="-6.7999" y1="0" x2="-6.4999" y2="0.3" width="0.2032" layer="21" curve="90"/>
-<wire x1="-6.8" y1="0" x2="-7" y2="0" width="0.2032" layer="21"/>
-<wire x1="-6.2" y1="0.3" x2="-5.9" y2="0" width="0.2032" layer="21" curve="-90"/>
-<wire x1="6.5" y1="0.3" x2="6.8" y2="0" width="0.2032" layer="21" curve="90"/>
-<wire x1="5.9" y1="0" x2="6.2" y2="0.3001" width="0.2032" layer="21" curve="-89.980911"/>
-<wire x1="-5" y1="8" x2="-4" y2="2" width="0.2032" layer="21"/>
-<wire x1="-4" y1="2" x2="-3" y2="2" width="0.2032" layer="21"/>
-<wire x1="-3" y1="2" x2="-2" y2="8" width="0.2032" layer="21"/>
-<wire x1="5" y1="8" x2="4" y2="2" width="0.2032" layer="21"/>
-<wire x1="4" y1="2" x2="3" y2="2" width="0.2032" layer="21"/>
-<wire x1="3" y1="2" x2="2" y2="8" width="0.2032" layer="21"/>
-<wire x1="6.8" y1="0" x2="7" y2="0" width="0.2032" layer="21"/>
-<wire x1="-6.5" y1="0.3" x2="-6.4999" y2="0.3" width="0.2032" layer="51"/>
-<wire x1="-6.4999" y1="0.3" x2="-6.2" y2="0.3" width="0.2032" layer="51"/>
-<wire x1="-5.9" y1="0" x2="5.9" y2="0" width="0.2032" layer="51"/>
-<wire x1="6.2" y1="0.3" x2="6.5" y2="0.3" width="0.2032" layer="51"/>
-<wire x1="6.5" y1="0.3" x2="6.5" y2="9" width="0.2032" layer="51"/>
-<wire x1="6.5" y1="9" x2="6.5" y2="11.5" width="0.2032" layer="51"/>
-<wire x1="6.5" y1="11.5" x2="6.5" y2="13.9" width="0.2032" layer="51"/>
-<wire x1="6.5" y1="13.9" x2="-6.5" y2="13.9" width="0.2032" layer="51"/>
-<wire x1="-6.5" y1="13.9" x2="-6.5" y2="11.5" width="0.2032" layer="51"/>
-<wire x1="-6.5" y1="11.5" x2="-6.5" y2="9" width="0.2032" layer="51"/>
-<wire x1="-6.5" y1="9" x2="-6.5" y2="0.3" width="0.2032" layer="51"/>
-<wire x1="-6.7999" y1="0" x2="-6.4999" y2="0.3" width="0.2032" layer="51" curve="90"/>
-<wire x1="-6.8" y1="0" x2="-7" y2="0" width="0.2032" layer="51"/>
-<wire x1="-6.2" y1="0.3" x2="-5.9" y2="0" width="0.2032" layer="51" curve="-90"/>
-<wire x1="6.5" y1="0.3" x2="6.8" y2="0" width="0.2032" layer="51" curve="90"/>
-<wire x1="5.9" y1="0" x2="6.2" y2="0.3001" width="0.2032" layer="51" curve="-89.980911"/>
-<wire x1="-5" y1="8" x2="-4" y2="2" width="0.2032" layer="51"/>
-<wire x1="-4" y1="2" x2="-3" y2="2" width="0.2032" layer="51"/>
-<wire x1="-3" y1="2" x2="-2" y2="8" width="0.2032" layer="51"/>
-<wire x1="5" y1="8" x2="4" y2="2" width="0.2032" layer="51"/>
-<wire x1="4" y1="2" x2="3" y2="2" width="0.2032" layer="51"/>
-<wire x1="3" y1="2" x2="2" y2="8" width="0.2032" layer="51"/>
-<wire x1="-6.5" y1="11.5" x2="-8" y2="11" width="0.2032" layer="51"/>
-<wire x1="-8" y1="11" x2="-8" y2="9.5" width="0.2032" layer="51"/>
-<wire x1="-8" y1="9.5" x2="-6.5" y2="9" width="0.2032" layer="51"/>
-<wire x1="6.5" y1="11.5" x2="8" y2="11" width="0.2032" layer="51"/>
-<wire x1="8" y1="11" x2="8" y2="9.5" width="0.2032" layer="51"/>
-<wire x1="8" y1="9.5" x2="6.5" y2="9" width="0.2032" layer="51"/>
-<wire x1="6.8" y1="0" x2="7" y2="0" width="0.2032" layer="51"/>
-<wire x1="3.1" y1="13.9" x2="1.4" y2="13.9" width="0.2032" layer="21"/>
-<wire x1="-1.4" y1="13.9" x2="-3.1" y2="13.9" width="0.2032" layer="21"/>
-<wire x1="0.6" y1="13.9" x2="-0.6" y2="13.9" width="0.2032" layer="21"/>
-<pad name="1" x="-3.5" y="12.99" drill="1"/>
-<pad name="2" x="-1" y="12.99" drill="1"/>
-<pad name="3" x="1" y="12.99" drill="1"/>
-<pad name="4" x="3.5" y="12.99" drill="1"/>
-<pad name="5" x="-6.57" y="10.2799" drill="2.3"/>
-<pad name="6" x="6.57" y="10.2799" drill="2.3"/>
-<text x="-6.5001" y="14.5001" size="1.016" layer="25" ratio="12">&gt;NAME</text>
-<text x="-4.5001" y="10" size="1.016" layer="27" ratio="12">&gt;VALUE</text>
-<text x="-5.08" y="0.635" size="1.016" layer="21" ratio="12">AMP 787616-1</text>
-</package>
-<package name="BT">
-<wire x1="0" y1="1" x2="0" y2="26" width="0.1524" layer="21"/>
-<wire x1="1" y1="27" x2="12" y2="27" width="0.1524" layer="21"/>
-<wire x1="13" y1="26" x2="13" y2="1" width="0.1524" layer="21"/>
-<wire x1="1" y1="0" x2="12" y2="0" width="0.1524" layer="21"/>
-<wire x1="12" y1="0" x2="13" y2="1" width="0.1524" layer="21" curve="90"/>
-<wire x1="13" y1="26" x2="12" y2="27" width="0.1524" layer="21" curve="90"/>
-<wire x1="1" y1="27" x2="0" y2="26" width="0.1524" layer="21" curve="90"/>
-<wire x1="0" y1="1" x2="1" y2="0" width="0.1524" layer="21" curve="90"/>
-<pad name="P$1" x="4" y="1" drill="0.6" shape="square"/>
-<pad name="P$2" x="5.5" y="1" drill="0.6" shape="square"/>
-<pad name="P$3" x="7.5" y="1" drill="0.6" shape="square"/>
-<pad name="P$4" x="9" y="1" drill="0.6" shape="square"/>
-</package>
 </packages>
 <symbols>
-<symbol name="POCKETBEAGLE">
-<pin name="VIN" x="-5.08" y="60.96" length="middle" direction="pwr"/>
-<pin name="USB1.DRVVBUS" x="-5.08" y="48.26" length="middle"/>
-<pin name="USB1.VBUS" x="-5.08" y="45.72" length="middle"/>
-<pin name="USB1.VIN" x="-5.08" y="43.18" length="middle"/>
-<pin name="USB1.D-" x="-5.08" y="40.64" length="middle"/>
-<pin name="USB1.D+" x="-5.08" y="38.1" length="middle"/>
-<pin name="USB1.ID" x="-5.08" y="35.56" length="middle"/>
-<pin name="GND@1" x="-5.08" y="33.02" length="middle"/>
-<pin name="AIN.VREF-" x="-5.08" y="20.32" length="middle" direction="in"/>
-<pin name="AIN0(1.8V)" x="-5.08" y="17.78" length="middle" direction="in"/>
-<pin name="AIN1(1.8V)" x="-5.08" y="15.24" length="middle" direction="in"/>
-<pin name="AIN2(1.8V)" x="-5.08" y="12.7" length="middle" direction="in"/>
-<pin name="AIN3(1.8V)" x="-5.08" y="10.16" length="middle" direction="in"/>
-<pin name="AIN4(1.8V)" x="-5.08" y="7.62" length="middle" direction="in"/>
-<pin name="PRU0.7" x="45.72" y="7.62" length="middle" rot="R180"/>
-<pin name="PRU0.4" x="45.72" y="15.24" length="middle" rot="R180"/>
-<pin name="PRU0.1" x="45.72" y="22.86" length="middle" rot="R180"/>
-<pin name="PRU1.10" x="45.72" y="5.08" length="middle" rot="R180"/>
-<pin name="AIN6/GPIO87" x="45.72" y="111.76" length="middle" rot="R180"/>
-<pin name="GPIO89" x="45.72" y="104.14" length="middle" rot="R180"/>
-<pin name="SPI0.CS" x="45.72" y="116.84" length="middle" rot="R180"/>
-<pin name="UART2.RX" x="45.72" y="83.82" length="middle" rot="R180"/>
-<pin name="UART2.TX" x="45.72" y="86.36" length="middle" rot="R180"/>
-<pin name="SPI0.MOSI" x="45.72" y="119.38" length="middle" rot="R180"/>
-<pin name="3.3V@1" x="45.72" y="132.08" length="middle" direction="pwr" rot="R180"/>
-<pin name="GND@2" x="45.72" y="93.98" length="middle" direction="pwr" rot="R180"/>
-<pin name="AIN.VREF+" x="-5.08" y="22.86" length="middle" direction="in"/>
-<pin name="GPIO20" x="45.72" y="60.96" length="middle" rot="R180"/>
-<pin name="GND@3" x="-5.08" y="81.28" length="middle" direction="pwr"/>
-<pin name="VOUT@1" x="-5.08" y="134.62" length="middle" direction="pwr"/>
-<pin name="I2C2.SDA" x="-5.08" y="124.46" length="middle"/>
-<pin name="I2C2.SCL" x="-5.08" y="127" length="middle"/>
-<pin name="UART0.TX" x="-5.08" y="119.38" length="middle"/>
-<pin name="UART0.RX" x="-5.08" y="116.84" length="middle"/>
-<pin name="GPIO26" x="-5.08" y="93.98" length="middle"/>
-<pin name="PWM0A" x="-5.08" y="86.36" length="middle"/>
-<pin name="PWM1A" x="45.72" y="99.06" length="middle" rot="R180"/>
-<pin name="GPIO23" x="45.72" y="106.68" length="middle" rot="R180"/>
-<pin name="UART4.RX" x="45.72" y="78.74" length="middle" rot="R180"/>
-<pin name="UART4.TX" x="45.72" y="81.28" length="middle" rot="R180"/>
-<pin name="I2C1.SCL" x="45.72" y="127" length="middle" rot="R180"/>
-<pin name="I2C1.SDA" x="45.72" y="124.46" length="middle" rot="R180"/>
-<pin name="VOUT@2" x="45.72" y="134.62" length="middle" direction="pwr" rot="R180"/>
-<pin name="GND@4" x="45.72" y="91.44" length="middle" direction="pwr" rot="R180"/>
-<pin name="GPIO65" x="45.72" y="33.02" length="middle" rot="R180"/>
-<pin name="GPIO27" x="45.72" y="58.42" length="middle" rot="R180"/>
-<pin name="GND@5" x="-5.08" y="78.74" length="middle" direction="pwr"/>
-<pin name="3.3V@2" x="-5.08" y="132.08" length="middle" direction="pwr"/>
-<pin name="SPI1.MOSI" x="-5.08" y="109.22" length="middle"/>
-<pin name="SPI1.MISO" x="-5.08" y="106.68" length="middle"/>
-<pin name="SPI1.CLK" x="-5.08" y="111.76" length="middle"/>
-<pin name="SPI1.CS" x="-5.08" y="104.14" length="middle"/>
-<pin name="GPIO45" x="-5.08" y="91.44" length="middle"/>
-<pin name="AIN5(3.3V)" x="-5.08" y="99.06" length="middle"/>
-<pin name="GPIO59" x="45.72" y="40.64" length="middle" rot="R180"/>
-<pin name="GPIO58" x="45.72" y="43.18" length="middle" rot="R180"/>
-<pin name="GPIO57" x="45.72" y="45.72" length="middle" rot="R180"/>
-<pin name="GPIO60" x="45.72" y="38.1" length="middle" rot="R180"/>
-<pin name="GPIO52" x="45.72" y="48.26" length="middle" rot="R180"/>
-<pin name="PWR.BTN" x="-5.08" y="66.04" length="middle" direction="in"/>
-<pin name="BAT.VIN" x="-5.08" y="55.88" length="middle" direction="pwr"/>
-<pin name="BAT.TEMP" x="-5.08" y="53.34" length="middle" direction="in"/>
-<pin name="GPIO47" x="45.72" y="50.8" length="middle" rot="R180"/>
-<pin name="GPIO64" x="45.72" y="35.56" length="middle" rot="R180"/>
-<pin name="GPIO46" x="45.72" y="53.34" length="middle" rot="R180"/>
-<pin name="GPIO44" x="45.72" y="55.88" length="middle" rot="R180"/>
-<pin name="RESET#" x="-5.08" y="71.12" length="middle" direction="in"/>
-<pin name="PRU0.6" x="45.72" y="10.16" length="middle" rot="R180"/>
-<pin name="PRU0.3" x="45.72" y="17.78" length="middle" rot="R180"/>
-<pin name="PRU0.2" x="45.72" y="20.32" length="middle" rot="R180"/>
-<pin name="PRU0.5" x="45.72" y="12.7" length="middle" rot="R180"/>
-<pin name="AIN7(1.8V)" x="-5.08" y="5.08" length="middle" direction="in"/>
-<wire x1="0" y1="0" x2="0" y2="27.94" width="0.254" layer="94"/>
-<wire x1="0" y1="27.94" x2="0" y2="50.8" width="0.254" layer="94"/>
-<wire x1="0" y1="50.8" x2="0" y2="73.66" width="0.254" layer="94"/>
-<wire x1="0" y1="73.66" x2="0" y2="139.7" width="0.254" layer="94"/>
-<wire x1="0" y1="139.7" x2="20.32" y2="139.7" width="0.254" layer="94"/>
-<wire x1="20.32" y1="139.7" x2="40.64" y2="139.7" width="0.254" layer="94"/>
-<wire x1="40.64" y1="139.7" x2="40.64" y2="88.9" width="0.254" layer="94"/>
-<wire x1="40.64" y1="88.9" x2="40.64" y2="73.66" width="0.254" layer="94"/>
-<wire x1="40.64" y1="73.66" x2="40.64" y2="63.5" width="0.254" layer="94"/>
-<wire x1="40.64" y1="63.5" x2="40.64" y2="27.94" width="0.254" layer="94"/>
-<wire x1="40.64" y1="27.94" x2="40.64" y2="0" width="0.254" layer="94"/>
-<wire x1="40.64" y1="0" x2="20.32" y2="0" width="0.254" layer="94"/>
-<wire x1="20.32" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="20.32" y1="0" x2="20.32" y2="50.8" width="0.254" layer="94"/>
-<wire x1="20.32" y1="50.8" x2="20.32" y2="63.5" width="0.254" layer="94"/>
-<wire x1="20.32" y1="63.5" x2="20.32" y2="88.9" width="0.254" layer="94"/>
-<wire x1="20.32" y1="88.9" x2="20.32" y2="139.7" width="0.254" layer="94"/>
-<wire x1="0" y1="73.66" x2="40.64" y2="73.66" width="0.254" layer="94"/>
-<wire x1="0" y1="27.94" x2="40.64" y2="27.94" width="0.254" layer="94"/>
-<wire x1="0" y1="50.8" x2="20.32" y2="50.8" width="0.254" layer="94"/>
-<text x="15.24" y="114.3" size="2.54" layer="94" rot="R270">CLICK0</text>
-<text x="22.86" y="114.3" size="2.54" layer="94" rot="R270">CLICK1</text>
-<text x="22.86" y="53.34" size="2.54" layer="94" rot="R270">GPIO</text>
-<text x="15.24" y="43.18" size="2.54" layer="94" rot="R270">USB1</text>
-<text x="15.24" y="66.04" size="2.54" layer="94" rot="R270">SYS</text>
-<text x="15.24" y="20.32" size="2.54" layer="94" rot="R270">ANALOG</text>
-<text x="22.86" y="17.78" size="2.54" layer="94" rot="R270">PRU</text>
-<text x="0" y="142.24" size="1.778" layer="95" rot="MR180">&gt;NAME</text>
-<text x="0" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
-<wire x1="40.64" y1="63.5" x2="20.32" y2="63.5" width="0.254" layer="94"/>
-<text x="22.86" y="68.58" size="2.54" layer="94">Pocket</text>
-<text x="25.4" y="66.04" size="2.54" layer="94">Beagle</text>
-<wire x1="40.64" y1="88.9" x2="20.32" y2="88.9" width="0.254" layer="94"/>
-<text x="25.4" y="78.74" size="2.54" layer="94" rot="R90">UART</text>
-</symbol>
 <symbol name="FEMALE90">
 <wire x1="0" y1="0" x2="0" y2="5.08" width="0.1524" layer="94"/>
 <wire x1="0" y1="5.08" x2="12.7" y2="5.08" width="0.1524" layer="94"/>
@@ -928,94 +785,132 @@ DIN A3, landscape with location and doc. field</description>
 <pin name="GND" x="0" y="2.54" visible="off" length="short" direction="sup" rot="R270"/>
 <text x="-2.54" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
+<symbol name="POCKETBEAGLEUNUSED">
+<pin name="VIN" x="-5.08" y="35.56" length="middle" direction="pwr"/>
+<pin name="AIN.VREF-" x="-5.08" y="22.86" length="middle" direction="in"/>
+<pin name="AIN0(1.8V)" x="-5.08" y="20.32" length="middle" direction="in"/>
+<pin name="AIN1(1.8V)" x="-5.08" y="17.78" length="middle" direction="in"/>
+<pin name="AIN2(1.8V)" x="-5.08" y="15.24" length="middle" direction="in"/>
+<pin name="AIN3(1.8V)" x="-5.08" y="12.7" length="middle" direction="in"/>
+<pin name="AIN4(1.8V)" x="-5.08" y="10.16" length="middle" direction="in"/>
+<pin name="PRU0.7" x="45.72" y="10.16" length="middle" rot="R180"/>
+<pin name="PRU0.4" x="45.72" y="17.78" length="middle" rot="R180"/>
+<pin name="PRU0.1" x="45.72" y="25.4" length="middle" rot="R180"/>
+<pin name="PRU1.10" x="45.72" y="7.62" length="middle" rot="R180"/>
+<pin name="AIN6/GPIO87" x="45.72" y="30.48" length="middle" rot="R180"/>
+<pin name="GPIO89" x="45.72" y="68.58" length="middle" rot="R180"/>
+<pin name="SPI0.CS" x="-5.08" y="58.42" length="middle"/>
+<pin name="SPI0.MOSI" x="-5.08" y="60.96" length="middle"/>
+<pin name="AIN.VREF+" x="-5.08" y="25.4" length="middle" direction="in"/>
+<pin name="GPIO20" x="45.72" y="60.96" length="middle" rot="R180"/>
+<pin name="VOUT@1" x="-5.08" y="48.26" length="middle" direction="pwr"/>
+<pin name="I2C2.SDA" x="-5.08" y="83.82" length="middle"/>
+<pin name="I2C2.SCL" x="-5.08" y="86.36" length="middle"/>
+<pin name="UART0.TX" x="-5.08" y="81.28" length="middle"/>
+<pin name="UART0.RX" x="-5.08" y="78.74" length="middle"/>
+<pin name="GPIO26" x="45.72" y="66.04" length="middle" rot="R180"/>
+<pin name="PWM0A" x="-5.08" y="53.34" length="middle"/>
+<pin name="PWM1A" x="-5.08" y="55.88" length="middle"/>
+<pin name="GPIO23" x="45.72" y="71.12" length="middle" rot="R180"/>
+<pin name="I2C1.SCL" x="-5.08" y="76.2" length="middle"/>
+<pin name="I2C1.SDA" x="-5.08" y="73.66" length="middle"/>
+<pin name="VOUT@2" x="-5.08" y="50.8" length="middle" direction="pwr"/>
+<pin name="GPIO65" x="45.72" y="33.02" length="middle" rot="R180"/>
+<pin name="GPIO27" x="45.72" y="58.42" length="middle" rot="R180"/>
+<pin name="SPI1.MOSI" x="-5.08" y="68.58" length="middle"/>
+<pin name="SPI1.MISO" x="-5.08" y="66.04" length="middle"/>
+<pin name="SPI1.CLK" x="-5.08" y="71.12" length="middle"/>
+<pin name="SPI1.CS" x="-5.08" y="63.5" length="middle"/>
+<pin name="GPIO45" x="45.72" y="63.5" length="middle" rot="R180"/>
+<pin name="AIN5(3.3V)" x="-5.08" y="45.72" length="middle"/>
+<pin name="GPIO59" x="45.72" y="40.64" length="middle" rot="R180"/>
+<pin name="GPIO58" x="45.72" y="43.18" length="middle" rot="R180"/>
+<pin name="GPIO57" x="45.72" y="45.72" length="middle" rot="R180"/>
+<pin name="GPIO60" x="45.72" y="38.1" length="middle" rot="R180"/>
+<pin name="GPIO52" x="45.72" y="48.26" length="middle" rot="R180"/>
+<pin name="PWR.BTN" x="-5.08" y="38.1" length="middle" direction="in"/>
+<pin name="BAT.VIN" x="-5.08" y="33.02" length="middle" direction="pwr"/>
+<pin name="BAT.TEMP" x="-5.08" y="30.48" length="middle" direction="in"/>
+<pin name="GPIO47" x="45.72" y="50.8" length="middle" rot="R180"/>
+<pin name="GPIO64" x="45.72" y="35.56" length="middle" rot="R180"/>
+<pin name="GPIO46" x="45.72" y="53.34" length="middle" rot="R180"/>
+<pin name="GPIO44" x="45.72" y="55.88" length="middle" rot="R180"/>
+<pin name="RESET#" x="-5.08" y="40.64" length="middle" direction="in"/>
+<pin name="PRU0.6" x="45.72" y="12.7" length="middle" rot="R180"/>
+<pin name="PRU0.3" x="45.72" y="20.32" length="middle" rot="R180"/>
+<pin name="PRU0.2" x="45.72" y="22.86" length="middle" rot="R180"/>
+<pin name="PRU0.5" x="45.72" y="15.24" length="middle" rot="R180"/>
+<pin name="AIN7(1.8V)" x="-5.08" y="7.62" length="middle" direction="in"/>
+<wire x1="0" y1="5.08" x2="0" y2="27.94" width="0.254" layer="94"/>
+<wire x1="0" y1="27.94" x2="0" y2="43.18" width="0.254" layer="94"/>
+<wire x1="0" y1="43.18" x2="0" y2="88.9" width="0.254" layer="94"/>
+<wire x1="40.64" y1="88.9" x2="40.64" y2="73.66" width="0.254" layer="94"/>
+<wire x1="40.64" y1="73.66" x2="40.64" y2="27.94" width="0.254" layer="94"/>
+<wire x1="40.64" y1="27.94" x2="40.64" y2="5.08" width="0.254" layer="94"/>
+<wire x1="40.64" y1="5.08" x2="20.32" y2="5.08" width="0.254" layer="94"/>
+<wire x1="20.32" y1="5.08" x2="0" y2="5.08" width="0.254" layer="94"/>
+<wire x1="20.32" y1="5.08" x2="20.32" y2="43.18" width="0.254" layer="94"/>
+<wire x1="20.32" y1="43.18" x2="20.32" y2="73.66" width="0.254" layer="94"/>
+<wire x1="0" y1="88.9" x2="20.32" y2="88.9" width="0.254" layer="94"/>
+<wire x1="20.32" y1="88.9" x2="40.64" y2="88.9" width="0.254" layer="94"/>
+<wire x1="0" y1="27.94" x2="40.64" y2="27.94" width="0.254" layer="94"/>
+<wire x1="0" y1="43.18" x2="20.32" y2="43.18" width="0.254" layer="94"/>
+<text x="15.24" y="71.12" size="2.54" layer="94" rot="R270">CLICK</text>
+<text x="22.86" y="53.34" size="2.54" layer="94" rot="R270">GPIO</text>
+<text x="15.24" y="38.1" size="2.54" layer="94" rot="R270">SYS</text>
+<text x="15.24" y="20.32" size="2.54" layer="94" rot="R270">ANALOG</text>
+<text x="22.86" y="17.78" size="2.54" layer="94" rot="R270">PRU</text>
+<text x="0" y="91.44" size="1.778" layer="95" rot="MR180">&gt;NAME</text>
+<text x="0" y="2.54" size="1.778" layer="96">&gt;VALUE</text>
+<wire x1="40.64" y1="73.66" x2="20.32" y2="73.66" width="0.254" layer="94"/>
+<text x="22.86" y="81.28" size="2.54" layer="94">Pocket</text>
+<text x="25.4" y="78.74" size="2.54" layer="94">Beagle</text>
+<wire x1="20.32" y1="88.9" x2="20.32" y2="73.66" width="0.254" layer="94"/>
+</symbol>
+<symbol name="POCKETBEAGLEUSED">
+<pin name="USB1.DRVVBUS" x="-5.08" y="20.32" length="middle"/>
+<pin name="USB1.VBUS" x="-5.08" y="17.78" length="middle"/>
+<pin name="USB1.VIN" x="-5.08" y="15.24" length="middle"/>
+<pin name="USB1.D-" x="-5.08" y="12.7" length="middle"/>
+<pin name="USB1.D+" x="-5.08" y="10.16" length="middle"/>
+<pin name="USB1.ID" x="-5.08" y="7.62" length="middle"/>
+<pin name="GND@1" x="-5.08" y="5.08" length="middle"/>
+<pin name="UART2.RX" x="45.72" y="10.16" length="middle" rot="R180"/>
+<pin name="UART2.TX" x="45.72" y="12.7" length="middle" rot="R180"/>
+<pin name="3.3V@1" x="45.72" y="17.78" length="middle" direction="pwr" rot="R180"/>
+<pin name="GND@2" x="-5.08" y="33.02" length="middle" direction="pwr"/>
+<pin name="GND@3" x="-5.08" y="30.48" length="middle" direction="pwr"/>
+<pin name="UART4.RX" x="45.72" y="5.08" length="middle" rot="R180"/>
+<pin name="UART4.TX" x="45.72" y="7.62" length="middle" rot="R180"/>
+<pin name="GND@4" x="-5.08" y="27.94" length="middle" direction="pwr"/>
+<pin name="GND@5" x="-5.08" y="25.4" length="middle" direction="pwr"/>
+<pin name="3.3V@2" x="45.72" y="20.32" length="middle" direction="pwr" rot="R180"/>
+<wire x1="0" y1="2.54" x2="0" y2="22.86" width="0.254" layer="94"/>
+<wire x1="0" y1="22.86" x2="0" y2="35.56" width="0.254" layer="94"/>
+<wire x1="40.64" y1="22.86" x2="40.64" y2="15.24" width="0.254" layer="94"/>
+<wire x1="40.64" y1="15.24" x2="40.64" y2="2.54" width="0.254" layer="94"/>
+<wire x1="20.32" y1="22.86" x2="20.32" y2="35.56" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="20.32" y2="2.54" width="0.254" layer="94"/>
+<wire x1="20.32" y1="2.54" x2="40.64" y2="2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="22.86" x2="20.32" y2="22.86" width="0.254" layer="94"/>
+<text x="15.24" y="15.24" size="2.54" layer="94" rot="R270">USB1</text>
+<text x="0" y="38.1" size="1.778" layer="95" rot="MR180">&gt;NAME</text>
+<text x="0" y="0" size="1.778" layer="96">&gt;VALUE</text>
+<text x="22.86" y="30.48" size="2.54" layer="94">Pocket</text>
+<text x="25.4" y="27.94" size="2.54" layer="94">Beagle</text>
+<text x="25.4" y="5.08" size="2.54" layer="94" rot="R90">UART</text>
+<wire x1="0" y1="35.56" x2="20.32" y2="35.56" width="0.254" layer="94"/>
+<text x="22.86" y="16.51" size="1.27" layer="94" rot="R90">VOUT</text>
+<text x="17.78" y="25.4" size="2.54" layer="94" rot="R90">GND</text>
+<wire x1="20.32" y1="22.86" x2="20.32" y2="15.24" width="0.254" layer="94"/>
+<wire x1="20.32" y1="15.24" x2="20.32" y2="2.54" width="0.254" layer="94"/>
+<wire x1="20.32" y1="15.24" x2="40.64" y2="15.24" width="0.254" layer="94"/>
+<wire x1="20.32" y1="22.86" x2="40.64" y2="22.86" width="0.254" layer="94"/>
+<wire x1="20.32" y1="35.56" x2="40.64" y2="35.56" width="0.254" layer="94"/>
+<wire x1="40.64" y1="35.56" x2="40.64" y2="22.86" width="0.254" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
-<deviceset name="POCKETBEAGLE" prefix="U">
-<gates>
-<gate name="G$1" symbol="POCKETBEAGLE" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="POCKETBEAGLE">
-<connects>
-<connect gate="G$1" pin="3.3V@1" pad="P1_14"/>
-<connect gate="G$1" pin="3.3V@2" pad="P2_23"/>
-<connect gate="G$1" pin="AIN.VREF+" pad="P1_18"/>
-<connect gate="G$1" pin="AIN.VREF-" pad="P1_17"/>
-<connect gate="G$1" pin="AIN0(1.8V)" pad="P1_19"/>
-<connect gate="G$1" pin="AIN1(1.8V)" pad="P1_21"/>
-<connect gate="G$1" pin="AIN2(1.8V)" pad="P1_23"/>
-<connect gate="G$1" pin="AIN3(1.8V)" pad="P1_25"/>
-<connect gate="G$1" pin="AIN4(1.8V)" pad="P1_27"/>
-<connect gate="G$1" pin="AIN5(3.3V)" pad="P2_35"/>
-<connect gate="G$1" pin="AIN6/GPIO87" pad="P1_02"/>
-<connect gate="G$1" pin="AIN7(1.8V)" pad="P2_36"/>
-<connect gate="G$1" pin="BAT.TEMP" pad="P2_16"/>
-<connect gate="G$1" pin="BAT.VIN" pad="P2_14"/>
-<connect gate="G$1" pin="GND@1" pad="P1_15"/>
-<connect gate="G$1" pin="GND@2" pad="P1_16"/>
-<connect gate="G$1" pin="GND@3" pad="P1_22"/>
-<connect gate="G$1" pin="GND@4" pad="P2_15"/>
-<connect gate="G$1" pin="GND@5" pad="P2_21"/>
-<connect gate="G$1" pin="GPIO20" pad="P1_20"/>
-<connect gate="G$1" pin="GPIO23" pad="P2_03"/>
-<connect gate="G$1" pin="GPIO26" pad="P1_34"/>
-<connect gate="G$1" pin="GPIO27" pad="P2_19"/>
-<connect gate="G$1" pin="GPIO44" pad="P2_24"/>
-<connect gate="G$1" pin="GPIO45" pad="P2_33"/>
-<connect gate="G$1" pin="GPIO46" pad="P2_22"/>
-<connect gate="G$1" pin="GPIO47" pad="P2_18"/>
-<connect gate="G$1" pin="GPIO52" pad="P2_10"/>
-<connect gate="G$1" pin="GPIO57" pad="P2_06"/>
-<connect gate="G$1" pin="GPIO58" pad="P2_04"/>
-<connect gate="G$1" pin="GPIO59" pad="P2_02"/>
-<connect gate="G$1" pin="GPIO60" pad="P2_08"/>
-<connect gate="G$1" pin="GPIO64" pad="P2_20"/>
-<connect gate="G$1" pin="GPIO65" pad="P2_17"/>
-<connect gate="G$1" pin="GPIO89" pad="P1_04"/>
-<connect gate="G$1" pin="I2C1.SCL" pad="P2_09"/>
-<connect gate="G$1" pin="I2C1.SDA" pad="P2_11"/>
-<connect gate="G$1" pin="I2C2.SCL" pad="P1_28"/>
-<connect gate="G$1" pin="I2C2.SDA" pad="P1_26"/>
-<connect gate="G$1" pin="PRU0.1" pad="P1_33"/>
-<connect gate="G$1" pin="PRU0.2" pad="P2_32"/>
-<connect gate="G$1" pin="PRU0.3" pad="P2_30"/>
-<connect gate="G$1" pin="PRU0.4" pad="P1_31"/>
-<connect gate="G$1" pin="PRU0.5" pad="P2_34"/>
-<connect gate="G$1" pin="PRU0.6" pad="P2_28"/>
-<connect gate="G$1" pin="PRU0.7" pad="P1_29"/>
-<connect gate="G$1" pin="PRU1.10" pad="P1_35"/>
-<connect gate="G$1" pin="PWM0A" pad="P1_36"/>
-<connect gate="G$1" pin="PWM1A" pad="P2_01"/>
-<connect gate="G$1" pin="PWR.BTN" pad="P2_12"/>
-<connect gate="G$1" pin="RESET#" pad="P2_26"/>
-<connect gate="G$1" pin="SPI0.CS" pad="P1_06"/>
-<connect gate="G$1" pin="SPI0.MOSI" pad="P1_12"/>
-<connect gate="G$1" pin="SPI1.CLK" pad="P2_29"/>
-<connect gate="G$1" pin="SPI1.CS" pad="P2_31"/>
-<connect gate="G$1" pin="SPI1.MISO" pad="P2_27"/>
-<connect gate="G$1" pin="SPI1.MOSI" pad="P2_25"/>
-<connect gate="G$1" pin="UART0.RX" pad="P1_32"/>
-<connect gate="G$1" pin="UART0.TX" pad="P1_30"/>
-<connect gate="G$1" pin="UART2.RX" pad="P1_08"/>
-<connect gate="G$1" pin="UART2.TX" pad="P1_10"/>
-<connect gate="G$1" pin="UART4.RX" pad="P2_05"/>
-<connect gate="G$1" pin="UART4.TX" pad="P2_07"/>
-<connect gate="G$1" pin="USB1.D+" pad="P1_11"/>
-<connect gate="G$1" pin="USB1.D-" pad="P1_09"/>
-<connect gate="G$1" pin="USB1.DRVVBUS" pad="P1_03"/>
-<connect gate="G$1" pin="USB1.ID" pad="P1_13"/>
-<connect gate="G$1" pin="USB1.VBUS" pad="P1_05"/>
-<connect gate="G$1" pin="USB1.VIN" pad="P1_07"/>
-<connect gate="G$1" pin="VIN" pad="P1_01"/>
-<connect gate="G$1" pin="VOUT@1" pad="P1_24"/>
-<connect gate="G$1" pin="VOUT@2" pad="P2_13"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="LPPB041NGCN-RC" prefix="K">
 <gates>
 <gate name="G$1" symbol="FEMALE90" x="-10.16" y="2.54"/>
@@ -1120,6 +1015,93 @@ DIN A3, landscape with location and doc. field</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="POCKETBEAGLE">
+<gates>
+<gate name="G$1" symbol="POCKETBEAGLEUNUSED" x="0" y="0"/>
+<gate name="G$2" symbol="POCKETBEAGLEUSED" x="0" y="111.76"/>
+</gates>
+<devices>
+<device name="" package="POCKETBEAGLE">
+<connects>
+<connect gate="G$1" pin="AIN.VREF+" pad="P1_01"/>
+<connect gate="G$1" pin="AIN.VREF-" pad="P1_02"/>
+<connect gate="G$1" pin="AIN0(1.8V)" pad="P1_03"/>
+<connect gate="G$1" pin="AIN1(1.8V)" pad="P1_04"/>
+<connect gate="G$1" pin="AIN2(1.8V)" pad="P1_05"/>
+<connect gate="G$1" pin="AIN3(1.8V)" pad="P1_06"/>
+<connect gate="G$1" pin="AIN4(1.8V)" pad="P1_07"/>
+<connect gate="G$1" pin="AIN5(3.3V)" pad="P1_08"/>
+<connect gate="G$1" pin="AIN6/GPIO87" pad="P1_09"/>
+<connect gate="G$1" pin="AIN7(1.8V)" pad="P1_10"/>
+<connect gate="G$1" pin="BAT.TEMP" pad="P1_11"/>
+<connect gate="G$1" pin="BAT.VIN" pad="P1_12"/>
+<connect gate="G$1" pin="GPIO20" pad="P1_13"/>
+<connect gate="G$1" pin="GPIO23" pad="P1_14"/>
+<connect gate="G$1" pin="GPIO26" pad="P1_15"/>
+<connect gate="G$1" pin="GPIO27" pad="P1_16"/>
+<connect gate="G$1" pin="GPIO44" pad="P1_17"/>
+<connect gate="G$1" pin="GPIO45" pad="P1_18"/>
+<connect gate="G$1" pin="GPIO46" pad="P1_19"/>
+<connect gate="G$1" pin="GPIO47" pad="P1_20"/>
+<connect gate="G$1" pin="GPIO52" pad="P1_21"/>
+<connect gate="G$1" pin="GPIO57" pad="P1_22"/>
+<connect gate="G$1" pin="GPIO58" pad="P1_23"/>
+<connect gate="G$1" pin="GPIO59" pad="P1_24"/>
+<connect gate="G$1" pin="GPIO60" pad="P1_25"/>
+<connect gate="G$1" pin="GPIO64" pad="P1_26"/>
+<connect gate="G$1" pin="GPIO65" pad="P1_27"/>
+<connect gate="G$1" pin="GPIO89" pad="P1_28"/>
+<connect gate="G$1" pin="I2C1.SCL" pad="P1_29"/>
+<connect gate="G$1" pin="I2C1.SDA" pad="P1_30"/>
+<connect gate="G$1" pin="I2C2.SCL" pad="P1_31"/>
+<connect gate="G$1" pin="I2C2.SDA" pad="P1_32"/>
+<connect gate="G$1" pin="PRU0.1" pad="P1_33"/>
+<connect gate="G$1" pin="PRU0.2" pad="P1_34"/>
+<connect gate="G$1" pin="PRU0.3" pad="P1_35"/>
+<connect gate="G$1" pin="PRU0.4" pad="P1_36"/>
+<connect gate="G$1" pin="PRU0.5" pad="P2_01"/>
+<connect gate="G$1" pin="PRU0.6" pad="P2_02"/>
+<connect gate="G$1" pin="PRU0.7" pad="P2_03"/>
+<connect gate="G$1" pin="PRU1.10" pad="P2_04"/>
+<connect gate="G$1" pin="PWM0A" pad="P2_05"/>
+<connect gate="G$1" pin="PWM1A" pad="P2_06"/>
+<connect gate="G$1" pin="PWR.BTN" pad="P2_07"/>
+<connect gate="G$1" pin="RESET#" pad="P2_08"/>
+<connect gate="G$1" pin="SPI0.CS" pad="P2_09"/>
+<connect gate="G$1" pin="SPI0.MOSI" pad="P2_10"/>
+<connect gate="G$1" pin="SPI1.CLK" pad="P2_11"/>
+<connect gate="G$1" pin="SPI1.CS" pad="P2_12"/>
+<connect gate="G$1" pin="SPI1.MISO" pad="P2_13"/>
+<connect gate="G$1" pin="SPI1.MOSI" pad="P2_14"/>
+<connect gate="G$1" pin="UART0.RX" pad="P2_15"/>
+<connect gate="G$1" pin="UART0.TX" pad="P2_16"/>
+<connect gate="G$1" pin="VIN" pad="P2_17"/>
+<connect gate="G$1" pin="VOUT@1" pad="P2_18"/>
+<connect gate="G$1" pin="VOUT@2" pad="P2_19"/>
+<connect gate="G$2" pin="3.3V@1" pad="P2_20"/>
+<connect gate="G$2" pin="3.3V@2" pad="P2_21"/>
+<connect gate="G$2" pin="GND@1" pad="P2_22"/>
+<connect gate="G$2" pin="GND@2" pad="P2_23"/>
+<connect gate="G$2" pin="GND@3" pad="P2_24"/>
+<connect gate="G$2" pin="GND@4" pad="P2_25"/>
+<connect gate="G$2" pin="GND@5" pad="P2_26"/>
+<connect gate="G$2" pin="UART2.RX" pad="P2_27"/>
+<connect gate="G$2" pin="UART2.TX" pad="P2_28"/>
+<connect gate="G$2" pin="UART4.RX" pad="P2_29"/>
+<connect gate="G$2" pin="UART4.TX" pad="P2_30"/>
+<connect gate="G$2" pin="USB1.D+" pad="P2_31"/>
+<connect gate="G$2" pin="USB1.D-" pad="P2_32"/>
+<connect gate="G$2" pin="USB1.DRVVBUS" pad="P2_33"/>
+<connect gate="G$2" pin="USB1.ID" pad="P2_34"/>
+<connect gate="G$2" pin="USB1.VBUS" pad="P2_35"/>
+<connect gate="G$2" pin="USB1.VIN" pad="P2_36"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="BeagleBone_Blue">
@@ -1164,21 +1146,21 @@ by exp-lbrs.ulp</description>
 </classes>
 <parts>
 <part name="FRAME1" library="ENGI301" deviceset="FRAMES_A3L-LOC" device=""/>
-<part name="SUPPLY1" library="ENGI301" deviceset="VDD_3P3V" device=""/>
-<part name="GND1" library="ENGI301" deviceset="GND" device=""/>
-<part name="U1" library="lpd" deviceset="POCKETBEAGLE" device=""/>
 <part name="K1" library="lpd" deviceset="LPPB041NGCN-RC" device=""/>
 <part name="U2" library="lpd" deviceset="GT-U7" device=""/>
 <part name="X1" library="lpd" deviceset="GHI2_USB_HOST_W/CHASSIS_GND" device=""/>
 <part name="U3" library="lpd" deviceset="HM-10" device=""/>
-<part name="SUPPLY2" library="ENGI301" deviceset="VDD_3P3V" device=""/>
-<part name="GND2" library="ENGI301" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="lpd" deviceset="VDD_3P3V" device=""/>
 <part name="GND4" library="lpd" deviceset="GND" device=""/>
 <part name="GND5" library="lpd" deviceset="GND" device=""/>
 <part name="SUPPLY4" library="lpd" deviceset="VDD_3P3V" device=""/>
 <part name="SUPPLY5" library="BeagleBone_Blue" deviceset="GHI-POWERGOUNDSUPPLY_CGND" device=""/>
 <part name="SUPPLY6" library="BeagleBone_Blue" deviceset="GHI-POWERGOUNDSUPPLY_CGND" device=""/>
+<part name="GND3" library="lpd" deviceset="GND" device=""/>
+<part name="U$1" library="lpd" deviceset="POCKETBEAGLE" device=""/>
+<part name="GND1" library="lpd" deviceset="GND" device=""/>
+<part name="SUPPLY1" library="lpd" deviceset="VDD_3P3V" device=""/>
+<part name="SUPPLY2" library="lpd" deviceset="VDD_3P3V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1578,19 +1560,10 @@ by exp-lbrs.ulp</description>
 <text x="162.56" y="127" size="5.08" layer="97" font="vector">USB</text>
 <text x="266.7" y="243.84" size="5.08" layer="97" font="vector">Bluetooth Module</text>
 <text x="266.7" y="127" size="5.08" layer="97" font="vector">90 Degree Female Header</text>
+<wire x1="152.4" y1="142.24" x2="5.08" y2="142.24" width="0.1524" layer="97"/>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="-0.3937" y="-0.3683" smashed="yes"/>
-<instance part="SUPPLY1" gate="G$1" x="119.38" y="205.74" smashed="yes">
-<attribute name="VALUE" x="119.38" y="209.804" size="1.778" layer="96" align="center"/>
-</instance>
-<instance part="GND1" gate="1" x="114.3" y="60.96" smashed="yes">
-<attribute name="VALUE" x="111.76" y="58.42" size="1.778" layer="96"/>
-</instance>
-<instance part="U1" gate="G$1" x="55.88" y="66.04" smashed="yes">
-<attribute name="NAME" x="55.88" y="208.28" size="1.778" layer="95" rot="MR180"/>
-<attribute name="VALUE" x="55.88" y="63.5" size="1.778" layer="96"/>
-</instance>
 <instance part="K1" gate="G$1" x="312.42" y="86.36" smashed="yes">
 <attribute name="NAME" x="302.26" y="88.9" size="1.778" layer="95"/>
 <attribute name="VALUE" x="327.66" y="88.9" size="1.778" layer="96"/>
@@ -1606,12 +1579,6 @@ by exp-lbrs.ulp</description>
 <instance part="U3" gate="G$1" x="309.88" y="172.72" smashed="yes">
 <attribute name="NAME" x="312.42" y="218.44" size="1.778" layer="95"/>
 <attribute name="VALUE" x="312.42" y="215.9" size="1.778" layer="96"/>
-</instance>
-<instance part="SUPPLY2" gate="G$1" x="30.48" y="205.74" smashed="yes">
-<attribute name="VALUE" x="30.48" y="209.804" size="1.778" layer="96" align="center"/>
-</instance>
-<instance part="GND2" gate="1" x="35.56" y="60.96" smashed="yes">
-<attribute name="VALUE" x="33.02" y="58.42" size="1.778" layer="96"/>
 </instance>
 <instance part="SUPPLY3" gate="G$1" x="223.52" y="190.5" smashed="yes">
 <attribute name="VALUE" x="223.52" y="194.564" size="1.778" layer="96" align="center"/>
@@ -1631,23 +1598,31 @@ by exp-lbrs.ulp</description>
 <instance part="SUPPLY6" gate="G$1" x="228.6" y="81.28" smashed="yes">
 <attribute name="VALUE" x="228.6" y="77.724" size="1.27" layer="96" align="center"/>
 </instance>
+<instance part="GND3" gate="1" x="205.74" y="124.46" smashed="yes" rot="R180">
+<attribute name="VALUE" x="208.28" y="127" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="U$1" gate="G$1" x="55.88" y="30.48" smashed="yes">
+<attribute name="NAME" x="55.88" y="121.92" size="1.778" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="55.88" y="33.02" size="1.778" layer="96"/>
+</instance>
+<instance part="U$1" gate="G$2" x="55.88" y="170.18" smashed="yes">
+<attribute name="NAME" x="55.88" y="208.28" size="1.778" layer="95" rot="MR180"/>
+<attribute name="VALUE" x="55.88" y="170.18" size="1.778" layer="96"/>
+</instance>
+<instance part="GND1" gate="1" x="40.64" y="215.9" smashed="yes" rot="R180">
+<attribute name="VALUE" x="43.18" y="218.44" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="SUPPLY1" gate="G$1" x="111.76" y="198.12" smashed="yes">
+<attribute name="VALUE" x="109.22" y="202.184" size="1.778" layer="96" align="center"/>
+</instance>
+<instance part="SUPPLY2" gate="G$1" x="121.92" y="198.12" smashed="yes">
+<attribute name="VALUE" x="124.46" y="202.184" size="1.778" layer="96" align="center"/>
+</instance>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="VDD_3P3V" class="0">
-<segment>
-<pinref part="SUPPLY2" gate="G$1" pin="VDD_3P3V"/>
-<pinref part="U1" gate="G$1" pin="3.3V@2"/>
-<wire x1="30.48" y1="203.2" x2="30.48" y2="198.12" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="198.12" x2="50.8" y2="198.12" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="U1" gate="G$1" pin="3.3V@1"/>
-<pinref part="SUPPLY1" gate="G$1" pin="VDD_3P3V"/>
-<wire x1="101.6" y1="198.12" x2="119.38" y2="198.12" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="198.12" x2="119.38" y2="203.2" width="0.1524" layer="91"/>
-</segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="VCC"/>
 <pinref part="SUPPLY3" gate="G$1" pin="VDD_3P3V"/>
@@ -1660,22 +1635,20 @@ by exp-lbrs.ulp</description>
 <wire x1="314.96" y1="86.36" x2="314.96" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="314.96" y1="68.58" x2="302.26" y2="68.58" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$2" pin="3.3V@2"/>
+<wire x1="101.6" y1="190.5" x2="111.76" y2="190.5" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="190.5" x2="111.76" y2="195.58" width="0.1524" layer="91"/>
+<pinref part="SUPPLY1" gate="G$1" pin="VDD_3P3V"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$2" pin="3.3V@1"/>
+<wire x1="101.6" y1="187.96" x2="121.92" y2="187.96" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="187.96" x2="121.92" y2="195.58" width="0.1524" layer="91"/>
+<pinref part="SUPPLY2" gate="G$1" pin="VDD_3P3V"/>
+</segment>
 </net>
 <net name="GND" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="GND@3"/>
-<pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="50.8" y1="147.32" x2="35.56" y2="147.32" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="147.32" x2="35.56" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="GND@5"/>
-<wire x1="35.56" y1="144.78" x2="35.56" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="35.56" y1="99.06" x2="35.56" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="50.8" y1="144.78" x2="35.56" y2="144.78" width="0.1524" layer="91"/>
-<junction x="35.56" y="144.78"/>
-<pinref part="U1" gate="G$1" pin="GND@1"/>
-<wire x1="50.8" y1="99.06" x2="35.56" y2="99.06" width="0.1524" layer="91"/>
-<junction x="35.56" y="99.06"/>
-</segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="GND"/>
 <pinref part="GND4" gate="1" pin="GND"/>
@@ -1687,14 +1660,32 @@ by exp-lbrs.ulp</description>
 <wire x1="317.5" y1="86.36" x2="317.5" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="GND@2"/>
+<pinref part="X1" gate="G$1" pin="GND"/>
+<wire x1="205.74" y1="93.98" x2="205.74" y2="121.92" width="0.1524" layer="91"/>
+<label x="205.74" y="99.06" size="1.778" layer="95" rot="R90"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$2" pin="GND@2"/>
+<wire x1="50.8" y1="203.2" x2="40.64" y2="203.2" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="203.2" x2="40.64" y2="213.36" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$2" pin="GND@3"/>
+<wire x1="50.8" y1="200.66" x2="40.64" y2="200.66" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="200.66" x2="40.64" y2="203.2" width="0.1524" layer="91"/>
+<junction x="40.64" y="203.2"/>
+<pinref part="U$1" gate="G$2" pin="GND@4"/>
+<wire x1="50.8" y1="198.12" x2="40.64" y2="198.12" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="198.12" x2="40.64" y2="200.66" width="0.1524" layer="91"/>
+<junction x="40.64" y="200.66"/>
+<pinref part="U$1" gate="G$2" pin="GND@5"/>
+<wire x1="50.8" y1="195.58" x2="40.64" y2="195.58" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="195.58" x2="40.64" y2="198.12" width="0.1524" layer="91"/>
+<junction x="40.64" y="198.12"/>
 <pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="101.6" y1="160.02" x2="114.3" y2="160.02" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="160.02" x2="114.3" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="GND@4"/>
-<wire x1="114.3" y1="157.48" x2="114.3" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="101.6" y1="157.48" x2="114.3" y2="157.48" width="0.1524" layer="91"/>
-<junction x="114.3" y="157.48"/>
+<pinref part="U$1" gate="G$2" pin="GND@1"/>
+<wire x1="50.8" y1="175.26" x2="40.64" y2="175.26" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="175.26" x2="40.64" y2="195.58" width="0.1524" layer="91"/>
+<junction x="40.64" y="195.58"/>
 </segment>
 </net>
 <net name="UART2.RX" class="0">
@@ -1704,9 +1695,9 @@ by exp-lbrs.ulp</description>
 <label x="205.74" y="177.8" size="1.27" layer="95" font="vector" rot="R90"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="UART2.RX"/>
-<wire x1="101.6" y1="149.86" x2="129.54" y2="149.86" width="0.1524" layer="91"/>
-<label x="119.38" y="149.86" size="1.778" layer="95"/>
+<pinref part="U$1" gate="G$2" pin="UART2.RX"/>
+<wire x1="101.6" y1="180.34" x2="121.92" y2="180.34" width="0.1524" layer="91"/>
+<label x="114.3" y="180.34" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="UART2.TX" class="0">
@@ -1716,9 +1707,9 @@ by exp-lbrs.ulp</description>
 <label x="203.2" y="177.8" size="1.27" layer="95" font="vector" rot="R90"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="UART2.TX"/>
-<wire x1="101.6" y1="152.4" x2="129.54" y2="152.4" width="0.1524" layer="91"/>
-<label x="119.38" y="152.4" size="1.778" layer="95"/>
+<pinref part="U$1" gate="G$2" pin="UART2.TX"/>
+<wire x1="101.6" y1="182.88" x2="121.92" y2="182.88" width="0.1524" layer="91"/>
+<label x="114.3" y="182.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="UART4.TX" class="0">
@@ -1728,9 +1719,9 @@ by exp-lbrs.ulp</description>
 <label x="320.04" y="63.5" size="1.4224" layer="95" font="vector" rot="R90"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="UART4.TX"/>
-<wire x1="101.6" y1="147.32" x2="129.54" y2="147.32" width="0.1524" layer="91"/>
-<label x="119.38" y="147.32" size="1.778" layer="95"/>
+<pinref part="U$1" gate="G$2" pin="UART4.TX"/>
+<wire x1="101.6" y1="177.8" x2="121.92" y2="177.8" width="0.1524" layer="91"/>
+<label x="114.3" y="177.8" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="UART4.RX" class="0">
@@ -1740,9 +1731,9 @@ by exp-lbrs.ulp</description>
 <label x="322.58" y="63.5" size="1.4224" layer="95" font="vector" rot="R90"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="UART4.RX"/>
-<wire x1="101.6" y1="144.78" x2="129.54" y2="144.78" width="0.1524" layer="91"/>
-<label x="119.38" y="144.78" size="1.778" layer="95"/>
+<pinref part="U$1" gate="G$2" pin="UART4.RX"/>
+<wire x1="101.6" y1="175.26" x2="121.92" y2="175.26" width="0.1524" layer="91"/>
+<label x="114.3" y="175.26" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="ANGLE1" class="0">
@@ -1818,9 +1809,9 @@ by exp-lbrs.ulp</description>
 <label x="198.12" y="99.06" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="USB1.VBUS"/>
-<wire x1="50.8" y1="111.76" x2="20.32" y2="111.76" width="0.1524" layer="91"/>
-<label x="20.32" y="111.76" size="1.778" layer="95"/>
+<pinref part="U$1" gate="G$2" pin="USB1.VBUS"/>
+<wire x1="50.8" y1="187.96" x2="22.86" y2="187.96" width="0.1524" layer="91"/>
+<label x="22.86" y="187.96" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="USB1.D-" class="0">
@@ -1830,9 +1821,9 @@ by exp-lbrs.ulp</description>
 <label x="200.66" y="99.06" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="USB1.D-"/>
-<wire x1="50.8" y1="106.68" x2="20.32" y2="106.68" width="0.1524" layer="91"/>
-<label x="20.32" y="106.68" size="1.778" layer="95"/>
+<pinref part="U$1" gate="G$2" pin="USB1.D-"/>
+<wire x1="50.8" y1="182.88" x2="22.86" y2="182.88" width="0.1524" layer="91"/>
+<label x="22.86" y="182.88" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="USB1.D+" class="0">
@@ -1842,16 +1833,9 @@ by exp-lbrs.ulp</description>
 <label x="203.2" y="99.06" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
-<pinref part="U1" gate="G$1" pin="USB1.D+"/>
-<wire x1="50.8" y1="104.14" x2="20.32" y2="104.14" width="0.1524" layer="91"/>
-<label x="20.32" y="104.14" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="USB1.GND" class="0">
-<segment>
-<pinref part="X1" gate="G$1" pin="GND"/>
-<wire x1="205.74" y1="93.98" x2="205.74" y2="111.76" width="0.1524" layer="91"/>
-<label x="205.74" y="99.06" size="1.778" layer="95" rot="R90"/>
+<pinref part="U$1" gate="G$2" pin="USB1.D+"/>
+<wire x1="50.8" y1="180.34" x2="22.86" y2="180.34" width="0.1524" layer="91"/>
+<label x="22.86" y="180.34" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
