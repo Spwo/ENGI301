@@ -177,20 +177,6 @@
 <libraries>
 <library name="lpd">
 <packages>
-<package name="FEMALE90">
-<pad name="P$1" x="0" y="0" drill="0.6" shape="square"/>
-<pad name="P$2" x="1.2" y="0" drill="0.6" shape="square"/>
-<pad name="P$3" x="2.4" y="0" drill="0.6" shape="square"/>
-<pad name="P$4" x="3.6" y="0" drill="0.6" shape="square"/>
-<wire x1="-0.7" y1="-0.6" x2="-0.7" y2="4" width="0.1524" layer="21"/>
-<wire x1="-0.7" y1="4" x2="4.3" y2="4" width="0.1524" layer="21"/>
-<wire x1="4.3" y1="4" x2="4.3" y2="-0.6" width="0.1524" layer="21"/>
-<wire x1="4.3" y1="-0.6" x2="-0.7" y2="-0.6" width="0.1524" layer="21"/>
-<pad name="P$5" x="0" y="3" drill="0.6" shape="square"/>
-<pad name="P$6" x="1.2" y="3" drill="0.6" shape="square"/>
-<pad name="P$7" x="2.4" y="3" drill="0.6" shape="square"/>
-<pad name="P$8" x="3.6" y="3" drill="0.6" shape="square"/>
-</package>
 <package name="GPS">
 <wire x1="2.66" y1="0" x2="23.94" y2="0" width="0.1524" layer="21"/>
 <wire x1="26.6" y1="2.66" x2="26.6" y2="23.94" width="0.1524" layer="21"/>
@@ -836,7 +822,6 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="K1" library="lpd" package="FEMALE90" value="LPPB041NGCN-RC" x="-27.94" y="-43.18" smashed="yes"/>
 <element name="U2" library="lpd" package="GPS" value="GT-U7" x="1.27" y="-69.85" smashed="yes"/>
 <element name="X1" library="lpd" package="GHI2_USB_HOST_HORIZONTAL_W/CHASSIS_GND" value="" x="26.67" y="-90.17" smashed="yes">
 <attribute name="NAME" x="20.1699" y="-75.6699" size="1.016" layer="25" ratio="12"/>
@@ -848,29 +833,29 @@ design rules under a new name.</description>
 <signals>
 <signal name="GND">
 <contactref element="U2" pad="P$1"/>
-<contactref element="K1" pad="P$2"/>
 <contactref element="X1" pad="4"/>
 <contactref element="U$1" pad="P2_23"/>
 <contactref element="U$1" pad="P2_24"/>
 <contactref element="U$1" pad="P2_25"/>
 <contactref element="U$1" pad="P2_26"/>
 <contactref element="U$1" pad="P2_22"/>
-<wire x1="5.91" y1="-95.53" x2="5.91" y2="-98.07" width="0" layer="19" extent="1-1"/>
-<wire x1="3.37" y1="-95.53" x2="5.91" y2="-95.53" width="0" layer="19" extent="1-1"/>
+<contactref element="U3" pad="P$1"/>
+<wire x1="3.37" y1="-95.53" x2="-9.97" y2="-86.63" width="0" layer="19" extent="1-1"/>
+<wire x1="5.91" y1="-95.53" x2="3.37" y2="-95.53" width="0" layer="19" extent="1-1"/>
+<wire x1="5.91" y1="-98.07" x2="5.91" y2="-95.53" width="0" layer="19" extent="1-1"/>
 <wire x1="8.45" y1="-98.07" x2="5.91" y2="-98.07" width="0" layer="19" extent="1-1"/>
 <wire x1="8.45" y1="-95.53" x2="5.91" y2="-95.53" width="0" layer="19" extent="1-1"/>
-<wire x1="9.25" y1="-67.19" x2="8.45" y2="-95.53" width="0" layer="19" extent="1-1"/>
+<wire x1="9.25" y1="-67.19" x2="-9.97" y2="-86.63" width="0" layer="19" extent="1-1"/>
 <wire x1="30.17" y1="-77.18" x2="9.25" y2="-67.19" width="0" layer="19" extent="1-1"/>
-<wire x1="-26.74" y1="-43.18" x2="9.25" y2="-67.19" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VDD_3P3V">
 <contactref element="U2" pad="P$5"/>
-<contactref element="K1" pad="P$1"/>
 <contactref element="U$1" pad="P2_21"/>
 <contactref element="U$1" pad="P2_20"/>
+<contactref element="U3" pad="P$4"/>
 <wire x1="0.83" y1="-95.53" x2="3.37" y2="-98.07" width="0" layer="19" extent="1-1"/>
-<wire x1="19.89" y1="-67.19" x2="0.83" y2="-95.53" width="0" layer="19" extent="1-1"/>
-<wire x1="-27.94" y1="-43.18" x2="19.89" y2="-67.19" width="0" layer="19" extent="1-1"/>
+<wire x1="-4.97" y1="-86.63" x2="0.83" y2="-95.53" width="0" layer="19" extent="1-1"/>
+<wire x1="19.89" y1="-67.19" x2="-4.97" y2="-86.63" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="UART2.RX">
 <contactref element="U2" pad="P$3"/>
@@ -883,34 +868,14 @@ design rules under a new name.</description>
 <wire x1="17.23" y1="-67.19" x2="10.99" y2="-95.53" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="UART4.TX">
-<contactref element="K1" pad="P$3"/>
 <contactref element="U$1" pad="P2_30"/>
-<wire x1="-25.54" y1="-43.18" x2="13.53" y2="-95.53" width="0" layer="19" extent="1-1"/>
+<contactref element="U3" pad="P$3"/>
+<wire x1="13.53" y1="-95.53" x2="-6.47" y2="-86.63" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="UART4.RX">
-<contactref element="K1" pad="P$4"/>
 <contactref element="U$1" pad="P2_29"/>
-<wire x1="-24.34" y1="-43.18" x2="13.53" y2="-98.07" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="ANGLE1">
-<contactref element="K1" pad="P$5"/>
-<contactref element="U3" pad="P$4"/>
-<wire x1="-27.94" y1="-40.18" x2="-4.97" y2="-86.63" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="ANGLE2">
-<contactref element="K1" pad="P$6"/>
-<contactref element="U3" pad="P$1"/>
-<wire x1="-26.74" y1="-40.18" x2="-9.97" y2="-86.63" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="ANGLE3">
-<contactref element="K1" pad="P$7"/>
-<contactref element="U3" pad="P$3"/>
-<wire x1="-25.54" y1="-40.18" x2="-6.47" y2="-86.63" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="ANGLE4">
-<contactref element="K1" pad="P$8"/>
 <contactref element="U3" pad="P$2"/>
-<wire x1="-24.34" y1="-40.18" x2="-8.47" y2="-86.63" width="0" layer="19" extent="1-1"/>
+<wire x1="13.53" y1="-98.07" x2="-8.47" y2="-86.63" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="CGND">
 <contactref element="X1" pad="5"/>
