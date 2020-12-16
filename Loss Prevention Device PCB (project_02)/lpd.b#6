@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="10" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="25" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -28,7 +28,7 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
@@ -823,10 +823,9 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 </element>
 <element name="U3" library="lpd" package="BT" value="HM-10" x="31.75" y="3.81" smashed="yes"/>
 <element name="U$1" library="lpd" package="POCKETBEAGLE" value="POCKETBEAGLE" x="38.1" y="1.27" smashed="yes" rot="R90"/>
-<element name="MGT1" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="-2.794" y="-7.62" smashed="yes"/>
-<element name="MGT2" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="-2.794" y="-12.446" smashed="yes"/>
-<element name="MGT3" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="-2.794" y="-17.272" smashed="yes"/>
-<element name="MGT4" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="-2.794" y="-22.098" smashed="yes"/>
+<element name="MGT1" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="3.175" y="3.175" smashed="yes"/>
+<element name="MGT2" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="43.815" y="6.985" smashed="yes"/>
+<element name="MGT3" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="42.545" y="53.34" smashed="yes"/>
 </elements>
 <signals>
 <signal name="GND">
