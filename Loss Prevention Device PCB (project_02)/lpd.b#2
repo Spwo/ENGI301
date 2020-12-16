@@ -831,16 +831,14 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 <contactref element="U$1" pad="P1_15"/>
 <contactref element="U$1" pad="P1_16"/>
 <contactref element="U3" pad="P$1"/>
-<polygon width="0.254" layer="2">
-<vertex x="-2.54" y="60.96"/>
-<vertex x="-2.54" y="-2.54"/>
-<vertex x="50.8" y="-2.54"/>
-<vertex x="50.8" y="60.96"/>
-</polygon>
 <contactref element="X1" pad="5"/>
 <contactref element="X1" pad="6"/>
-<wire x1="23.82" y1="14.26" x2="26.89" y2="11.5499" width="0" layer="19" extent="1-1"/>
-<wire x1="13.75" y1="11.5499" x2="23.82" y2="14.26" width="0" layer="19" extent="1-1"/>
+<polygon width="0.254" layer="2">
+<vertex x="-2.54" y="60.96"/>
+<vertex x="50.8" y="60.96"/>
+<vertex x="50.8" y="-2.54"/>
+<vertex x="-2.54" y="-2.54"/>
+</polygon>
 </signal>
 <signal name="VDD_3P3V">
 <contactref element="U2" pad="P$5"/>
@@ -910,12 +908,40 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 <signal name="USB1.D-">
 <contactref element="X1" pad="2"/>
 <contactref element="U$1" pad="P1_09"/>
-<wire x1="19.32" y1="14.26" x2="34.57" y2="17.34" width="0" layer="19" extent="1-1"/>
+<wire x1="34.57" y1="17.34" x2="34.57" y2="18.6608" width="0.254" layer="1"/>
+<wire x1="34.57" y1="18.6608" x2="35.7892" y2="18.6608" width="0.254" layer="1"/>
+<wire x1="35.7892" y1="18.6608" x2="35.7892" y2="21.0992" width="0.254" layer="1"/>
+<wire x1="30.8108" y1="21.0992" x2="30.8108" y2="20.32" width="0.254" layer="1"/>
+<wire x1="30.8108" y1="20.32" x2="30.48" y2="20.32" width="0.254" layer="1"/>
+<wire x1="35.7892" y1="21.0992" x2="30.8108" y2="21.0992" width="0.254" layer="1"/>
+<wire x1="30.48" y1="20.32" x2="28.956" y2="21.844" width="0.254" layer="1"/>
+<wire x1="28.956" y1="21.844" x2="28.956" y2="25.146" width="0.254" layer="1"/>
+<wire x1="28.956" y1="25.146" x2="20.9756" y2="33.1264" width="0.254" layer="1"/>
+<wire x1="20.9756" y1="33.1264" x2="21.2296" y2="33.3804" width="0.254" layer="1"/>
+<wire x1="21.2296" y1="33.3804" x2="21.2296" y2="35.7076" width="0.254" layer="1"/>
+<wire x1="21.2296" y1="35.7076" x2="13.8224" y2="35.7076" width="0.254" layer="1"/>
+<wire x1="13.8224" y1="35.7076" x2="13.8224" y2="32.4406" width="0.254" layer="1"/>
+<wire x1="13.8224" y1="32.4406" x2="19.32" y2="26.943" width="0.254" layer="1"/>
+<wire x1="19.32" y1="26.943" x2="19.32" y2="14.26" width="0.254" layer="1"/>
 </signal>
 <signal name="USB1.D+">
 <contactref element="X1" pad="3"/>
 <contactref element="U$1" pad="P1_11"/>
-<wire x1="21.32" y1="14.26" x2="34.57" y2="19.88" width="0" layer="19" extent="1-1"/>
+<wire x1="34.57" y1="19.88" x2="33.2492" y2="19.88" width="0.254" layer="1"/>
+<wire x1="33.2492" y1="19.88" x2="33.2492" y2="18.6608" width="0.254" layer="1"/>
+<wire x1="33.2492" y1="18.6608" x2="30.8108" y2="18.6608" width="0.254" layer="1"/>
+<wire x1="14.3304" y1="35.1996" x2="14.3304" y2="33.3804" width="0.254" layer="1"/>
+<wire x1="16.6617875" y1="31.0490125" x2="16.6617875" y2="30.4086" width="0.254" layer="1"/>
+<wire x1="14.3304" y1="33.3804" x2="16.6617875" y2="31.0490125" width="0.254" layer="1"/>
+<wire x1="28.448" y1="24.638" x2="28.1528" y2="24.638" width="0.254" layer="1"/>
+<wire x1="28.1528" y1="24.638" x2="18.6896" y2="34.1012" width="0.254" layer="1"/>
+<wire x1="18.6896" y1="34.1012" x2="18.6896" y2="35.1996" width="0.254" layer="1"/>
+<wire x1="16.6617875" y1="30.4086" x2="20.1228" y2="26.9475875" width="0.254" layer="1"/>
+<wire x1="20.1228" y1="26.9475875" x2="20.1228" y2="15.4572" width="0.254" layer="1"/>
+<wire x1="21.32" y1="14.26" x2="20.1228" y2="15.4572" width="0.254" layer="1"/>
+<wire x1="30.8108" y1="18.6608" x2="28.448" y2="21.0236" width="0.254" layer="1"/>
+<wire x1="28.448" y1="21.0236" x2="28.448" y2="24.638" width="0.254" layer="1"/>
+<wire x1="18.6896" y1="35.1996" x2="14.3304" y2="35.1996" width="0.254" layer="1"/>
 </signal>
 <signal name="VIN">
 <contactref element="U$1" pad="P2_34"/>
