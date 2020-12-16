@@ -671,6 +671,9 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="17.272" y1="12.192" x2="17.272" y2="4.826" width="0.2032" layer="21"/>
 <wire x1="12.192" y1="12.192" x2="12.192" y2="4.826" width="0.2032" layer="21"/>
 </package>
+<package name="MOUNTING_HOLE">
+<pad name="P$1" x="0" y="0" drill="3.175" diameter="4.445"/>
+</package>
 </packages>
 <symbols>
 <symbol name="GPS">
@@ -881,6 +884,11 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="20.32" y1="35.56" x2="40.64" y2="35.56" width="0.254" layer="94"/>
 <wire x1="40.64" y1="35.56" x2="40.64" y2="22.86" width="0.254" layer="94"/>
 </symbol>
+<symbol name="MOUNTING_HOLE">
+<circle x="0" y="2.54" radius="2.54" width="0.254" layer="94"/>
+<pin name="P$1" x="0" y="-5.08" visible="off" length="middle" rot="R90"/>
+<text x="0.762" y="-2.032" size="1.27" layer="95">&gt;NAME</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="GT-U7" prefix="U">
@@ -1052,6 +1060,22 @@ DIN A3, landscape with location and doc. field</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="MOUNTING_HOLE" prefix="MGT">
+<description>Chassis Mounting Hole w/GND connection ability</description>
+<gates>
+<gate name="G$1" symbol="MOUNTING_HOLE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MOUNTING_HOLE">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -1079,6 +1103,10 @@ DIN A3, landscape with location and doc. field</description>
 <part name="GND2" library="lpd" deviceset="GND" device=""/>
 <part name="GND5" library="lpd" deviceset="GND" device=""/>
 <part name="GND6" library="lpd" deviceset="GND" device=""/>
+<part name="MGT1" library="lpd" deviceset="MOUNTING_HOLE" device=""/>
+<part name="MGT2" library="lpd" deviceset="MOUNTING_HOLE" device=""/>
+<part name="MGT3" library="lpd" deviceset="MOUNTING_HOLE" device=""/>
+<part name="MGT4" library="lpd" deviceset="MOUNTING_HOLE" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1478,6 +1506,7 @@ DIN A3, landscape with location and doc. field</description>
 <text x="162.56" y="127" size="5.08" layer="97" font="vector">USB</text>
 <text x="266.7" y="243.84" size="5.08" layer="97" font="vector">Bluetooth Module</text>
 <wire x1="152.4" y1="142.24" x2="5.08" y2="142.24" width="0.1524" layer="97"/>
+<text x="261.62" y="132.08" size="5.08" layer="97" font="vector">Mechanicals</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="-0.3937" y="-0.3683" smashed="yes"/>
@@ -1530,6 +1559,18 @@ DIN A3, landscape with location and doc. field</description>
 </instance>
 <instance part="GND6" gate="1" x="228.6" y="81.28" smashed="yes">
 <attribute name="VALUE" x="226.06" y="78.74" size="1.778" layer="96"/>
+</instance>
+<instance part="MGT1" gate="G$1" x="264.16" y="119.38" smashed="yes">
+<attribute name="NAME" x="264.922" y="117.348" size="1.27" layer="95"/>
+</instance>
+<instance part="MGT2" gate="G$1" x="274.32" y="119.38" smashed="yes">
+<attribute name="NAME" x="275.082" y="117.348" size="1.27" layer="95"/>
+</instance>
+<instance part="MGT3" gate="G$1" x="284.48" y="119.38" smashed="yes">
+<attribute name="NAME" x="285.242" y="117.348" size="1.27" layer="95"/>
+</instance>
+<instance part="MGT4" gate="G$1" x="294.64" y="119.38" smashed="yes">
+<attribute name="NAME" x="295.402" y="117.348" size="1.27" layer="95"/>
 </instance>
 </instances>
 <busses>

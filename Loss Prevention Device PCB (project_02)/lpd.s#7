@@ -219,20 +219,6 @@ DIN A3, landscape with location and doc. field</description>
 </library>
 <library name="lpd">
 <packages>
-<package name="FEMALE90">
-<pad name="P$1" x="0" y="0" drill="0.6" shape="square"/>
-<pad name="P$2" x="1.2" y="0" drill="0.6" shape="square"/>
-<pad name="P$3" x="2.4" y="0" drill="0.6" shape="square"/>
-<pad name="P$4" x="3.6" y="0" drill="0.6" shape="square"/>
-<wire x1="-0.7" y1="-0.6" x2="-0.7" y2="4" width="0.1524" layer="21"/>
-<wire x1="-0.7" y1="4" x2="4.3" y2="4" width="0.1524" layer="21"/>
-<wire x1="4.3" y1="4" x2="4.3" y2="-0.6" width="0.1524" layer="21"/>
-<wire x1="4.3" y1="-0.6" x2="-0.7" y2="-0.6" width="0.1524" layer="21"/>
-<pad name="P$5" x="0" y="3" drill="0.6" shape="square"/>
-<pad name="P$6" x="1.2" y="3" drill="0.6" shape="square"/>
-<pad name="P$7" x="2.4" y="3" drill="0.6" shape="square"/>
-<pad name="P$8" x="3.6" y="3" drill="0.6" shape="square"/>
-</package>
 <package name="GPS">
 <wire x1="2.66" y1="0" x2="23.94" y2="0" width="0.1524" layer="21"/>
 <wire x1="26.6" y1="2.66" x2="26.6" y2="23.94" width="0.1524" layer="21"/>
@@ -685,22 +671,6 @@ DIN A3, landscape with location and doc. field</description>
 </package>
 </packages>
 <symbols>
-<symbol name="FEMALE90">
-<wire x1="0" y1="0" x2="0" y2="5.08" width="0.1524" layer="94"/>
-<wire x1="0" y1="5.08" x2="12.7" y2="5.08" width="0.1524" layer="94"/>
-<wire x1="12.7" y1="5.08" x2="12.7" y2="0" width="0.1524" layer="94"/>
-<wire x1="12.7" y1="0" x2="0" y2="0" width="0.1524" layer="94"/>
-<pin name="P$1" x="2.54" y="0" length="middle" rot="R270"/>
-<pin name="P$2" x="5.08" y="0" length="middle" rot="R270"/>
-<pin name="P$3" x="7.62" y="0" length="middle" rot="R270"/>
-<pin name="P$4" x="10.16" y="0" length="middle" rot="R270"/>
-<text x="-10.16" y="2.54" size="1.778" layer="95">&gt;NAME</text>
-<text x="15.24" y="2.54" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="P$5" x="2.54" y="5.08" visible="pad" length="point" rot="R90"/>
-<pin name="P$6" x="5.08" y="5.08" visible="pad" length="point" rot="R90"/>
-<pin name="P$7" x="7.62" y="5.08" visible="pad" length="point" rot="R90"/>
-<pin name="P$8" x="10.16" y="5.08" visible="pad" length="point" rot="R90"/>
-</symbol>
 <symbol name="GPS">
 <pin name="PPS" x="2.54" y="0" length="middle" rot="R90"/>
 <pin name="TXD" x="5.08" y="0" length="middle" rot="R90"/>
@@ -911,28 +881,6 @@ DIN A3, landscape with location and doc. field</description>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="LPPB041NGCN-RC" prefix="K">
-<gates>
-<gate name="G$1" symbol="FEMALE90" x="-10.16" y="2.54"/>
-</gates>
-<devices>
-<device name="" package="FEMALE90">
-<connects>
-<connect gate="G$1" pin="P$1" pad="P$1"/>
-<connect gate="G$1" pin="P$2" pad="P$2"/>
-<connect gate="G$1" pin="P$3" pad="P$3"/>
-<connect gate="G$1" pin="P$4" pad="P$4"/>
-<connect gate="G$1" pin="P$5" pad="P$5"/>
-<connect gate="G$1" pin="P$6" pad="P$6"/>
-<connect gate="G$1" pin="P$7" pad="P$7"/>
-<connect gate="G$1" pin="P$8" pad="P$8"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="GT-U7" prefix="U">
 <gates>
 <gate name="G$1" symbol="GPS" x="-7.62" y="-17.78"/>
@@ -1146,14 +1094,11 @@ by exp-lbrs.ulp</description>
 </classes>
 <parts>
 <part name="FRAME1" library="ENGI301" deviceset="FRAMES_A3L-LOC" device=""/>
-<part name="K1" library="lpd" deviceset="LPPB041NGCN-RC" device=""/>
 <part name="U2" library="lpd" deviceset="GT-U7" device=""/>
 <part name="X1" library="lpd" deviceset="GHI2_USB_HOST_W/CHASSIS_GND" device=""/>
 <part name="U3" library="lpd" deviceset="HM-10" device=""/>
 <part name="SUPPLY3" library="lpd" deviceset="VDD_3P3V" device=""/>
 <part name="GND4" library="lpd" deviceset="GND" device=""/>
-<part name="GND5" library="lpd" deviceset="GND" device=""/>
-<part name="SUPPLY4" library="lpd" deviceset="VDD_3P3V" device=""/>
 <part name="SUPPLY5" library="BeagleBone_Blue" deviceset="GHI-POWERGOUNDSUPPLY_CGND" device=""/>
 <part name="SUPPLY6" library="BeagleBone_Blue" deviceset="GHI-POWERGOUNDSUPPLY_CGND" device=""/>
 <part name="GND3" library="lpd" deviceset="GND" device=""/>
@@ -1161,6 +1106,8 @@ by exp-lbrs.ulp</description>
 <part name="GND1" library="lpd" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="lpd" deviceset="VDD_3P3V" device=""/>
 <part name="SUPPLY2" library="lpd" deviceset="VDD_3P3V" device=""/>
+<part name="SUPPLY4" library="lpd" deviceset="VDD_3P3V" device=""/>
+<part name="GND2" library="lpd" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1559,15 +1506,10 @@ by exp-lbrs.ulp</description>
 <text x="162.56" y="246.38" size="5.08" layer="97" font="vector">GPS</text>
 <text x="162.56" y="127" size="5.08" layer="97" font="vector">USB</text>
 <text x="266.7" y="243.84" size="5.08" layer="97" font="vector">Bluetooth Module</text>
-<text x="266.7" y="127" size="5.08" layer="97" font="vector">90 Degree Female Header</text>
 <wire x1="152.4" y1="142.24" x2="5.08" y2="142.24" width="0.1524" layer="97"/>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="-0.3937" y="-0.3683" smashed="yes"/>
-<instance part="K1" gate="G$1" x="312.42" y="86.36" smashed="yes">
-<attribute name="NAME" x="302.26" y="88.9" size="1.778" layer="95"/>
-<attribute name="VALUE" x="327.66" y="88.9" size="1.778" layer="96"/>
-</instance>
 <instance part="U2" gate="G$1" x="198.12" y="195.58" smashed="yes">
 <attribute name="NAME" x="195.58" y="226.06" size="1.778" layer="95"/>
 <attribute name="VALUE" x="208.28" y="226.06" size="1.778" layer="96"/>
@@ -1585,12 +1527,6 @@ by exp-lbrs.ulp</description>
 </instance>
 <instance part="GND4" gate="1" x="208.28" y="172.72" smashed="yes">
 <attribute name="VALUE" x="205.74" y="170.18" size="1.778" layer="96"/>
-</instance>
-<instance part="GND5" gate="1" x="317.5" y="58.42" smashed="yes">
-<attribute name="VALUE" x="314.96" y="55.88" size="1.778" layer="96"/>
-</instance>
-<instance part="SUPPLY4" gate="G$1" x="302.26" y="71.12" smashed="yes">
-<attribute name="VALUE" x="302.26" y="75.184" size="1.778" layer="96" align="center"/>
 </instance>
 <instance part="SUPPLY5" gate="G$1" x="175.26" y="81.28" smashed="yes">
 <attribute name="VALUE" x="175.26" y="77.724" size="1.27" layer="96" align="center"/>
@@ -1618,6 +1554,12 @@ by exp-lbrs.ulp</description>
 <instance part="SUPPLY2" gate="G$1" x="121.92" y="198.12" smashed="yes">
 <attribute name="VALUE" x="124.46" y="202.184" size="1.778" layer="96" align="center"/>
 </instance>
+<instance part="SUPPLY4" gate="G$1" x="302.26" y="167.64" smashed="yes">
+<attribute name="VALUE" x="302.26" y="171.704" size="1.778" layer="96" align="center"/>
+</instance>
+<instance part="GND2" gate="1" x="317.5" y="149.86" smashed="yes">
+<attribute name="VALUE" x="314.96" y="147.32" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -1628,12 +1570,6 @@ by exp-lbrs.ulp</description>
 <pinref part="SUPPLY3" gate="G$1" pin="VDD_3P3V"/>
 <wire x1="210.82" y1="195.58" x2="210.82" y2="187.96" width="0.1524" layer="91"/>
 <wire x1="210.82" y1="187.96" x2="223.52" y2="187.96" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="K1" gate="G$1" pin="P$1"/>
-<pinref part="SUPPLY4" gate="G$1" pin="VDD_3P3V"/>
-<wire x1="314.96" y1="86.36" x2="314.96" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="314.96" y1="68.58" x2="302.26" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="U$1" gate="G$2" pin="3.3V@2"/>
@@ -1647,17 +1583,18 @@ by exp-lbrs.ulp</description>
 <wire x1="121.92" y1="187.96" x2="121.92" y2="195.58" width="0.1524" layer="91"/>
 <pinref part="SUPPLY2" gate="G$1" pin="VDD_3P3V"/>
 </segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="VCC"/>
+<wire x1="316.23" y1="168.91" x2="316.23" y2="165.1" width="0.1524" layer="91"/>
+<wire x1="316.23" y1="165.1" x2="302.26" y2="165.1" width="0.1524" layer="91"/>
+<pinref part="SUPPLY4" gate="G$1" pin="VDD_3P3V"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="GND"/>
 <pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="208.28" y1="195.58" x2="208.28" y2="175.26" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="K1" gate="G$1" pin="P$2"/>
-<pinref part="GND5" gate="1" pin="GND"/>
-<wire x1="317.5" y1="86.36" x2="317.5" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="X1" gate="G$1" pin="GND"/>
@@ -1687,6 +1624,12 @@ by exp-lbrs.ulp</description>
 <wire x1="40.64" y1="175.26" x2="40.64" y2="195.58" width="0.1524" layer="91"/>
 <junction x="40.64" y="195.58"/>
 </segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="GND"/>
+<wire x1="318.77" y1="168.91" x2="318.77" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="318.77" y1="152.4" x2="317.5" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="UART2.RX" class="0">
 <segment>
@@ -1714,78 +1657,28 @@ by exp-lbrs.ulp</description>
 </net>
 <net name="UART4.TX" class="0">
 <segment>
-<pinref part="K1" gate="G$1" pin="P$3"/>
-<wire x1="320.04" y1="86.36" x2="320.04" y2="63.5" width="0.1524" layer="91"/>
-<label x="320.04" y="63.5" size="1.4224" layer="95" font="vector" rot="R90"/>
-</segment>
-<segment>
 <pinref part="U$1" gate="G$2" pin="UART4.TX"/>
 <wire x1="101.6" y1="177.8" x2="121.92" y2="177.8" width="0.1524" layer="91"/>
 <label x="114.3" y="177.8" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="TXD"/>
+<wire x1="321.31" y1="168.91" x2="321.31" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="321.31" y1="162.56" x2="337.82" y2="162.56" width="0.1524" layer="91"/>
+<label x="327.66" y="162.56" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="UART4.RX" class="0">
-<segment>
-<pinref part="K1" gate="G$1" pin="P$4"/>
-<wire x1="322.58" y1="86.36" x2="322.58" y2="63.5" width="0.1524" layer="91"/>
-<label x="322.58" y="63.5" size="1.4224" layer="95" font="vector" rot="R90"/>
-</segment>
 <segment>
 <pinref part="U$1" gate="G$2" pin="UART4.RX"/>
 <wire x1="101.6" y1="175.26" x2="121.92" y2="175.26" width="0.1524" layer="91"/>
 <label x="114.3" y="175.26" size="1.778" layer="95"/>
 </segment>
-</net>
-<net name="ANGLE1" class="0">
-<segment>
-<pinref part="K1" gate="G$1" pin="P$5"/>
-<wire x1="314.96" y1="91.44" x2="314.96" y2="104.14" width="0.1524" layer="91"/>
-<label x="314.96" y="96.52" size="1.4224" layer="95" font="vector" rot="R90"/>
-</segment>
-<segment>
-<pinref part="U3" gate="G$1" pin="VCC"/>
-<wire x1="316.23" y1="168.91" x2="314.96" y2="168.91" width="0.1524" layer="91"/>
-<wire x1="314.96" y1="168.91" x2="314.96" y2="157.48" width="0.1524" layer="91"/>
-<label x="314.96" y="157.48" size="1.4224" layer="95" font="vector" rot="R90"/>
-</segment>
-</net>
-<net name="ANGLE2" class="0">
-<segment>
-<pinref part="K1" gate="G$1" pin="P$6"/>
-<wire x1="317.5" y1="91.44" x2="317.5" y2="104.14" width="0.1524" layer="91"/>
-<label x="317.5" y="96.52" size="1.4224" layer="95" font="vector" rot="R90"/>
-</segment>
-<segment>
-<pinref part="U3" gate="G$1" pin="GND"/>
-<wire x1="318.77" y1="168.91" x2="317.5" y2="168.91" width="0.1524" layer="91"/>
-<wire x1="317.5" y1="168.91" x2="317.5" y2="157.48" width="0.1524" layer="91"/>
-<label x="317.5" y="157.48" size="1.4224" layer="95" font="vector" rot="R90"/>
-</segment>
-</net>
-<net name="ANGLE3" class="0">
-<segment>
-<pinref part="K1" gate="G$1" pin="P$7"/>
-<wire x1="320.04" y1="91.44" x2="320.04" y2="104.14" width="0.1524" layer="91"/>
-<label x="320.04" y="96.52" size="1.4224" layer="95" font="vector" rot="R90"/>
-</segment>
-<segment>
-<pinref part="U3" gate="G$1" pin="TXD"/>
-<wire x1="321.31" y1="168.91" x2="322.58" y2="168.91" width="0.1524" layer="91"/>
-<wire x1="322.58" y1="168.91" x2="322.58" y2="157.48" width="0.1524" layer="91"/>
-<label x="322.58" y="157.48" size="1.4224" layer="95" font="vector" rot="R90"/>
-</segment>
-</net>
-<net name="ANGLE4" class="0">
-<segment>
-<pinref part="K1" gate="G$1" pin="P$8"/>
-<wire x1="322.58" y1="91.44" x2="322.58" y2="104.14" width="0.1524" layer="91"/>
-<label x="322.58" y="96.52" size="1.4224" layer="95" font="vector" rot="R90"/>
-</segment>
 <segment>
 <pinref part="U3" gate="G$1" pin="RXD"/>
-<wire x1="323.85" y1="168.91" x2="325.12" y2="168.91" width="0.1524" layer="91"/>
-<wire x1="325.12" y1="168.91" x2="325.12" y2="157.48" width="0.1524" layer="91"/>
-<label x="325.12" y="157.48" size="1.4224" layer="95" font="vector" rot="R90"/>
+<wire x1="323.85" y1="168.91" x2="323.85" y2="167.64" width="0.1524" layer="91"/>
+<wire x1="323.85" y1="167.64" x2="337.82" y2="167.64" width="0.1524" layer="91"/>
+<label x="327.66" y="167.64" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CGND" class="0">

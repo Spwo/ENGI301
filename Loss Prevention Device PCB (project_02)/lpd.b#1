@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="3" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="25" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
@@ -435,6 +435,10 @@
 <rectangle x1="41.4528" y1="17.4498" x2="41.6052" y2="17.526" layer="21" rot="R90"/>
 <rectangle x1="41.1861" y1="18.6309" x2="41.8719" y2="18.7071" layer="21" rot="R90"/>
 <rectangle x1="41.1861" y1="19.6215" x2="41.8719" y2="19.6977" layer="21" rot="R90"/>
+<text x="42.545" y="41.91" size="1.016" layer="21" font="vector" rot="R270">Rev. 1.0</text>
+<text x="40.005" y="41.91" size="1.016" layer="21" font="vector" rot="R270">Loss Prevention Device</text>
+<text x="45.085" y="38.1" size="1.27" layer="21" font="vector" rot="R270">s</text>
+<text x="45.593" y="38.354" size="0.762" layer="21" font="vector" rot="R90">bw</text>
 </plain>
 <libraries>
 <library name="lpd">

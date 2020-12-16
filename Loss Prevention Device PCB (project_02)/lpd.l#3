@@ -621,6 +621,9 @@
 <text x="-4.5001" y="10" size="1.016" layer="27" ratio="12">&gt;VALUE</text>
 <text x="-5.08" y="0.635" size="1.016" layer="21" ratio="12">AMP 787616-1</text>
 </package>
+<package name="MOUNTING_HOLE">
+<pad name="P$1" x="0" y="0" drill="3.175" diameter="4.445"/>
+</package>
 </packages>
 <symbols>
 <symbol name="GPS">
@@ -840,6 +843,11 @@
 <text x="25.4" y="78.74" size="2.54" layer="94">Beagle</text>
 <wire x1="20.32" y1="88.9" x2="20.32" y2="73.66" width="0.254" layer="94"/>
 </symbol>
+<symbol name="MOUNTING_HOLE">
+<circle x="0" y="2.54" radius="2.54" width="0.254" layer="94"/>
+<pin name="P$1" x="0" y="-5.08" visible="off" length="middle" rot="R90"/>
+<text x="0.762" y="-2.032" size="1.27" layer="95">&gt;NAME</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="GT-U7" prefix="U">
@@ -1016,6 +1024,22 @@
 <connect gate="G$2" pin="USB1.ID" pad="P1_13"/>
 <connect gate="G$2" pin="USB1.VBUS" pad="P1_05"/>
 <connect gate="G$2" pin="USB1.VIN" pad="P1_07"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MOUNTING_HOLE" prefix="MGT">
+<description>Chassis Mounting Hole w/GND connection ability</description>
+<gates>
+<gate name="G$1" symbol="MOUNTING_HOLE" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MOUNTING_HOLE">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
 </connects>
 <technologies>
 <technology name=""/>

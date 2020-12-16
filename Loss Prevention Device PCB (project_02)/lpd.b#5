@@ -829,11 +829,11 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 <element name="U3" library="lpd" package="BT" value="HM-10" x="31.75" y="3.81" smashed="yes"/>
 <element name="U$1" library="lpd" package="POCKETBEAGLE" value="POCKETBEAGLE" x="38.1" y="1.27" smashed="yes" rot="R90"/>
 <element name="MGT1" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="3.175" y="3.175" smashed="yes"/>
-<element name="MGT2" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="43.815" y="6.985" smashed="yes"/>
-<element name="MGT3" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="42.545" y="53.34" smashed="yes"/>
-<element name="FUD1" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-6.35" smashed="yes"/>
-<element name="FUD2" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-8.89" smashed="yes"/>
-<element name="FUD3" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-11.43" smashed="yes"/>
+<element name="MGT2" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="45.085" y="6.985" smashed="yes"/>
+<element name="MGT3" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="45.085" y="55.245" smashed="yes"/>
+<element name="FUD1" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="1.905" y="7.62" smashed="yes"/>
+<element name="FUD2" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="40.64" y="7.62" smashed="yes"/>
+<element name="FUD3" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="40.64" y="50.165" smashed="yes"/>
 <element name="FUD4" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-13.97" smashed="yes"/>
 <element name="FUD5" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-16.51" smashed="yes"/>
 <element name="FUD6" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-19.05" smashed="yes"/>

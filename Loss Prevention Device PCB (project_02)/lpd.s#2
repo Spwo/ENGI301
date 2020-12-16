@@ -674,6 +674,11 @@ DIN A3, landscape with location and doc. field</description>
 <package name="MOUNTING_HOLE">
 <pad name="P$1" x="0" y="0" drill="3.175" diameter="4.445"/>
 </package>
+<package name="FIDUCIAL_40MIL">
+<circle x="0" y="0" radius="0.762" width="0.6096" layer="29"/>
+<circle x="0" y="0" radius="1.04726875" width="0.127" layer="41"/>
+<smd name="P$1" x="0" y="0" dx="1.016" dy="1.016" layer="1" roundness="100" cream="no"/>
+</package>
 </packages>
 <symbols>
 <symbol name="GPS">
@@ -889,6 +894,15 @@ DIN A3, landscape with location and doc. field</description>
 <pin name="P$1" x="0" y="-5.08" visible="off" length="middle" rot="R90"/>
 <text x="0.762" y="-2.032" size="1.27" layer="95">&gt;NAME</text>
 </symbol>
+<symbol name="FIDUCIAL">
+<wire x1="-2.54" y1="-2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
+<pin name="P$1" x="0" y="0" visible="off" length="point" direction="nc"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="GT-U7" prefix="U">
@@ -1076,6 +1090,21 @@ DIN A3, landscape with location and doc. field</description>
 </device>
 </devices>
 </deviceset>
+<deviceset name="FIDUCIAL" prefix="FUD">
+<gates>
+<gate name="G$1" symbol="FIDUCIAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="FIDUCIAL_40MIL">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 </libraries>
@@ -1106,6 +1135,12 @@ DIN A3, landscape with location and doc. field</description>
 <part name="MGT1" library="lpd" deviceset="MOUNTING_HOLE" device=""/>
 <part name="MGT2" library="lpd" deviceset="MOUNTING_HOLE" device=""/>
 <part name="MGT3" library="lpd" deviceset="MOUNTING_HOLE" device=""/>
+<part name="FUD1" library="lpd" deviceset="FIDUCIAL" device=""/>
+<part name="FUD2" library="lpd" deviceset="FIDUCIAL" device=""/>
+<part name="FUD3" library="lpd" deviceset="FIDUCIAL" device=""/>
+<part name="FUD4" library="lpd" deviceset="FIDUCIAL" device=""/>
+<part name="FUD5" library="lpd" deviceset="FIDUCIAL" device=""/>
+<part name="FUD6" library="lpd" deviceset="FIDUCIAL" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1568,6 +1603,12 @@ DIN A3, landscape with location and doc. field</description>
 <instance part="MGT3" gate="G$1" x="284.48" y="119.38" smashed="yes">
 <attribute name="NAME" x="285.242" y="117.348" size="1.27" layer="95"/>
 </instance>
+<instance part="FUD1" gate="G$1" x="264.16" y="104.14" smashed="yes"/>
+<instance part="FUD2" gate="G$1" x="274.32" y="104.14" smashed="yes"/>
+<instance part="FUD3" gate="G$1" x="284.48" y="104.14" smashed="yes"/>
+<instance part="FUD4" gate="G$1" x="264.16" y="93.98" smashed="yes"/>
+<instance part="FUD5" gate="G$1" x="274.32" y="93.98" smashed="yes"/>
+<instance part="FUD6" gate="G$1" x="284.48" y="93.98" smashed="yes"/>
 </instances>
 <busses>
 </busses>

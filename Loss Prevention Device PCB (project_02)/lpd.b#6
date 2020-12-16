@@ -632,6 +632,11 @@
 <package name="MOUNTING_HOLE">
 <pad name="P$1" x="0" y="0" drill="3.175" diameter="4.445"/>
 </package>
+<package name="FIDUCIAL_40MIL">
+<circle x="0" y="0" radius="0.762" width="0.6096" layer="29"/>
+<circle x="0" y="0" radius="1.04726875" width="0.127" layer="41"/>
+<smd name="P$1" x="0" y="0" dx="1.016" dy="1.016" layer="1" roundness="100" cream="no"/>
+</package>
 </packages>
 </library>
 </libraries>
@@ -826,6 +831,12 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 <element name="MGT1" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="3.175" y="3.175" smashed="yes"/>
 <element name="MGT2" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="43.815" y="6.985" smashed="yes"/>
 <element name="MGT3" library="lpd" package="MOUNTING_HOLE" value="MOUNTING_HOLE" x="42.545" y="53.34" smashed="yes"/>
+<element name="FUD1" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-6.35" smashed="yes"/>
+<element name="FUD2" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-8.89" smashed="yes"/>
+<element name="FUD3" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-11.43" smashed="yes"/>
+<element name="FUD4" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-13.97" smashed="yes"/>
+<element name="FUD5" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-16.51" smashed="yes"/>
+<element name="FUD6" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-19.05" smashed="yes"/>
 </elements>
 <signals>
 <signal name="GND">

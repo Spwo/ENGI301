@@ -23,7 +23,7 @@
 <layer number="13" name="Route13" color="21" fill="1" visible="no" active="no"/>
 <layer number="14" name="Route14" color="22" fill="1" visible="no" active="no"/>
 <layer number="15" name="Route15" color="23" fill="1" visible="no" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
@@ -834,9 +834,9 @@ This DRC check is for 4-Layer Standard Capability boards. Use Layer 2 and 15 for
 <element name="FUD1" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="1.905" y="7.62" smashed="yes"/>
 <element name="FUD2" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="40.64" y="7.62" smashed="yes"/>
 <element name="FUD3" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="40.64" y="50.165" smashed="yes"/>
-<element name="FUD4" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-13.97" smashed="yes"/>
-<element name="FUD5" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-16.51" smashed="yes"/>
-<element name="FUD6" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="-3.81" y="-19.05" smashed="yes"/>
+<element name="FUD4" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="1.905" y="7.62" smashed="yes" rot="MR0"/>
+<element name="FUD5" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="40.64" y="7.62" smashed="yes" rot="MR0"/>
+<element name="FUD6" library="lpd" package="FIDUCIAL_40MIL" value="FIDUCIAL" x="40.64" y="50.165" smashed="yes" rot="MR0"/>
 </elements>
 <signals>
 <signal name="GND">

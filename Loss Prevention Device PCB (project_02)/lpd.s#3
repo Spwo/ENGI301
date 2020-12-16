@@ -1106,7 +1106,6 @@ DIN A3, landscape with location and doc. field</description>
 <part name="MGT1" library="lpd" deviceset="MOUNTING_HOLE" device=""/>
 <part name="MGT2" library="lpd" deviceset="MOUNTING_HOLE" device=""/>
 <part name="MGT3" library="lpd" deviceset="MOUNTING_HOLE" device=""/>
-<part name="MGT4" library="lpd" deviceset="MOUNTING_HOLE" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1568,9 +1567,6 @@ DIN A3, landscape with location and doc. field</description>
 </instance>
 <instance part="MGT3" gate="G$1" x="284.48" y="119.38" smashed="yes">
 <attribute name="NAME" x="285.242" y="117.348" size="1.27" layer="95"/>
-</instance>
-<instance part="MGT4" gate="G$1" x="294.64" y="119.38" smashed="yes">
-<attribute name="NAME" x="295.402" y="117.348" size="1.27" layer="95"/>
 </instance>
 </instances>
 <busses>

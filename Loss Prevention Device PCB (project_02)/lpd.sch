@@ -238,6 +238,7 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="10.16" y1="25.4" x2="10.16" y2="20.32" width="0.254" layer="21"/>
 <wire x1="10.16" y1="20.32" x2="15.24" y2="20.32" width="0.254" layer="21"/>
 <wire x1="15.24" y1="20.32" x2="15.24" y2="25.4" width="0.254" layer="21"/>
+<text x="6.35" y="12.7" size="1.778" layer="25">GPS module</text>
 </package>
 <package name="GHI2_USB_HOST_HORIZONTAL_W/CHASSIS_GND">
 <wire x1="-6.5" y1="0.3" x2="-6.4999" y2="0.3" width="0.2032" layer="21"/>

@@ -624,6 +624,11 @@
 <package name="MOUNTING_HOLE">
 <pad name="P$1" x="0" y="0" drill="3.175" diameter="4.445"/>
 </package>
+<package name="FIDUCIAL_40MIL">
+<circle x="0" y="0" radius="0.762" width="0.6096" layer="29"/>
+<circle x="0" y="0" radius="1.04726875" width="0.127" layer="41"/>
+<smd name="P$1" x="0" y="0" dx="1.016" dy="1.016" layer="1" roundness="100" cream="no"/>
+</package>
 </packages>
 <symbols>
 <symbol name="GPS">
@@ -848,6 +853,15 @@
 <pin name="P$1" x="0" y="-5.08" visible="off" length="middle" rot="R90"/>
 <text x="0.762" y="-2.032" size="1.27" layer="95">&gt;NAME</text>
 </symbol>
+<symbol name="FIDUCIAL">
+<wire x1="-2.54" y1="-2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="-2.54" y2="2.54" width="0.254" layer="94"/>
+<pin name="P$1" x="0" y="0" visible="off" length="point" direction="nc"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="GT-U7" prefix="U">
@@ -1038,6 +1052,21 @@
 </gates>
 <devices>
 <device name="" package="MOUNTING_HOLE">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="FIDUCIAL" prefix="FUD">
+<gates>
+<gate name="G$1" symbol="FIDUCIAL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="FIDUCIAL_40MIL">
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 </connects>
