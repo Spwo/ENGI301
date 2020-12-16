@@ -1608,6 +1608,12 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="210.82" y1="195.58" x2="210.82" y2="187.96" width="0.1524" layer="91"/>
 <wire x1="210.82" y1="187.96" x2="223.52" y2="187.96" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="K1" gate="G$1" pin="P$1"/>
+<pinref part="SUPPLY4" gate="G$1" pin="VDD_3P3V"/>
+<wire x1="314.96" y1="86.36" x2="314.96" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="314.96" y1="68.58" x2="302.26" y2="68.58" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="GND" class="0">
 <segment>
@@ -1634,6 +1640,11 @@ DIN A3, landscape with location and doc. field</description>
 <pinref part="U2" gate="G$1" pin="GND"/>
 <pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="208.28" y1="195.58" x2="208.28" y2="175.26" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="K1" gate="G$1" pin="P$2"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+<wire x1="317.5" y1="86.36" x2="317.5" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="UART2.RX" class="0">
@@ -1666,12 +1677,22 @@ DIN A3, landscape with location and doc. field</description>
 <wire x1="101.6" y1="185.42" x2="121.92" y2="185.42" width="0.1524" layer="91"/>
 <label x="111.76" y="185.42" size="1.4224" layer="95" font="vector"/>
 </segment>
+<segment>
+<pinref part="K1" gate="G$1" pin="P$3"/>
+<wire x1="320.04" y1="86.36" x2="320.04" y2="63.5" width="0.1524" layer="91"/>
+<label x="320.04" y="63.5" size="1.4224" layer="95" font="vector" rot="R90"/>
+</segment>
 </net>
 <net name="UART4.RX" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="UART4.RX"/>
 <wire x1="101.6" y1="182.88" x2="121.92" y2="182.88" width="0.1524" layer="91"/>
 <label x="111.76" y="182.88" size="1.4224" layer="95" font="vector"/>
+</segment>
+<segment>
+<pinref part="K1" gate="G$1" pin="P$4"/>
+<wire x1="322.58" y1="86.36" x2="322.58" y2="63.5" width="0.1524" layer="91"/>
+<label x="322.58" y="63.5" size="1.4224" layer="95" font="vector" rot="R90"/>
 </segment>
 </net>
 <net name="ANGLE1" class="0">

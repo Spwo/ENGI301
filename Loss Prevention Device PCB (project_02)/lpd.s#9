@@ -828,10 +828,10 @@ DIN A3, landscape with location and doc. field</description>
 <pin name="P$4" x="10.16" y="0" length="middle" rot="R270"/>
 <text x="-10.16" y="2.54" size="1.778" layer="95">&gt;NAME</text>
 <text x="15.24" y="2.54" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="P$5" x="2.54" y="5.08" length="middle" rot="R90"/>
-<pin name="P$6" x="5.08" y="5.08" length="middle" rot="R90"/>
-<pin name="P$7" x="7.62" y="5.08" length="middle" rot="R90"/>
-<pin name="P$8" x="10.16" y="5.08" length="middle" rot="R90"/>
+<pin name="P$5" x="2.54" y="5.08" visible="pad" length="point" rot="R90"/>
+<pin name="P$6" x="5.08" y="5.08" visible="pad" length="point" rot="R90"/>
+<pin name="P$7" x="7.62" y="5.08" visible="pad" length="point" rot="R90"/>
+<pin name="P$8" x="10.16" y="5.08" visible="pad" length="point" rot="R90"/>
 </symbol>
 <symbol name="GPS">
 <pin name="PPS" x="2.54" y="0" length="middle" rot="R90"/>
@@ -1134,6 +1134,8 @@ DIN A3, landscape with location and doc. field</description>
 <part name="GND3" library="ENGI301" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="lpd" deviceset="VDD_3P3V" device=""/>
 <part name="GND4" library="lpd" deviceset="GND" device=""/>
+<part name="GND5" library="lpd" deviceset="GND" device=""/>
+<part name="SUPPLY4" library="lpd" deviceset="VDD_3P3V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1577,6 +1579,12 @@ DIN A3, landscape with location and doc. field</description>
 <instance part="GND4" gate="1" x="208.28" y="172.72" smashed="yes">
 <attribute name="VALUE" x="205.74" y="170.18" size="1.778" layer="96"/>
 </instance>
+<instance part="GND5" gate="1" x="317.5" y="58.42" smashed="yes">
+<attribute name="VALUE" x="314.96" y="55.88" size="1.778" layer="96"/>
+</instance>
+<instance part="SUPPLY4" gate="G$1" x="302.26" y="71.12" smashed="yes">
+<attribute name="VALUE" x="302.26" y="75.184" size="1.778" layer="96" align="center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -1664,6 +1672,58 @@ DIN A3, landscape with location and doc. field</description>
 <pinref part="U1" gate="G$1" pin="UART4.RX"/>
 <wire x1="101.6" y1="182.88" x2="121.92" y2="182.88" width="0.1524" layer="91"/>
 <label x="111.76" y="182.88" size="1.4224" layer="95" font="vector"/>
+</segment>
+</net>
+<net name="ANGLE1" class="0">
+<segment>
+<pinref part="K1" gate="G$1" pin="P$5"/>
+<wire x1="314.96" y1="91.44" x2="314.96" y2="104.14" width="0.1524" layer="91"/>
+<label x="314.96" y="96.52" size="1.4224" layer="95" font="vector" rot="R90"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="VCC"/>
+<wire x1="316.23" y1="168.91" x2="314.96" y2="168.91" width="0.1524" layer="91"/>
+<wire x1="314.96" y1="168.91" x2="314.96" y2="157.48" width="0.1524" layer="91"/>
+<label x="314.96" y="157.48" size="1.4224" layer="95" font="vector" rot="R90"/>
+</segment>
+</net>
+<net name="ANGLE2" class="0">
+<segment>
+<pinref part="K1" gate="G$1" pin="P$6"/>
+<wire x1="317.5" y1="91.44" x2="317.5" y2="104.14" width="0.1524" layer="91"/>
+<label x="317.5" y="96.52" size="1.4224" layer="95" font="vector" rot="R90"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="GND"/>
+<wire x1="318.77" y1="168.91" x2="317.5" y2="168.91" width="0.1524" layer="91"/>
+<wire x1="317.5" y1="168.91" x2="317.5" y2="157.48" width="0.1524" layer="91"/>
+<label x="317.5" y="157.48" size="1.4224" layer="95" font="vector" rot="R90"/>
+</segment>
+</net>
+<net name="ANGLE3" class="0">
+<segment>
+<pinref part="K1" gate="G$1" pin="P$7"/>
+<wire x1="320.04" y1="91.44" x2="320.04" y2="104.14" width="0.1524" layer="91"/>
+<label x="320.04" y="96.52" size="1.4224" layer="95" font="vector" rot="R90"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="TXD"/>
+<wire x1="321.31" y1="168.91" x2="322.58" y2="168.91" width="0.1524" layer="91"/>
+<wire x1="322.58" y1="168.91" x2="322.58" y2="157.48" width="0.1524" layer="91"/>
+<label x="322.58" y="157.48" size="1.4224" layer="95" font="vector" rot="R90"/>
+</segment>
+</net>
+<net name="ANGLE4" class="0">
+<segment>
+<pinref part="K1" gate="G$1" pin="P$8"/>
+<wire x1="322.58" y1="91.44" x2="322.58" y2="104.14" width="0.1524" layer="91"/>
+<label x="322.58" y="96.52" size="1.4224" layer="95" font="vector" rot="R90"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="RXD"/>
+<wire x1="323.85" y1="168.91" x2="325.12" y2="168.91" width="0.1524" layer="91"/>
+<wire x1="325.12" y1="168.91" x2="325.12" y2="157.48" width="0.1524" layer="91"/>
+<label x="325.12" y="157.48" size="1.4224" layer="95" font="vector" rot="R90"/>
 </segment>
 </net>
 </nets>
